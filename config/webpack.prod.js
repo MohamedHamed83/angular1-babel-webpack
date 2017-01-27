@@ -95,7 +95,7 @@ module.exports = function makeWebpackConfig() {
   if (!isTest) {
     config.plugins.push(
       new HtmlWebpackPlugin({
-        template: './src/public/index.html',
+        template: '../src/public/index.html',
         inject: 'body'
       }),
       new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true})

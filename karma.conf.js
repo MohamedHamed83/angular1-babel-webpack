@@ -26,16 +26,16 @@ module.exports = function karmaConfig(config) {
 
     files: [
       // Grab all files in the app folder that contain .spec.
-      './webpack.test.js'
+       { pattern: 'config/karma.shim.js', watched: false }
     ],
 
     preprocessors: {
-      'src/tests.webpack.js': ['webpack', 'sourcemap']
+      'config/karma.shim.js': ['webpack', 'sourcemap']
     },
 
     browsers: [
       // 'PhantomJS'
-      'Chrome'
+      'PhantomJS'
     ],
 
     singleRun: true,
@@ -49,7 +49,7 @@ module.exports = function karmaConfig(config) {
       ]
     },
 
-    webpack: require('./webpack.config'),
+    webpack: require('./config/webpack.test'),
 
     // Hide webpack build information from output
     webpackMiddleware: {

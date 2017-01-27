@@ -14,13 +14,13 @@ let app = () => {
 class AppCtrl {
   constructor() {
     this.url = 'test app';
-    Rx.Observable.from([1,2,3,4,5,6,7,8])
-    .map((item)=>{
-      return item + 1 
-    })
-    .subscribe((testRx)=>{
-      console.log('x:', testRx)
-    })
+    // Rx.Observable.from([1,2,3,4,5,6,7,8])
+    // .map((item)=>{
+    //   return item + 1 
+    // })
+    // .subscribe((testRx)=>{
+    //   console.log('x:', testRx)
+    // })
   }
 }
 

@@ -20,27 +20,20 @@ module.exports = function makeWebpackConfig() {
 
   var config = {};
 
-  config.entry = isTest ? {} : {
+  config.entry = {
     app: './src/app/app.js'
   };
 
 
-  config.output = isTest ? {} : {
+  config.output = {
     path: root('./dist'),
     publicPath: isProd ? '/' : 'http://localhost:8080/',
     filename: isProd ? '[name].[hash].js' : '[name].bundle.js',
     chunkFilename: isProd ? '[name].[hash].js' : '[name].bundle.js'
   };
 
-  if (isTest) {
-    config.devtool = 'inline-source-map';
-  }
-  else if (isProd) {
-    config.devtool = 'source-map';
-  }
-  else {
-    config.devtool = 'eval-source-map';
-  }
+
+  config.devtool = 'inline-source-map';
 
   // Initialize module
   config.module = {
@@ -50,14 +43,9 @@ module.exports = function makeWebpackConfig() {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loader: isTest ? 'null' : ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: [
-          {loader: 'css-loader', options: {sourceMap: true}},
-          {loader: 'postcss-loader'}
-        ],
-      })
-    }, {
+      loader: 'null-loader' 
+    },
+     {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
       loader: 'file-loader'
     }, {
@@ -92,32 +80,10 @@ module.exports = function makeWebpackConfig() {
     })
   ];
 
-  if (!isTest) {
-    config.plugins.push(
-      new HtmlWebpackPlugin({
-        template: './src/public/index.html',
-        inject: 'body'
-      }),
-      new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true})
-    )
-  }
-
-
-  if (isProd) {
-    config.plugins.push(
-      new webpack.NoErrorsPlugin(),
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin({sourceMap: true}),
-      new CopyWebpackPlugin([{
-        from: __dirname + '/src/public'
-      }])
-    )
-  }
-
   config.devServer = {
     contentBase: './src/public',
     stats: 'minimal'
   };
 
   return config;
-}();
+} ();

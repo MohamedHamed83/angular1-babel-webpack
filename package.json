@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && webpack --bail --progress --profile",
-    "server": "webpack-dev-server --history-api-fallback --inline --progress",
+    "build": "rimraf dist && webpack   --progress --profile --json > app.state.json --bail --display-modules --display-reasons",
+    "server": "webpack-dev-server --config config/webpack.dev.js --history-api-fallback --inline --progress",
     "test": "karma start karma.conf.js",
     "test-watch": "karma start --auto-watch --no-single-run",
     "start": "npm run server"
