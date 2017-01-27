@@ -1,0 +1,1 @@
+angular1-babel-webpack
