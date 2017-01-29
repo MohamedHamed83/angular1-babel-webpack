@@ -1,0 +1,4 @@
+export {
+    FirebaseModule
+}
+from './firebaseConfig';

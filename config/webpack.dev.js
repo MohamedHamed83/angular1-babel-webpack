@@ -17,7 +17,8 @@ module.exports = function makeWebpackConfig() {
     var config = {};
 
     config.entry = {
-        app: './src/app/app.js'
+        vendors:'./src/vendors',
+        app: './src/app/app'
     };
 
 
@@ -69,6 +70,11 @@ module.exports = function makeWebpackConfig() {
     };
 
     config.plugins = [
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
+        }),
         new webpack.LoaderOptionsPlugin({
             test: /\.scss$/i,
             options: {
