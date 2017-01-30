@@ -5,6 +5,6 @@ import 'firebase';
 import  'angularfire';
 import {
     FirebaseModule
-} from './shared/firebaseConfig'
+} from './app/shared/firebaseConfig';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';

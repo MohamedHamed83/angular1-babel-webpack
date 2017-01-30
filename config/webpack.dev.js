@@ -17,7 +17,7 @@ module.exports = function makeWebpackConfig() {
     var config = {};
 
     config.entry = {
-        vendors:'./src/vendors',
+        vendors: './src/vendors',
         app: './src/app/app'
     };
 
