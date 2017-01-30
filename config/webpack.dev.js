@@ -84,7 +84,7 @@ module.exports = function makeWebpackConfig() {
             }
         }),
         new HtmlWebpackPlugin({
-            template: './src/public/index.html',
+            template: './src/index.html',
             inject: 'body'
         }),
         new ExtractTextPlugin({

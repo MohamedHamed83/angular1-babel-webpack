@@ -1,8 +1,11 @@
 <div class="container-fluid">
   <div class="jumbotron centered">
-    <h1>{{homeController.title}}</h1>
+    <h3>{{homeController.title}}</h1>
   </div>
   <div ng-if="!home.isAuth">
     <a ui-sref="nestedDiv">nested</a>
   </div>
+    <ul>
+    <li ng-repeat="plan in homeController.plans">{{ plan.$value }}</li>
+  </ul>
 </div>

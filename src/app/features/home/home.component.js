@@ -1,16 +1,15 @@
 'use strict';
 
 import template from './home.html';
-
+let firebase = require('firebase/app');
 
 class homeController {
   constructor($firebaseArray) {
     let homeController = this;
-    homeController.title = 'test title 1';
-    // let ref = firebase.database().ref().child("plans");
-    // homeController.plans = [];
-    // homeController.plans =  $firebaseArray(ref);
-    // console.log(homeController.plans)
+    homeController.title = 'test title';
+    let ref = firebase.database().ref().child("plans");
+    homeController.plans = [];
+    homeController.plans =  $firebaseArray(ref);
   }
 }
 let homeComponent = {
