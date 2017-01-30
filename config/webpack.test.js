@@ -20,9 +20,11 @@ module.exports = function makeWebpackConfig() {
 
   var config = {};
 
-  config.entry = {
-    app: './src/app/app.js'
+  config.resolve = {
+    extensions: ['.js', '.json', '.css', '.scss', '.html'],
   };
+
+  config.entry = () => { return {} };
 
 
   config.output = {
@@ -43,33 +45,44 @@ module.exports = function makeWebpackConfig() {
       exclude: /node_modules/
     }, {
       test: /\.css$/,
-      loader: 'null-loader' 
+      loader: 'null-loader'
     },
-     {
+    {
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-      loader: 'file-loader'
+      loader: 'null-loader'
     }, {
       test: /\.html$/,
       loader: 'raw-loader'
-    }]
-  };
-
-  if (isTest) {
-    config.module.rules.push({
+    },
+    {
       enforce: 'pre',
       test: /\.js$/,
       exclude: [
         /node_modules/,
         /\.spec\.js$/
       ],
-      use: 'istanbul-instrumenter',
+      loader: 'istanbul-instrumenter-loader',
       options: {
         esModules: true
       }
-    })
-  }
+    },
+    {
+      enforce: 'post',
+      test: /\.(js)$/,
+      loader: 'istanbul-instrumenter-loader',
+      include: root('src'),
+      exclude: [/\.spec\.js$/, /\.e2e\.js$/, /node_modules/]
+    }]
+  };
 
   config.plugins = [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery",
+      Tether: "tether",
+      "window.Tether": "tether"
+    }),
     new webpack.LoaderOptionsPlugin({
       test: /\.scss$/i,
       options: {
@@ -81,7 +94,7 @@ module.exports = function makeWebpackConfig() {
   ];
 
   config.devServer = {
-    contentBase: './src/public',
+    contentBase: './src',
     stats: 'minimal'
   };
 

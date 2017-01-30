@@ -12,15 +12,14 @@ module.exports = function karmaConfig(config) {
       require('karma-webpack'),
       require('karma-jasmine'),
       require('karma-coverage'),
-      require('karma-sourcemap-loader')
+      require('karma-mocha'),
+      require('karma-sourcemap-loader'),
+      require('karma-mocha-reporter'),
+      require('istanbul-instrumenter-loader'),
+      require('karma-remap-coverage')
     ],
     reporters: [
-      // Reference: https://github.com/mlex/karma-spec-reporter
-      // Set reporter to print detailed results to console
-      'progress',
-
-      // Reference: https://github.com/karma-runner/karma-coverage
-      // Output code coverage files
+      'mocha',
       'coverage'
     ],
 
@@ -35,19 +34,19 @@ module.exports = function karmaConfig(config) {
 
     browsers: [
       // 'PhantomJS'
-      'PhantomJS'
+      'Chrome'
     ],
 
     singleRun: true,
 
     // Configure code coverage reporter
-    coverageReporter: {
-      dir: 'coverage/',
-      reporters: [
+		coverageReporter: {
+	    dir: 'coverage/',
+			reporters: [
         { type: 'text-summary' },
-        { type: 'html' }
-      ]
-    },
+				{ type: 'html' }
+			]
+		},
 
     webpack: require('./config/webpack.test'),
 

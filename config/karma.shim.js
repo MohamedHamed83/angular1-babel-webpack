@@ -3,8 +3,8 @@
 
 import 'angular';
 import 'angular-mocks/angular-mocks';
+ 
+var appContext = require.context('../src', true, /\.spec\.js/);
 
-const context = require.context('../src/app', true, /\.js$/);
-
-context.keys().forEach(context);
+appContext.keys().forEach(appContext);
 
