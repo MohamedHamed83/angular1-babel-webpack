@@ -1,11 +1,10 @@
 'use strict';
 
-import './home.css';
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import 'firebase/auth';
 import 'firebase/database';
-
+require('./home.scss')
 import routing from './home.routes';
 import homeComponent from './home.component';
 

@@ -43,7 +43,7 @@ module.exports = function makeWebpackConfig() {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                loaders: ['to-string-loader', 'css-loader', 'sass-loader']
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
             }, {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
