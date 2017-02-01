@@ -2,10 +2,11 @@
   <div class="jumbotron centered">
     <h3>{{homeController.title}}</h1>
   </div>
-  <div ng-if="!home.isAuth">
+  <button id='obButton'>button</button>
+  <div >
     <a ui-sref="nestedDiv">nested</a>
   </div>
-    <ul>
-    <li ng-repeat="plan in homeController.plans">{{ plan.$value }}</li>
+  <ul>
+    <li ng-repeat="plan in homeController.plans[0]">{{ plan }}</li>
   </ul>
 </div>

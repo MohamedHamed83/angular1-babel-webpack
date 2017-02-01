@@ -4,7 +4,7 @@ let component;
 
 describe('Component: homeController', () => {
     beforeEach(() => {
-        component = new homeController();
+        component = new homeController($firebaseArray);
     })
     it('should expose the title', () => {
         expect(component.title).toBeDefined();
