@@ -6,7 +6,7 @@ import homeController from './home.controller'
 let homeComponent = {
   template: template,
   controllerAs: 'homeController',
-  controller: ['$firebaseArray', homeController]
+  controller: ['plans','workouts', homeController]
 };
 
 export default homeComponent;

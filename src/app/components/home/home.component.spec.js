@@ -1,8 +1,12 @@
 import homeController from './home.controller';
 
-let component;
+let $componentController;
 
 describe('Component: homeController', () => {
+    beforeEach(module(''))
+    beforeEach(inject(function (_$componentController_) {
+        $componentController = _$componentController_;
+    }))
     beforeEach(() => {
         component = new homeController($firebaseArray);
     })

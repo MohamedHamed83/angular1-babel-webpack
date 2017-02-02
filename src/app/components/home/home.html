@@ -2,11 +2,14 @@
   <div class="jumbotron centered">
     <h3>{{homeController.title}}</h1>
   </div>
-  <button id='obButton'>button</button>
+  <button id='obButton' class='btn btn-default'>button</button>
   <div >
     <a ui-sref="nestedDiv">nested</a>
   </div>
   <ul>
-    <li ng-repeat="plan in homeController.plans[0]">{{ plan }}</li>
+    <li ng-repeat="plan in homeController.plans">{{ plan }}</li>
+  </ul>
+    <ul>
+    <li ng-repeat="workout in homeController.workouts">{{ workout }}</li>
   </ul>
 </div>
