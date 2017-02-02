@@ -37,7 +37,7 @@ module.exports = function makeWebpackConfig() {
     config.module = {
         rules: [{
                 test: /\.js$/,
-                use: 'babel-loader',
+                loaders: ['ng-annotate-loader','babel-loader'],
                 exclude: /node_modules/
             },
             {

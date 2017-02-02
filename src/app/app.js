@@ -1,8 +1,11 @@
 import 'angular-ui-router';
-import './components/home/index';
+import './components/index';
 import routing from './app.config';
-import FirebaseModule from './common/config/firebaseConfig';
 
 
-angular.module('limFit', ['ui.router', 'limFit.home', 'firebase'])
+/**
+ * This includes all of our nested modules.
+ **/
+
+angular.module('limFit', ['ui.router', 'limFit.home'])
   .config(routing);

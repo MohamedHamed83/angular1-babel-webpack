@@ -1,8 +1,9 @@
-export default class plans {
-    constructor() {
-    }
+import ref from '../config/firebaseConfig'
+
+export class plans {
+    constructor($firebaseObject) {}
 
     getPlans() {
-        return ["Beach Ready", "Best Sports", "Crowded Gym"]
+        return $firebaseObject(ref.child("plans"));
     }
 }
