@@ -1,9 +1,13 @@
+'use strict';
+
 export default class homeController {
-  constructor(plans, workouts) {
-    let homeController = this;
-    homeController.title = 'test title';
-    homeController.plans = plans.getPlans();
-    homeController.workouts = workouts.getWorkOuts();
-    console.log(plans);
+  constructor(plans) {
+    console.log(plans)
+    this.plansSvc = plans;
+    this.title = 'test title';
+    this.plans = this.plansSvc.getPlans();
+  }
+  getplans() {
+    return this.plansSvc.getPlans();
   }
 }

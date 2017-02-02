@@ -1,15 +1,9 @@
 import uirouter from 'angular-ui-router';
 import 'firebase/auth';
 import 'firebase/database';
+import './home/index'
+import routing from './components.routes';
 
-import limFitService from '../common/services/index';
-require('./home/home.scss')
-import routing from './home/home.routes';
-import homeComponent from './home/home.component';
-
-
-
-export default angular.module('limFit.home', [uirouter, limFitService])
+export default angular.module('components', ['components.home'])
   .config(routing)
-  .component('homeComponent', homeComponent)
   .name;

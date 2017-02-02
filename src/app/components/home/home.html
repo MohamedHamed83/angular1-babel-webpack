@@ -1,15 +1,12 @@
 <div class="container-fluid">
   <div class="jumbotron centered">
-    <h3>{{homeController.title}}</h1>
+    <h3>{{homeCtrl.title}}</h1>
   </div>
-  <button id='obButton' class='btn btn-default'>button</button>
+  <button id='obButton' class='btn btn-default' >button</button>
   <div >
-    <a ui-sref="nestedDiv">nested</a>
+    <a ui-sref="nestedDiv" >nested</a>
   </div>
   <ul>
-    <li ng-repeat="plan in homeController.plans">{{ plan }}</li>
-  </ul>
-    <ul>
-    <li ng-repeat="workout in homeController.workouts">{{ workout }}</li>
+    <li ng-repeat="plan in homeCtrl.plans">{{ plan.$value }}</li>
   </ul>
 </div>

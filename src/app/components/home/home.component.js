@@ -5,8 +5,8 @@ import homeController from './home.controller'
 
 let homeComponent = {
   template: template,
-  controllerAs: 'homeController',
-  controller: ['plans','workouts', homeController]
+  controllerAs: 'homeCtrl',
+  controller: ['plans', homeController]
 };
 
 export default homeComponent;

@@ -1,12 +1,10 @@
 import 'firebase';
-import  'angularfire';
+import 'angularfire';
 import FirebaseModule from '../config/firebaseConfig';
 
-import plans from './plans.service'
-import workouts from './workouts.service';
+import './plans.service'
+import './workouts.service';
 
 
-export default angular.module('services.limFit', ['firebase'])
-    .service('plans',  plans)
-    .service('workouts', workouts)
-    .name;
+export default angular.module('fitnessClub.services', ['firebase', 'services.plans', 'services.workouts'])
+  .name;

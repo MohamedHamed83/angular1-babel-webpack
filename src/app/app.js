@@ -7,5 +7,6 @@ import routing from './app.config';
  * This includes all of our nested modules.
  **/
 
-angular.module('limFit', ['ui.router', 'limFit.home'])
-  .config(routing);
+angular.module('fitnessClub', ['ui.router', 'components'])
+  .config(routing)
+  .name
