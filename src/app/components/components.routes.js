@@ -4,8 +4,12 @@ routes.$inject = ['$stateProvider'];
 
 export default function routes($stateProvider) {
   $stateProvider
-    .state('home', {
+  .state('login', {
       url: '/',
+      component: 'loginComponent',
+    })
+    .state('home', {
+      url: '/home',
       component: 'homeComponent',
     });
 }

@@ -1,7 +1,19 @@
 'use strict';
-
 import template from './home.html';
-import homeController from './home.controller'
+import '../../common/services/index';
+require('./home.scss');
+
+ class homeController {
+  constructor(plans) {
+    console.log(plans)
+    this.plansSvc = plans;
+    this.title = 'test title';
+    this.plans = this.plansSvc.getPlans();
+  }
+  getplans() {
+    return this.plansSvc.getPlans();
+  }
+}
 
 let homeComponent = {
   template: template,
@@ -9,4 +21,6 @@ let homeComponent = {
   controller: ['plans', homeController]
 };
 
-export default homeComponent;
+export default angular.module('home', ['fitnessClub.services'])
+  .component('homeComponent', homeComponent)
+  .name;

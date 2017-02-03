@@ -1,9 +1,14 @@
 import uirouter from 'angular-ui-router';
 import 'firebase/auth';
 import 'firebase/database';
-import './home/index'
+import './home/home.component'
 import routing from './components.routes';
 
-export default angular.module('components', ['components.home'])
+// stateless components
+import './login/login.component'
+
+
+
+export default angular.module('components', ['home','login'])
   .config(routing)
   .name;
