@@ -1,15 +1,17 @@
-import {ref, FirebaseModule} from '../config/firebaseConfig';
+import {
+  firebaseRefFactory
+} from './firbaseRef.factory'
+
 
 class plans {
-  constructor($firebaseArray) {
-    this.plansArr = $firebaseArray(ref.child("plans"));
+  constructor(firebaseRefFactory) {
+    this.plansArr = firebaseRefFactory;
   }
 
   getPlans() {
-    return this.plansArr;
+    return this.plansArr.plansRef();
   }
 }
-
 
 export default angular.module('services.plans', [])
   .service('plans', plans)
