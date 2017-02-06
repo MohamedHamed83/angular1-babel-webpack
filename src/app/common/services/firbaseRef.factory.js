@@ -2,15 +2,15 @@ import {
   ref
 } from '../config/firebaseConfig';
 
-export function firebaseRefFactory($firebaseArray) {
+export function firebaseRefFactory($firebaseObject) {
   return {
     plansRef: () => {
-      return $firebaseArray(ref.child("plans"));
+      return $firebaseObject(ref.child("plans")).$loaded();
     }
   };
 }
 
 
-export default angular.module('firebaseRef.factory',['firebase'])
+export default angular.module('firebaseRef.factory', ['firebase'])
   .factory('firebaseRefFactory', firebaseRefFactory)
   .name;

@@ -21,15 +21,6 @@ module.exports = function makeWebpackConfig() {
     app: './src/app/app'
   };
 
-  config.resolve = {
-    extensions: ['', '.js', '.html'],
-    descriptionFiles: ['package.json'],
-    root: root('src'),
-    modules: [
-      root('src'),
-      'node_modules'
-    ]
-  }
   config.output = {
     path: root('../dist'),
     publicPath: 'http://localhost:8080/',
