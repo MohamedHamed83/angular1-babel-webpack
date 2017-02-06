@@ -6,5 +6,8 @@ import './plans.service'
 import './workouts.service';
 
 
-export default angular.module('fitnessClub.services', ['firebase', 'services.plans', 'services.workouts','services.firebaseRef'])
+export default angular.module('services', ['plans.service',
+    'workouts.service',
+    'firebaseRef.factory'
+  ])
   .name;

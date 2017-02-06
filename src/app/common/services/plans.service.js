@@ -13,6 +13,6 @@ class plans {
   }
 }
 
-export default angular.module('services.plans', [])
+export default angular.module('plans.service', [])
   .service('plans', plans)
   .name;

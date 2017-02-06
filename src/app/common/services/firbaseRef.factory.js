@@ -11,6 +11,6 @@ export function firebaseRefFactory($firebaseArray) {
 }
 
 
-export default angular.module('services.firebaseRef',[])
+export default angular.module('firebaseRef.factory',['firebase'])
   .factory('firebaseRefFactory', firebaseRefFactory)
   .name;

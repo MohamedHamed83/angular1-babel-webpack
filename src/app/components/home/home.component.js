@@ -20,6 +20,6 @@ let homeComponent = {
   controller: ['plans', homeController]
 };
 
-export default angular.module('home', ['fitnessClub.services'])
+export default angular.module('home', ['services'])
   .component('homeComponent', homeComponent)
   .name;

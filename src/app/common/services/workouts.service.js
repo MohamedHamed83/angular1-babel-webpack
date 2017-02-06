@@ -9,7 +9,7 @@ class workouts {
     }
 }
 
-export default angular.module('services.workouts',[])
+export default angular.module('workouts.service',[])
   .service('workouts', workouts)
   .name;
 
