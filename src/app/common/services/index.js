@@ -1,13 +1,13 @@
 import 'firebase';
 import 'angularfire';
 import FirebaseModule from '../config/firebaseConfig';
-import './firbaseRef.factory'
-import './plans.service'
-import './workouts.service';
+import firebaseRefFactory from './firbaseRef.factory'
+import plans from './plans.service'
+import workouts from './workouts.service';
 
 
-export default angular.module('services', ['plans.service',
-    'workouts.service',
-    'firebaseRef.factory'
-  ])
+export default angular.module('services', ['firebase'])
+  .factory('firebaseRefFactory', firebaseRefFactory)
+  .service('plans', plans)
+  .service('workouts', workouts)
   .name;

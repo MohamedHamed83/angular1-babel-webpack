@@ -1,24 +1,24 @@
-import {
-  firebaseRefFactory
-} from './firbaseRef.factory'
-
-
-class plans {
+export class plans {
   constructor(firebaseRefFactory) {
-    this.plansArr = firebaseRefFactory;
+    this.firebaseRefFactory = firebaseRefFactory;
   }
 
   getPlans() {
-    return this.plansArr.getAllPlans();
-  };
+    return this.firebaseRefFactory.getAllPlans();
+  }
   getworkouts() {
-    return this.plansArr.getAllWorkouts();
-  };
-  addNewPlan(){
-    this.plansArr.plansRef().push({description:'test New Plan'});
-  };
+    return this.firebaseRefFactory.getAllWorkouts();
+  }
+  addNewPlan() {
+    this.firebaseRefFactory.plansRef().push({
+      description: 'test New Plan'
+    });
+  }
+  plansRef() {
+    return this.firebaseRefFactory.plansDbRef();
+  }
+  workoutsRef() {
+    return this.firebaseRefFactory.workoutsDbRef();
+  }
 }
-
-export default angular.module('plans.service', [])
-  .service('plans', plans)
-  .name;
+plans.$inject = ['firebaseRefFactory'];

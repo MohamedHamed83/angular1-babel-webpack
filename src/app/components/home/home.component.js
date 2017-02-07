@@ -5,9 +5,9 @@ import '../../common/services/index';
 class homeController {
   constructor(plans) {
     homeController = this;
+    homeController.plansSvc = plans;
     homeController.projectHeader = 'welcome to Fitness Club';
     homeController.projectFooter = 'Fitness Club';
-    homeController.plansSvc = plans;
     homeController.navbarLinkes = [{
         text: "plans",
         status: "active"
@@ -17,30 +17,15 @@ class homeController {
         status: ""
       }
     ]
-    homeController.title = 'test title';
-    homeController.getworkouts = plans.getworkouts();
-    let workoutsSubscription = Rx.Observable.fromPromise(homeController.getworkouts);
-
-    workoutsSubscription.subscribe((x) => {
-        console.log(x);
-      },
-      (err) => {
-        console.log('Error: %s', err);
-      },
-      () => {
-        console.log('Completed');
-      })
-    homeController.allPlans = plans.getPlans();
-    let plansSubscription = Rx.Observable.fromPromise(homeController.allPlans);
-    plansSubscription.subscribe((x) => {
-        console.log(x);
-      },
-      (err) => {
-        console.log('Error: %s', err);
-      },
-      () => {
-        console.log('Completed');
-      })
+    Rx.Observable.fromEvent(homeController.plansSvc.plansRef(), 'child_added').subscribe((snap) => {
+      console.log(snap.key);
+    });
+    Rx.Observable.fromEvent(homeController.plansSvc.plansRef(), 'child_changed').subscribe((snap) => {
+      console.log(snap.key);
+    });
+    Rx.Observable.fromEvent(homeController.plansSvc.plansRef(), 'child_removed').subscribe((snap) => {
+      console.log(snap.key);
+    });
   }
   getplans() {
     return homeController.plansSvc.getPlans();
@@ -49,7 +34,6 @@ class homeController {
     return homeController.plansSvc.addNewPlan();
   }
 }
-
 let homeComponent = {
   template: template,
   controllerAs: 'homeCtrl',

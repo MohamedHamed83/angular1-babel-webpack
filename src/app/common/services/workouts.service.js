@@ -1,16 +1,13 @@
-import {ref, FirebaseModule} from '../config/firebaseConfig';
+import {
+  ref,
+  FirebaseModule
+} from '../config/firebaseConfig';
 
-class workouts {
-    constructor() {
-    }
+export class workouts {
+  constructor() {}
 
-    getWorkouts() {
-        return ["push up", "Tuck Jump", "Inchworm", "Prone Walkout"]
-    }
+  getWorkouts() {
+    return ["push up", "Tuck Jump", "Inchworm", "Prone Walkout"]
+  }
 }
-
-export default angular.module('workouts.service',[])
-  .service('workouts', workouts)
-  .name;
-
 
