@@ -3,7 +3,7 @@ import {
   FirebaseModule
 } from '../config/firebaseConfig';
 
-export class workouts {
+class workouts {
   constructor() {}
 
   getWorkouts() {
@@ -11,3 +11,6 @@ export class workouts {
   }
 }
 
+export default angular.module('workouts.service',[])
+  .service('workouts', workouts)
+  .name;

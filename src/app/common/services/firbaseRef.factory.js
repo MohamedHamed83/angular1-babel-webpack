@@ -2,7 +2,7 @@ import {
   ref
 } from '../config/firebaseConfig';
 
-export class firebaseRefFactory {
+class firebaseDbRef {
   constructor($firebaseObject, $firebaseArray) {
     this.$firebaseObject = $firebaseObject;
     this.$firebaseArray = $firebaseArray;
@@ -22,4 +22,8 @@ export class firebaseRefFactory {
     return this.$firebaseObject(ref.child("workouts/-KcG7V240o-fdV_wrH63"));
   }
 }
-firebaseRefFactory.$inject = ['$firebaseObject','$firebaseArray'];
+
+
+export default angular.module('firebaseRef.factory', ['firebase'])
+  .factory('firebaseDbRefSvc',['$firebaseObject','$firebaseArray',($firebaseObject, $firebaseArray)=> new firebaseDbRef($firebaseObject, $firebaseArray)] )
+  .name;

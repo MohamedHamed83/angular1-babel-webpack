@@ -1,24 +1,27 @@
-export class plans {
-  constructor(firebaseRefFactory) {
-    this.firebaseRefFactory = firebaseRefFactory;
+class plans {
+  constructor(firebaseDbRefSvc) {
+    this.firebaseDbRefSvc = firebaseDbRefSvc;
   }
 
   getPlans() {
-    return this.firebaseRefFactory.getAllPlans();
+    return this.firebaseDbRefSvc.getAllPlans();
   }
   getworkouts() {
-    return this.firebaseRefFactory.getAllWorkouts();
+    return this.firebaseDbRefSvc.getAllWorkouts();
   }
   addNewPlan() {
-    this.firebaseRefFactory.plansRef().push({
+    this.firebaseDbRefSvc.plansDbRef().push({
       description: 'test New Plan'
     });
   }
   plansRef() {
-    return this.firebaseRefFactory.plansDbRef();
+    return this.firebaseDbRefSvc.plansDbRef();
   }
   workoutsRef() {
-    return this.firebaseRefFactory.workoutsDbRef();
+    return this.firebaseDbRefSvc.workoutsDbRef();
   }
 }
-plans.$inject = ['firebaseRefFactory'];
+
+export default angular.module('plans.service', [])
+  .service('plans', ['firebaseDbRefSvc', (firebaseDbRefSvc) => new plans(firebaseDbRefSvc)])
+  .name;
