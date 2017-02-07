@@ -2,10 +2,21 @@ import {
   ref
 } from '../config/firebaseConfig';
 
-export function firebaseRefFactory($firebaseObject) {
+export function firebaseRefFactory($firebaseObject, $firebaseArray) {
   return {
+    getAllPlans: () => {
+      //returning a promise
+      return $firebaseArray(ref.child("plans")).$loaded();
+    },
+    getAllWorkouts: () => {
+      //returning a promise
+      return $firebaseObject(ref.child("workouts/-KcG7V240o-fdV_wrH63")).$loaded();
+    },
     plansRef: () => {
-      return $firebaseObject(ref.child("plans")).$loaded();
+      return ref.child("plans");
+    },
+    workoutsRef: () => {
+      return $firebaseObject(ref.child("workouts/-KcG7V240o-fdV_wrH63"));
     }
   };
 }

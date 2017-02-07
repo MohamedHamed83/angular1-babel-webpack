@@ -9,8 +9,14 @@ class plans {
   }
 
   getPlans() {
-    return this.plansArr.plansRef();
-  }
+    return this.plansArr.getAllPlans();
+  };
+  getworkouts() {
+    return this.plansArr.getAllWorkouts();
+  };
+  addNewPlan(){
+    this.plansArr.plansRef().push({description:'test New Plan'});
+  };
 }
 
 export default angular.module('plans.service', [])

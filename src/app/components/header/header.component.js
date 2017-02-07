@@ -4,15 +4,6 @@ import template from './header.html';
 class headerController {
   constructor() {
     let headerCtrl = this;
-    headerCtrl.navbarLinkes = [{
-        text: "plans",
-        status: "active"
-      },
-      {
-        text: "workouts",
-        status: ""
-      }
-    ]
   }
 }
 
@@ -21,7 +12,8 @@ let headerComponent = {
   controllerAs: 'headerCtrl',
   controller: [headerController],
   bindings: {
-    headerTitle: '='
+    headerTitle: '=',
+    navbarLinkes:'='
   }
 };
 

@@ -1,19 +1,12 @@
 <div class="container">
   <div class="row">
     <ul class="listrap">
-      <li>
+      <li ng-click="listviewCtrl.selectedListItem = !listviewCtrl.selectedListItem" ng-class="listviewCtrl.selectedListItem ? 'active' : ''">
         <div class="listrap-toggle">
           <span></span>
           <img class="img-circle" />
         </div>
         <strong>plan 1</strong>
-      </li>
-      <li class="active">
-        <div class="listrap-toggle">
-          <span></span>
-          <img class="img-circle" />
-        </div>
-        <strong>plan 2</strong>
       </li>
     </ul>
   </div>

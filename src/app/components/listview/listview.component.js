@@ -3,7 +3,8 @@ import template from './listview.html';
 
 class listviewController {
   constructor() {
-    let navbarCtrl = this;
+    let listviewCtrl = this;
+    listviewCtrl.selectedListItem = false;
   }
 }
 

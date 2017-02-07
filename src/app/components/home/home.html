@@ -1,3 +1,9 @@
-<header-component header-title='homeCtrl.projectHeader'></header-component>
+<header-component navbar-linkes="homeCtrl.navbarLinkes" header-title='homeCtrl.projectHeader'></header-component>
 <listview-component></listview-component>
+<div>
+  <button class="btn btn-default" ng-click="homeCtrl.pushItem()">Push list<button>
+<button class="btn btn-default" ng-click="homeCtrl.updateListItem()">update list<button>
+<button class="btn btn-default" ng-click="homeCtrl.removeList()">remove List<button>
+<button class="btn btn-default" ng-click="homeCtrl.setObject()">set object<button>
+</div>
 <footer-component project-name='homeCtrl.projectFooter'></footer-component>
