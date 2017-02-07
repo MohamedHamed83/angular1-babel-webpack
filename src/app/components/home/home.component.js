@@ -1,17 +1,18 @@
 'use strict';
 import template from './home.html';
 import '../../common/services/index';
-require('./home.scss');
 
 class homeController {
   constructor(plans) {
     homeController = this;
+    homeController.projectHeader = 'welcome to Fitness Club';
+    homeController.projectFooter = 'Fitness Club';
     homeController.title = 'test title';
     homeController.allPlans = plans.getPlans();
     let plansSource = Rx.Observable.fromPromise(homeController.allPlans);
     plansSource.subscribe((x) => {
-        console.log('Next: %s', x);
-      },
+      console.log('Next: %s', x);
+    },
       (err) => {
         console.log('Error: %s', err);
       },

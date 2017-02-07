@@ -1,12 +1,3 @@
-<div class="container-fluid">
-  <div class="jumbotron centered">
-    <h3>{{homeCtrl.title}}</h1>
-  </div>
-  <button id='obButton' class='btn btn-default' >button</button>
-  <div >
-    <a ui-sref="nestedDiv" >nested</a>
-  </div>
-  <ul>
-    <li ng-repeat="plan in homeCtrl.plans">{{ plan.$value }}</li>
-  </ul>
-</div>
+<header-component header-title='homeCtrl.projectHeader'></header-component>
+<listview-component></listview-component>
+<footer-component project-name='homeCtrl.projectFooter'></footer-component>

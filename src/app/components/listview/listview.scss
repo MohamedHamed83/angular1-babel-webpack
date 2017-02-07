@@ -1,0 +1,65 @@
+listview-component {
+  .container {
+    padding-top: 40px;
+  }
+  .listrap {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .img-circle {
+      padding-top: 5px;
+      content: url("../img/workout-item.jpg");
+      width: 100px;
+      height: 100px;
+    }
+    li {
+      padding-bottom: 45px;
+      strong {
+        margin-left: 40px;
+      }
+    }
+    li.active,
+    li:hover {
+      background-color: rgba(130, 140, 142, 0.50);
+      cursor: pointer;
+    }
+  }
+  .listrap .listrap li.active,
+  .listrap li:hover {
+    background-color: rgba(130, 140, 142, 0.50);
+  }
+  .listrap .listrap-toggle {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+  }
+  .listrap .listrap-toggle span {
+    background-color: #428bca;
+    opacity: 0.8;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    display: none;
+    position: absolute;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    vertical-align: middle;
+    color: #ffffff;
+  }
+  .listrap .listrap-toggle span:before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e013";
+  }
+  .listrap li.active .listrap-toggle span {
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+}
