@@ -10,6 +10,6 @@ export default function routes($stateProvider) {
     })
     .state('home', {
       url: '/',
-      component: 'homeComponent',
+      component: 'plansComponent',
     });
 }

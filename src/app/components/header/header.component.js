@@ -17,6 +17,6 @@ let headerComponent = {
   }
 };
 
-export default angular.module('ngHeader', [])
+export default angular.module('ngHeader.component', [])
   .component('headerComponent', headerComponent)
   .name;

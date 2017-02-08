@@ -13,6 +13,6 @@ let loginComponent = {
   controller: [loginController]
 };
 
-export default angular.module('login', [])
+export default angular.module('login.component', [])
   .component('loginComponent', loginComponent)
   .name;

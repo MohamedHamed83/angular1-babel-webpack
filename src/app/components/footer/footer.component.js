@@ -15,6 +15,6 @@ let footerComponent = {
   }
 };
 
-export default angular.module('ngFooter', [])
+export default angular.module('ngFooter.component', [])
   .component('footerComponent', footerComponent)
   .name;

@@ -1,28 +1,12 @@
 'use strict';
-import template from './home.html';
+import template from './plans.html';
 import '../../common/services/index';
 
-class homeController {
-  constructor(plans, workouts) {
-    homeController = this;
-    homeController.plansSvc = plans;
-    homeController.workoutsSvc = workouts;
-    homeController.allPlans = homeController.plansSvc.getPlans()
-
-    homeController.projectHeader = 'welcome to Fitness Club';
-    homeController.projectFooter = 'Fitness Club';
-    homeController.navbarLinkes = [{
-        text: "plans",
-        status: "active"
-      },
-      {
-        text: "workouts",
-        status: ""
-      }
-    ]
-  }
-  getplans() {
-    return homeController.plansSvc.getPlans();
+class plansController {
+  constructor(plans) {
+    plansController = this;
+    plansController.plansSvc = plans;
+    plansController.allPlans = plansController.plansSvc.getPlans()
   }
   getSelectedListItem(item) {
     this.allPlans = [];
@@ -37,12 +21,12 @@ class homeController {
     return this.allPlans;
   }
 }
-let homeComponent = {
+let plansComponent = {
   template: template,
-  controllerAs: 'homeCtrl',
-  controller: ['plans', 'workouts', homeController]
+  controllerAs: 'plansCtrl',
+  controller: ['plans', plansController]
 };
 
-export default angular.module('home', ['services'])
-  .component('homeComponent', homeComponent)
+export default angular.module('plans.component', ['services'])
+  .component('plansComponent', plansComponent)
   .name;

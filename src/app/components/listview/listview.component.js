@@ -27,6 +27,6 @@ let listviewComponent = {
   }
 };
 
-export default angular.module('nglistview', [])
+export default angular.module('nglistview.component', [])
   .component('listviewComponent', listviewComponent)
   .name;

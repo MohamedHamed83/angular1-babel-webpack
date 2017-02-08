@@ -43,6 +43,6 @@ let homeComponent = {
   controller: ['plans', 'workouts', homeController]
 };
 
-export default angular.module('home', ['services'])
+export default angular.module('home.component', ['services'])
   .component('homeComponent', homeComponent)
   .name;
