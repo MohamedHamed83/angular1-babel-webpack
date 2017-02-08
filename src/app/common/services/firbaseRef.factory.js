@@ -9,11 +9,14 @@ class firebaseDbRef {
   }
   getAllPlans() {
     //returning a promise
-    return this.$firebaseArray(ref.child("plans")).$loaded();
+    return this.$firebaseArray(ref.child("plans"));
   }
   getAllWorkouts() {
     //returning a promise
-    return this.$firebaseObject(ref.child("workouts/-KcG7V240o-fdV_wrH63")).$loaded();
+    return this.$firebaseArray(ref.child("workouts"));
+  }
+  getPlanByIdApi(PlanId){
+    return this.$firebaseObject(ref.child(`workouts/${PlanId}`));
   }
   plansDbRef() {
     return ref.child("plans");

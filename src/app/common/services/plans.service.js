@@ -14,6 +14,12 @@ class plans {
       description: 'test New Plan'
     });
   }
+  removePlan(plan) {
+    this.firebaseDbRefSvc.plansDbRef().$remove(plan);
+  }
+  getPlanById(planId){
+     return this.firebaseDbRefSvc.getPlanByIdApi(planId).$loaded();
+  }
   plansRef() {
     return this.firebaseDbRefSvc.plansDbRef();
   }
