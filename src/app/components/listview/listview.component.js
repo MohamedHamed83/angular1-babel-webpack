@@ -18,6 +18,7 @@ let listviewComponent = {
   controller: listviewController,
   bindings: {
     allItems: '=',
+    appSearchString:'=',
     setSelectedItem: '&'
   }
 };

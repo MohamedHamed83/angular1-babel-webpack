@@ -7,6 +7,7 @@ class workoutsByPlanCtrl {
     'ngInject';
     this.workoutsSvc = workoutsVmSvc;
     this.$stateParams = $stateParams;
+    this.searchString = '';
   }
 
 }

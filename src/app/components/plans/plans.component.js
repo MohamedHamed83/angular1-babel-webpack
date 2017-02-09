@@ -6,6 +6,7 @@ class plansController {
     'ngInject';
     this.plansSvc = plans;
     this.allPlans = this.plansSvc.getPlans()
+    this.searchString = '';
   }
   getSelectedListItem(item) {
     this.plansSvc.workoutsView('workoutsStView', item.$id);
