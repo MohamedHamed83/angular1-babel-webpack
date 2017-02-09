@@ -1,6 +1,5 @@
 'use strict';
 import template from './plans.html';
-import '../../common/services/index';
 
 class plansController {
   constructor(plans) {
@@ -9,16 +8,7 @@ class plansController {
     plansController.allPlans = plansController.plansSvc.getPlans()
   }
   getSelectedListItem(item) {
-    this.allPlans = [];
-    Rx.Observable.fromPromise(homeController.workoutsSvc.getworkouts())
-      .subscribe((workouts) => {
-        homeController.allPlans = _.filter(workouts, (workout) => {
-          if (workout.planId === item.$id) {
-            this.allPlans.push(workout);
-          }
-        })
-      });
-    return this.allPlans;
+    plansController.plansSvc.workoutsView('workouts', item.$id);
   }
 }
 let plansComponent = {
@@ -27,6 +17,6 @@ let plansComponent = {
   controller: ['plans', plansController]
 };
 
-export default angular.module('plans.component', ['services'])
+export default angular.module('plans.component', [])
   .component('plansComponent', plansComponent)
   .name;

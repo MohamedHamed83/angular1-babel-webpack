@@ -3,10 +3,9 @@ import template from './home.html';
 import '../../common/services/index';
 
 class homeController {
-  constructor(plans, workouts) {
+  constructor(plans) {
     homeController = this;
     homeController.plansSvc = plans;
-    homeController.workoutsSvc = workouts;
     homeController.allPlans = homeController.plansSvc.getPlans()
 
     homeController.projectHeader = 'welcome to Fitness Club';
@@ -24,23 +23,11 @@ class homeController {
   getplans() {
     return homeController.plansSvc.getPlans();
   }
-  getSelectedListItem(item) {
-    this.allPlans = [];
-    Rx.Observable.fromPromise(homeController.workoutsSvc.getworkouts())
-      .subscribe((workouts) => {
-        homeController.allPlans = _.filter(workouts, (workout) => {
-          if (workout.planId === item.$id) {
-            this.allPlans.push(workout);
-          }
-        })
-      });
-    return this.allPlans;
-  }
 }
 let homeComponent = {
   template: template,
   controllerAs: 'homeCtrl',
-  controller: ['plans', 'workouts', homeController]
+  controller: ['plans', homeController]
 };
 
 export default angular.module('home.component', ['services'])

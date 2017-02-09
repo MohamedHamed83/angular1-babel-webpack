@@ -1,33 +1,45 @@
 class plans {
-  constructor(firebaseDbRefSvc) {
-    this.firebaseDbRefSvc = firebaseDbRefSvc;
+  constructor(firebaseDbRefSvc, $state) {
+    plans = this;
+    plans.firebaseDbRefSvc = firebaseDbRefSvc;
+    plans.$state = $state;
   }
 
   getPlans() {
-    return this.firebaseDbRefSvc.getAllPlans();
+    return plans.firebaseDbRefSvc.getAllPlans();
   }
   getworkouts() {
-    return this.firebaseDbRefSvc.getAllWorkouts();
+    return plans.firebaseDbRefSvc.getAllWorkouts();
   }
   addNewPlan() {
-    this.firebaseDbRefSvc.plansDbRef().push({
+    plans.firebaseDbRefSvc.plansDbRef().push({
       description: 'test New Plan'
     });
   }
   removePlan(plan) {
-    this.firebaseDbRefSvc.plansDbRef().$remove(plan);
+    plans.firebaseDbRefSvc.plansDbRef().$remove(plan);
   }
-  getPlanById(planId){
-     return this.firebaseDbRefSvc.getPlanByIdApi(planId).$loaded();
+  getPlanById(planId) {
+    return plans.firebaseDbRefSvc.getPlanByIdApi(planId).$loaded();
   }
   plansRef() {
-    return this.firebaseDbRefSvc.plansDbRef();
+    return plans.firebaseDbRefSvc.plansDbRef();
   }
   workoutsRef() {
-    return this.firebaseDbRefSvc.workoutsDbRef();
+    return plans.firebaseDbRefSvc.workoutsDbRef();
+  }
+  workoutsView(view, params) {
+    if (params) {
+      plans.$state.go(view, {
+        planId: params
+      });
+    } else {
+      plans.$state.go(view);
+    }
+
   }
 }
 
 export default angular.module('plans.service', [])
-  .service('plans', ['firebaseDbRefSvc', (firebaseDbRefSvc) => new plans(firebaseDbRefSvc)])
+  .service('plans', ['firebaseDbRefSvc', '$state', (firebaseDbRefSvc, $state) => new plans(firebaseDbRefSvc, $state)])
   .name;

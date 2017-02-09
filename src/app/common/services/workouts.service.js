@@ -1,21 +1,20 @@
-class workouts {
-  constructor(firebaseDbRefSvc) {
-    this.firebaseDbRefSvc = firebaseDbRefSvc;
-  }
-  getworkouts() {
-    return this.firebaseDbRefSvc.getAllWorkouts().$loaded();
-  }
-  removePlan(plan) {
-    this.firebaseDbRefSvc.plansDbRef().$remove(plan);
-  }
-   getworkoutById(workoutId){
-     return this.firebaseDbRefSvc.getworkoutByIdApi(workoutId).$loaded();
-  }
-  workoutsRef() {
-    return this.firebaseDbRefSvc.workoutsDbRef();
+function workoutsVmSvc(firebaseDbRefSvc) {
+  return {
+    getworkouts: () => {
+      return firebaseDbRefSvc.getAllWorkouts().$loaded();
+    },
+    removePlan: (plan) => {
+      return firebaseDbRefSvc.plansDbRef().$remove(plan);
+    },
+    getworkoutById: (workoutId) => {
+      return firebaseDbRefSvc.getworkoutByIdApi(workoutId).$loaded();
+    },
+    workoutsRef: () => {
+      return firebaseDbRefSvc.workoutsDbRef();
+    }
   }
 }
 
-export default angular.module('workouts.service',[])
-  .service('workouts', ['firebaseDbRefSvc', (firebaseDbRefSvc) => new workouts(firebaseDbRefSvc)])
+export default angular.module('workouts.service', [])
+  .service('workoutsVmSvc', ['firebaseDbRefSvc', workoutsVmSvc])
   .name;

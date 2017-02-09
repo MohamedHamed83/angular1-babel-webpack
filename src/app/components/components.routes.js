@@ -1,15 +1,24 @@
 'use strict';
 
-routes.$inject = ['$stateProvider'];
+routes.$inject = ['$stateProvider', 'workoutsVmSvcProvider'];
 
-export default function routes($stateProvider) {
+export default function routes($stateProvider, workoutsVmSvcProvider) {
   $stateProvider
-  .state('login', {
+    .state('login', {
       url: '/login',
       component: 'loginComponent',
+    }).state('workouts', {
+      url: "/workouts",
+      component: 'workoutsByPlanComponent',
+      resolve: {
+        allWorkouts: function () {
+          console.log('f')
+          return workoutsVmSvcProvider.$get().getworkouts();
+        }
+      },
     })
-    .state('home', {
+    .state('plans', {
       url: '/',
       component: 'plansComponent',
-    });
+    })
 }
