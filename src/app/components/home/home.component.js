@@ -4,13 +4,13 @@ import '../../common/services/index';
 
 class homeController {
   constructor(plans) {
-    homeController = this;
-    homeController.plansSvc = plans;
-    homeController.allPlans = homeController.plansSvc.getPlans()
+    'ngInject';
+    this.plansSvc = plans;
+    this.allPlans = this.plansSvc.getPlans()
 
-    homeController.projectHeader = 'welcome to Fitness Club';
-    homeController.projectFooter = 'Fitness Club';
-    homeController.navbarLinkes = [{
+    this.projectHeader = 'welcome to Fitness Club';
+    this.projectFooter = 'Fitness Club';
+    this.navbarLinkes = [{
         text: "plans",
         status: "active"
       },
@@ -21,13 +21,13 @@ class homeController {
     ]
   }
   getplans() {
-    return homeController.plansSvc.getPlans();
+    return this.plansSvc.getPlans();
   }
 }
 let homeComponent = {
   template: template,
   controllerAs: 'homeCtrl',
-  controller: ['plans', homeController]
+  controller: homeController
 };
 
 export default angular.module('home.component', ['services'])

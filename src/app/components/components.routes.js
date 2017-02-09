@@ -1,8 +1,8 @@
 'use strict';
 
-routes.$inject = ['$stateProvider', 'workoutsVmSvcProvider'];
 
 export default function routes($stateProvider, workoutsVmSvcProvider) {
+  'ngInject';
   $stateProvider
     .state('login', {
       url: '/login',

@@ -3,14 +3,14 @@ import template from './navbar.html';
 
 class navbarController {
   constructor() {
-    let navbarCtrl = this;
+        'ngInject';
   }
 }
 
 let navbarComponent = {
   template: template,
   controllerAs: 'navbarCtrl',
-  controller: [navbarController],
+  controller: navbarController,
   bindings: {
     mainLinks: '='
   }

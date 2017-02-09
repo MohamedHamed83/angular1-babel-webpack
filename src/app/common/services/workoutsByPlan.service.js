@@ -1,10 +1,10 @@
 class workoutsByPlan {
-  constructor(planId) {
-    workoutsByPlan = this;
+  constructor() {
+    'ngInject';
   }
 
 }
 
 export default angular.module('workoutsByPlan.service', [])
-  .service('workoutsByPlan', [(planId) => new workoutsByPlan(planId)])
+  .service('workoutsByPlan', workoutsByPlan)
   .name;

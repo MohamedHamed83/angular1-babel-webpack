@@ -3,14 +3,14 @@ import template from './login.component.html';
 
  class loginController {
   constructor() {
-
+    'ngInject';
   }
 }
 
 let loginComponent = {
   template: template,
   controllerAs: 'logInCtrl',
-  controller: [loginController]
+  controller: loginController
 };
 
 export default angular.module('login.component', [])

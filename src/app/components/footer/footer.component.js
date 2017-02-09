@@ -3,13 +3,14 @@ import template from './footer.html';
 
 class footerController {
   constructor() {
+    'ngInject';
   }
 }
 
 let footerComponent = {
   template: template,
   controllerAs: 'footerCtrl',
-  controller: [footerController],
+  controller: footerController,
   bindings: {
     projectName: '='
   }

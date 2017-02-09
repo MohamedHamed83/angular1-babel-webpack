@@ -4,14 +4,16 @@ import '../../common/services/index';
 
 class workoutsByPlanCtrl {
   constructor(workoutsVmSvc, $stateParams) {
+    'ngInject';
     this.workoutsSvc = workoutsVmSvc;
+    this.$stateParams = $stateParams;
   }
 
 }
 let workoutsByPlanComponent = {
   template: template,
   controllerAs: 'workoutsByPlanCtrl',
-  controller: ['workoutsVmSvc', '$stateParams', (workoutsVmSvc, $stateParams) => new workoutsByPlanCtrl(workoutsVmSvc, $stateParams)],
+  controller: workoutsByPlanCtrl,
   bindings: {
     allWorkouts: '='
   }

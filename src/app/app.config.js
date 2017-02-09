@@ -1,8 +1,9 @@
 'use strict';
 
-routing.$inject = ['$urlRouterProvider', '$locationProvider'];
 
-export default function routing($urlRouterProvider, $locationProvider) {
+export function routing($urlRouterProvider, $locationProvider, cfpLoadingBarProvider) {
+  'ngInject';
+  cfpLoadingBarProvider.includeSpinner = false;
   $locationProvider.html5Mode(false);
   $urlRouterProvider.otherwise('/');
 }

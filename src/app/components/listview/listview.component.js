@@ -1,13 +1,12 @@
 'use strict';
 import template from './listview.html';
-import listItemComponent from '../listItem/listItem.component';
 
 class listviewController {
   constructor() {
-    listviewController = this;
+    'ngInject';
   }
   getSelectedItem(listitem) {
-    listviewController.setSelectedItem({
+    this.setSelectedItem({
       item: listitem
     })
   }
@@ -16,7 +15,7 @@ class listviewController {
 let listviewComponent = {
   template: template,
   controllerAs: 'listviewCtrl',
-  controller: [listviewController],
+  controller: listviewController,
   bindings: {
     allItems: '=',
     setSelectedItem: '&'

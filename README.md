@@ -1,7 +1,9 @@
 angular1 babel webpack
 
-Using angular 1.6, Es6, firebase and webpack to build gym web app 
+Using angular 1.6, Es6, firebase 3 and webpack 2 to build gym web app 
 
+##Note 
+This project is very much still a work in progress.
 
 ## Setup and install
 

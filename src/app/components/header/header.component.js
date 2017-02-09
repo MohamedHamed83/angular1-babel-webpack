@@ -3,17 +3,17 @@ import template from './header.html';
 
 class headerController {
   constructor() {
-    let headerCtrl = this;
+    'ngInject';
   }
 }
 
 let headerComponent = {
   template: template,
   controllerAs: 'headerCtrl',
-  controller: [headerController],
+  controller: headerController,
   bindings: {
     headerTitle: '=',
-    navbarLinkes:'='
+    navbarLinkes: '='
   }
 };
 

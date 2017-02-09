@@ -10,7 +10,6 @@ import './workoutsByPlan.service';
 
 export default angular.module('services', ['plans.service',
     'workouts.service',
-    'firebaseRef.factory',
-    'workoutsByPlan.service'
+    'firebaseRef.factory'
   ])
   .name;

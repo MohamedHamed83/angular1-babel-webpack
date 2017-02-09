@@ -1,20 +1,22 @@
-function workoutsVmSvc(firebaseDbRefSvc) {
-  return {
-    getworkouts: () => {
-      return firebaseDbRefSvc.getAllWorkouts().$loaded();
-    },
-    removePlan: (plan) => {
-      return firebaseDbRefSvc.plansDbRef().$remove(plan);
-    },
-    getworkoutById: (workoutId) => {
-      return firebaseDbRefSvc.getworkoutByIdApi(workoutId).$loaded();
-    },
-    workoutsRef: () => {
-      return firebaseDbRefSvc.workoutsDbRef();
-    }
+class workoutsVmSvc {
+  constructor(firebaseDbRefSvc) {
+    'ngInject';
+    this.firebaseDbRefSvc = firebaseDbRefSvc;
+  }
+  getworkouts() {
+    return this.firebaseDbRefSvc.getAllWorkouts().$loaded();
+  }
+  removePlan(plan) {
+    return this.firebaseDbRefSvc.plansDbRef().$remove(plan);
+  }
+  getworkoutById(workoutId) {
+    return this.firebaseDbRefSvc.getworkoutByIdApi(workoutId).$loaded();
+  }
+  workoutsRef() {
+    return this.firebaseDbRefSvc.workoutsDbRef();
   }
 }
 
 export default angular.module('workouts.service', [])
-  .service('workoutsVmSvc', ['firebaseDbRefSvc', workoutsVmSvc])
+  .service('workoutsVmSvc', workoutsVmSvc)
   .name;
