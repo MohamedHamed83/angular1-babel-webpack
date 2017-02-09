@@ -1,14 +1,7 @@
 <div class="container">
   <div class="row">
     <ul class="listrap">
-      <li ng-repeat="listItem in listviewCtrl.allItems" ng-click="listviewCtrl.selectedListItem(listItem)"
-         ng-class="listItem.selected ? 'active' : ''">
-        <div class="listrap-toggle">
-          <span></span>
-          <img class="img-circle" />
-        </div>
-        <strong>{{listItem.url}}</strong>
-      </li>
+      <list-item-component ng-repeat="listItem in listviewCtrl.allItems" list-item='listItem' set-selected-item='listviewCtrl.getSelectedItem(item)' > </list-item-component>
     </ul>
   </div>
 </div>

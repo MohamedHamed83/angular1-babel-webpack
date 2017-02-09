@@ -3,30 +3,25 @@ import template from './listItem.html';
 
 class listItemController {
   constructor() {
-    let listviewController = this;
+    let listItemController = this;
   }
-  unSelectAllItems() {
-    _.map(this.allItems, (item) => {
-      item.selected = false
-    })
-  }
+
   selectedListItem(listItem) {
-    this.unSelectAllItems();
     listItem.selected = true;
     this.setSelectedItem({item: listItem})
   }
 }
 
-export const listviewComponent = {
+export const listItemComponent = {
   template: template,
-  controllerAs: 'listviewCtrl',
-  controller: [listviewController],
+  controllerAs: 'listItemCtrl',
+  controller: [listItemController],
   bindings: {
-    allItems: '=',
+    listItem: '=',
     setSelectedItem: '&'
   }
 };
 
-export default angular.module('nglistview.component', [])
-  .component('listviewComponent', listviewComponent)
+export default angular.module('nglistItem.component', [])
+  .component('listItemComponent', listItemComponent)
   .name;

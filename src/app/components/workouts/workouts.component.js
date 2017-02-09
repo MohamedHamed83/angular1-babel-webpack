@@ -6,9 +6,7 @@ class workoutsByPlanCtrl {
   constructor(workoutsVmSvc, $stateParams) {
     this.workoutsSvc = workoutsVmSvc;
   }
-  $onInit() {
-    console.log(this.allWorkouts);
-  }
+
 }
 let workoutsByPlanComponent = {
   template: template,
