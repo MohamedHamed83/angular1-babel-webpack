@@ -4,10 +4,10 @@
 export default function routes($stateProvider, workoutsVmSvcProvider) {
   'ngInject';
   $stateProvider
-    .state('login', {
+    .state('loginStView', {
       url: '/login',
       component: 'loginComponent',
-    }).state('workouts', {
+    }).state('workoutsStView', {
       url: "/workouts",
       component: 'workoutsByPlanComponent',
       resolve: {
@@ -16,7 +16,7 @@ export default function routes($stateProvider, workoutsVmSvcProvider) {
         }
       },
     })
-    .state('plans', {
+    .state('plansStView', {
       url: '/',
       component: 'plansComponent',
     })

@@ -5,24 +5,20 @@ import '../../common/services/index';
 class homeController {
   constructor(plans) {
     'ngInject';
-    this.plansSvc = plans;
-    this.allPlans = this.plansSvc.getPlans()
-
     this.projectHeader = 'welcome to Fitness Club';
     this.projectFooter = 'Fitness Club';
     this.navbarLinkes = [{
         text: "plans",
-        status: "active"
+        uiSref: "plansStView"
       },
       {
         text: "workouts",
+        uiSref:'workoutsStView',
         status: ""
       }
     ]
   }
-  getplans() {
-    return this.plansSvc.getPlans();
-  }
+
 }
 let homeComponent = {
   template: template,

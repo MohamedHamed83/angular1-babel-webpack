@@ -8,7 +8,7 @@ class plansController {
     this.allPlans = this.plansSvc.getPlans()
   }
   getSelectedListItem(item) {
-    this.plansSvc.workoutsView('workouts', item.$id);
+    this.plansSvc.workoutsView('workoutsStView', item.$id);
   }
 }
 let plansComponent = {

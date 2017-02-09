@@ -12,7 +12,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav">
-                    <li ng-repeat="navItems in navbarCtrl.mainLinks" class="{{navItems.status}}"><a  target="_blank">{{navItems.text}}</a></li>
+                    <li ng-repeat="navItems in navbarCtrl.mainLinks" class="{{navItems.status}}"><a  ui-sref="{{navItems.uiSref}}" ui-sref-active="active">{{navItems.text}}</a></li>
                 </ul>
             </div>
         </div>
