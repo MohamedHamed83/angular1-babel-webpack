@@ -1,19 +1,15 @@
 'use strict';
 import template from './listview.html';
+import listItemComponent from '../listItem/listItem.component';
 
 class listviewController {
   constructor() {
-    let listviewController = this;
+    listviewController = this;
   }
-  unSelectAllItems() {
-    _.map(this.allItems, (item) => {
-      item.selected = false
+  getSelectedItem(listitem) {
+    listviewController.setSelectedItem({
+      item: listitem
     })
-  }
-  selectedListItem(listItem) {
-    this.unSelectAllItems();
-    listItem.selected = true;
-    this.setSelectedItem({item: listItem})
   }
 }
 

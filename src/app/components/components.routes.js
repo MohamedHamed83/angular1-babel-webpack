@@ -12,7 +12,6 @@ export default function routes($stateProvider, workoutsVmSvcProvider) {
       component: 'workoutsByPlanComponent',
       resolve: {
         allWorkouts: function () {
-          console.log('f')
           return workoutsVmSvcProvider.$get().getworkouts();
         }
       },

@@ -12,6 +12,7 @@ import './footer/footer.component';
 import './login/login.component';
 import './navbar/navbar.component';
 import './listview/listview.component';
+import './listItem/listItem.component';
 // stateful  components
 import './home/home.component'
 import './plans/plans.component'
@@ -19,7 +20,7 @@ import './workouts/workouts.component';
 
 
 export default angular.module('components', ['services', 'home.component', 'login.component', 'plans.component',
-    'ngHeader.component', 'ngFooter.component', 'ngNavbar.component', 'nglistview.component', 'workoutsByPlan.component'
+    'ngHeader.component', 'ngFooter.component', 'ngNavbar.component', 'nglistItem.component', 'nglistview.component', 'workoutsByPlan.component'
   ])
   .config(routing)
   .name;
