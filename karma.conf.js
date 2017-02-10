@@ -16,20 +16,21 @@ module.exports = function karmaConfig(config) {
       require('karma-sourcemap-loader'),
       require('karma-mocha-reporter'),
       require('istanbul-instrumenter-loader'),
-      require('karma-remap-coverage')
+      require('karma-remap-coverage'),
+      require('karma-spec-reporter'),
     ],
-    reporters: [
-      'mocha',
-      'coverage'
-    ],
+    reporters: ['spec'],
 
     files: [
       // Grab all files in the app folder that contain .spec.
-       { pattern: 'config/karma.shim.js', watched: false }
+      {
+        pattern: 'karma.shim.js',
+        watched: false
+      }
     ],
 
     preprocessors: {
-      'config/karma.shim.js': ['webpack', 'sourcemap']
+      'karma.shim.js': ['webpack', 'sourcemap']
     },
 
     browsers: [
@@ -38,15 +39,20 @@ module.exports = function karmaConfig(config) {
     ],
 
     singleRun: true,
-
+    colors: true,
+    concurrency: Infinity,
+    logLevel: config.LOG_INFO,
     // Configure code coverage reporter
-		coverageReporter: {
-	    dir: 'coverage/',
-			reporters: [
-        { type: 'text-summary' },
-				{ type: 'html' }
-			]
-		},
+    coverageReporter: {
+      dir: 'coverage/',
+      reporters: [{
+          type: 'text-summary'
+        },
+        {
+          type: 'html'
+        }
+      ]
+    },
 
     webpack: require('./config/webpack.test'),
 

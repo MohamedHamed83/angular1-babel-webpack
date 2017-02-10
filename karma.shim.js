@@ -6,7 +6,7 @@ import 'angular-mocks/angular-mocks';
 import 'firebase';
 import  'angularfire';
 
-var appContext = require.context('../src', true, /\.spec\.js/);
+var appContext = require.context('./src', true, /\.spec\.js/);
 
 appContext.keys().forEach(appContext);
 

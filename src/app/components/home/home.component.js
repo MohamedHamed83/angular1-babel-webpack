@@ -3,7 +3,7 @@ import template from './home.html';
 import '../../common/services/index';
 // component controller
 class homeController {
-  constructor(plans) {
+  constructor() {
     'ngInject';
     this.projectHeader = 'welcome to Fitness Club';
     this.projectFooter = 'Fitness Club';
