@@ -1,6 +1,6 @@
 'use strict';
 import template from './listview.html';
-
+// component controller
 class listviewController {
   constructor() {
     'ngInject';
@@ -11,7 +11,7 @@ class listviewController {
     })
   }
 }
-
+//component settings
 let listviewComponent = {
   template: template,
   controllerAs: 'listviewCtrl',

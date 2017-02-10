@@ -3,11 +3,14 @@
 
 export default function routes($stateProvider, workoutsVmSvcProvider) {
   'ngInject';
+  //components routes
   $stateProvider
     .state('loginStView', {
       url: '/login',
       component: 'loginComponent',
-    }).state('workoutsStView', {
+    })
+    // workouts list view
+    .state('workoutsStView', {
       url: "/workouts",
       component: 'workoutsByPlanComponent',
       resolve: {
@@ -16,6 +19,7 @@ export default function routes($stateProvider, workoutsVmSvcProvider) {
         }
       },
     })
+    // plans list view
     .state('plansStView', {
       url: '/',
       component: 'plansComponent',

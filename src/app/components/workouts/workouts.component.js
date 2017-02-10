@@ -2,6 +2,7 @@
 import template from './workouts.html';
 import '../../common/services/index';
 
+// component controller
 class workoutsByPlanCtrl {
   constructor(workoutsVmSvc, $stateParams) {
     'ngInject';
@@ -11,6 +12,7 @@ class workoutsByPlanCtrl {
   }
 
 }
+//component settings
 let workoutsByPlanComponent = {
   template: template,
   controllerAs: 'workoutsByPlanCtrl',

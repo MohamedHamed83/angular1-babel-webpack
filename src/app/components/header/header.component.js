@@ -1,12 +1,12 @@
 'use strict';
 import template from './header.html';
-
+// component controller
 class headerController {
   constructor() {
     'ngInject';
   }
 }
-
+//component settings
 let headerComponent = {
   template: template,
   controllerAs: 'headerCtrl',

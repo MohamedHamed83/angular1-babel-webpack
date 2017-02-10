@@ -1,7 +1,7 @@
 'use strict';
 import template from './home.html';
 import '../../common/services/index';
-
+// component controller
 class homeController {
   constructor(plans) {
     'ngInject';
@@ -18,8 +18,8 @@ class homeController {
       }
     ]
   }
-
 }
+//component settings
 let homeComponent = {
   template: template,
   controllerAs: 'homeCtrl',
