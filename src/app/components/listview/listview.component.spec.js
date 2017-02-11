@@ -41,6 +41,13 @@ describe('listview Component', () => {
     it('should show the correct plans', () => {
       expect(controller.allItems).toEqual(mockAllItems);
     });
-
+    it('should call setSelectedItem with the correct payload', () => {
+      const onSelectListItemPayload = {
+        item: mockSelectedItem
+      };
+      spyOn(controller, 'setSelectedItem');
+      controller.getSelectedItem(mockSelectedItem);
+      expect(controller.setSelectedItem).toHaveBeenCalledWith(onSelectListItemPayload)
+    });
   });
 });
