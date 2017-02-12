@@ -14,4 +14,5 @@ Fork this repo from inside GitHub so you can commit directly to your account, or
 1. Download and install Node.js for Windows or for Mac.
 2. Install Project dependencies by running command 'npm install'
 3. To start the project run command 'npm start'
-4. to run the unit test run command 'npm test'
+4. To run the unit test run command 'npm test'
+5. To Bulid to project run command 'npm run build'
