@@ -60,7 +60,7 @@ module.exports = function makeWebpackConfig() {
         })
       }, {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-        loader: 'file-loader'
+        loader: 'file-loader?name=[path][name].[ext]'
       }, {
         test: /\.html$/,
         loader: 'raw-loader'

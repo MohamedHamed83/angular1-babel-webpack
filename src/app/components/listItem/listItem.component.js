@@ -4,6 +4,10 @@ import template from './listItem.html';
 class listItemController {
   constructor() {
     'ngInject';
+
+  }
+  $onInit() {
+    this.listItem.imageUrl = require('../../../img/workouts/' + this.listItem.imgUrl);
   }
 
   selectedListItem(listItem) {

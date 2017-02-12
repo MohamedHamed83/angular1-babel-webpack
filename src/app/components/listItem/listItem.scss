@@ -10,9 +10,11 @@ listview-component {
     user-select: none;
     .img-circle {
       padding-top: 5px;
-      content: url("../img/workout-item.jpg");
       width: 100px;
       height: 100px;
+      .plan-img {
+        content: url("../img/workout-item.jpg");
+      }
     }
     li {
       padding-bottom: 45px;
