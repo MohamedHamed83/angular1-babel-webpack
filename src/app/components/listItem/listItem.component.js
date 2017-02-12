@@ -1,5 +1,6 @@
 'use strict';
 import template from './listItem.html';
+
 // component controller
 class listItemController {
   constructor() {
@@ -7,7 +8,9 @@ class listItemController {
 
   }
   $onInit() {
-    this.listItem.imageUrl = require('../../../img/workouts/' + this.listItem.imgUrl);
+    if (this.listItem.imgUrl) {
+      this.listItem.imageUrl = require('../../../img/workouts/' + this.listItem.imgUrl);
+    }
   }
 
   selectedListItem(listItem) {

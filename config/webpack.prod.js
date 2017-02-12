@@ -44,7 +44,16 @@ module.exports = function makeWebpackConfig() {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loaders: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: [{
+              loader: 'css-loader'
+            },
+            {
+              loader: 'sass-loader'
+            }
+          ],
+        })
       }, {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
@@ -71,6 +80,7 @@ module.exports = function makeWebpackConfig() {
   };
 
   config.plugins = [
+     new ExtractTextPlugin("[name].css"),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendors'],
       minChunks: Infinity
@@ -109,7 +119,7 @@ module.exports = function makeWebpackConfig() {
       sourceMap: true
     }),
     new CopyWebpackPlugin([{
-      from:'./src'
+      from: './src'
     }])
   )
 

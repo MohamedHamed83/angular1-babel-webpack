@@ -24,7 +24,7 @@ module.exports = function makeWebpackConfig() {
   config.output = {
     path: root('../dist'),
     publicPath: 'http://localhost:8080/',
-    filename: 'js/[name].js',
+    filename: '[name].js',
     chunkFilename: '[id].chunk.js'
   };
 
@@ -42,7 +42,16 @@ module.exports = function makeWebpackConfig() {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loaders: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: [{
+              loader: 'css-loader'
+            },
+            {
+              loader: 'sass-loader'
+            }
+          ],
+        })
       }, {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
@@ -69,6 +78,7 @@ module.exports = function makeWebpackConfig() {
   };
 
   config.plugins = [
+     new ExtractTextPlugin("[name].css"),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendors'],
       minChunks: Infinity
