@@ -13,8 +13,12 @@ import {
 
 
 /**
- * This includes all of our nested modules.
- **/
+ * @ngdoc module
+ * @requires ui.router, ui.router.components, angular-loading-bar and components
+ * @name fitnessClub
+ * @module fitnessClub
+ * @description This is the main module for application
+ */
 
 angular.module('fitnessClub', ['ui.router', 'ui.router.components', 'angular-loading-bar', 'components'])
   .config(routing)
