@@ -7,14 +7,6 @@ class workoutsVmSvc {
     return this.firebaseDbRefSvc.getAllWorkouts().$loaded();
   }
   /**
-   * Remove selected plan
-   * @param  {Object} plan The plan object of the selected plan.
-   * @return {Promise}  A promise to the deleted plan.
-   */
-  removePlan(plan) {
-    return this.firebaseDbRefSvc.plansDbRef().$remove(plan);
-  }
-  /**
    * Get workouts by id
    * @param  {string} workoutId The id of the selected workout
    * @return {Promise}  A promise to the returned workout.

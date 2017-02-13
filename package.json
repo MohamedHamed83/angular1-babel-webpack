@@ -13,7 +13,7 @@
     "clean-docs": "gulp cleanDocs",
     "copy-docs": "gulp copyDocs",
     "generate-docs": "gulp dgeni",
-    "docs": "npm run clean-docs && npm run copy-docs && npm run generate-docs"
+    "docs": "npm run clean-docs && npm run copy-docs && npm run generate-docs && lite-server"
   },
   "author": "Mohamed Hamed",
   "license": "ISC",

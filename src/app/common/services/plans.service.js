@@ -7,14 +7,17 @@ class plans {
   getPlans() {
     return this.firebaseDbRefSvc.getAllPlans();
   }
-  getworkouts() {
-    return this.firebaseDbRefSvc.getAllWorkouts();
-  }
   addNewPlan() {
     this.firebaseDbRefSvc.plansDbRef().push({
       description: 'test New Plan'
     });
   }
+
+  /**
+   * Remove selected plan
+   * @param  {Object} plan The plan object of the selected plan.
+   * @return {Promise}  A promise to the deleted plan.
+   */
   removePlan(plan) {
     return this.firebaseDbRefSvc.plansDbRef().$remove(plan);
   }
@@ -24,10 +27,7 @@ class plans {
   plansRef() {
     return this.firebaseDbRefSvc.plansDbRef();
   }
-  workoutsRef() {
-    return this.firebaseDbRefSvc.workoutsDbRef();
-  }
-  workoutsView(view, params) {
+  reloadView(view, params) {
     if (params) {
       this.$state.go(view, {
         planId: params
@@ -50,12 +50,12 @@ class plans {
  * And plans data transformation
  */
 export default angular.module('plans.service', [])
-/**
- * @ngdoc service
- * @name plans
- * @module plans.service
- *
- * @description Provides plans HTTP methods for our firebase connection.
- */
+  /**
+   * @ngdoc service
+   * @name plans
+   * @module plans.service
+   *
+   * @description Provides plans HTTP methods for our firebase connection.
+   */
   .service('plans', plans)
   .name;

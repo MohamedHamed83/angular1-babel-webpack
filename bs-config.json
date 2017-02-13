@@ -1,0 +1,5 @@
+{
+  "port": 4783,
+  "files": ["./src/**/*.{html,htm,css,js}"],
+  "server": { "baseDir": "./docs/build" }
+}

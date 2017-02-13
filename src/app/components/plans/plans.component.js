@@ -11,7 +11,7 @@ class plansController {
   }
   // get selected item from the list view
   getSelectedListItem(item) {
-    this.plansSvc.workoutsView('workoutsStView', item.$id);
+    this.plansSvc.reloadView('workoutsStView', item.$id);
   }
 }
 //component settings
