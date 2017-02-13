@@ -7,6 +7,8 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var localPath = 'http://localhost:8080';
 
 function root(args) {
   args = Array.prototype.slice.call(arguments, 0);
@@ -23,7 +25,7 @@ module.exports = function makeWebpackConfig() {
 
   config.output = {
     path: root('../dist'),
-    publicPath: 'http://localhost:8080/',
+    publicPath: localPath,
     filename: '[name].js',
     chunkFilename: '[id].chunk.js'
   };
@@ -78,7 +80,10 @@ module.exports = function makeWebpackConfig() {
   };
 
   config.plugins = [
-     new ExtractTextPlugin("[name].css"),
+    new OpenBrowserPlugin({
+      url: localPath
+    }),
+    new ExtractTextPlugin("[name].css"),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendors'],
       minChunks: Infinity
