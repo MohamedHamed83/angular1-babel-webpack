@@ -4,6 +4,7 @@ listview-component {
     padding-bottom: 60px;
   }
   .listrap {
+    @include fadeInLeft( $duration: 1s, $count: 1, $delay: .2s, $function: ease, $fill: both);
     list-style-type: none;
     margin: 0;
     padding: 0;

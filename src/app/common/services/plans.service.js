@@ -85,7 +85,6 @@ class plans {
 
 /**
  * @ngdoc module
- * @requires ui.router, ui.router.components, angular-loading-bar and components
  * @name ngPlans
  * @module ngPlans
  * @description this module Provides plans service which is responsable of plans web api

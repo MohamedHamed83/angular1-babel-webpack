@@ -1,5 +1,13 @@
 'use strict';
 import template from './footer.html';
+
+/**
+ * @ngdoc method
+ * @name ngFooterModule#footerController
+ * @module ng
+ * @description
+ * See {@link ng.$controllerProvider#register $controllerProvider.register()}.
+ */
 class footerController {
   constructor() {
     'ngInject';
@@ -16,8 +24,8 @@ let footerComponent = {
 
 /**
  * @ngdoc module
- * @name ngFooter.component
- * @module ngFooter.component
+ * @name ngFooterModule
+ * @module ngFooterModule
  * @description This is footer component module
  */
 

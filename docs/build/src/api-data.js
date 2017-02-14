@@ -58,11 +58,11 @@ angular
     ]
   },
   {
-    "name": "ngFooter.component",
-    "stateName": "ngFooterComponent",
+    "name": "ngFooterModule",
+    "stateName": "ngFooterModule",
     "type": "module",
-    "outputPath": "partials/api/ngFooter.component.html",
-    "url": "api/ngFooter.component",
+    "outputPath": "partials/api/ngFooterModule.html",
+    "url": "api/ngFooterModule",
     "docs": []
   }
 ]);

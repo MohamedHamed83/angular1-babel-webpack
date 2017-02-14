@@ -10,12 +10,35 @@ class workoutsVmSvc {
     'ngInject';
     this.firebaseDbRefSvc = firebaseDbRefSvc;
   }
+    /**
+   * @ngdoc method
+   * @name $workoutsVmSvc#getworkouts
+   *
+   * @description
+   * Returns list of plans.
+   *
+   * @returns {Array} list of workouts.
+   */
   getworkouts() {
     return this.firebaseDbRefSvc.getAllWorkouts().$loaded();
   }
+    /**
+   * @ngdoc method
+   * @name $workoutsVmSvc#getworkoutById
+   * @param {string} workout Id
+   * @description
+   * Get selected workout by Id .
+   *
+   */
   getworkoutById(workoutId) {
     return this.firebaseDbRefSvc.getworkoutByIdApi(workoutId).$loaded();
   }
+    /**
+   * @ngdoc method
+   * @name $workoutsVmSvc#workoutsRef
+   * @description
+   * Db refrance to workouts array.
+   */
   workoutsRef() {
     return this.firebaseDbRefSvc.workoutsDbRef();
   }
