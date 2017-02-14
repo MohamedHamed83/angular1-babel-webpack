@@ -33,6 +33,6 @@ const listItemComponent = {
   }
 };
 //list item is nested component in list view
-export default angular.module('nglistItem.component', [])
+export default angular.module('nglistItemModule', [])
   .component('listItemComponent', listItemComponent)
   .name;

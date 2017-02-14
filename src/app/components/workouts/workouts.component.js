@@ -22,6 +22,6 @@ let workoutsByPlanComponent = {
   }
 };
 
-export default angular.module('workoutsByPlan.component', [])
+export default angular.module('workoutsByPlanModule', [])
   .component('workoutsByPlanComponent', workoutsByPlanComponent)
   .name;

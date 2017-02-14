@@ -8,8 +8,23 @@ import './plans.service'
 import './workouts.service';
 import './workoutsByPlan.service';
 
-export default angular.module('services', ['plans.service',
-    'workouts.service',
-    'firebaseRef.factory'
+
+/**
+ *
+ * @ngdoc module
+ * @name services
+ *
+ * @requires ngPlans
+ * @requires ngWorkouts
+ * @requires ngFirebaseRef
+ *
+ * @description
+ *
+ * This is the main module to all the application services
+ *
+ **/
+export default angular.module('services', ['ngPlans',
+    'ngWorkouts',
+    'ngFirebaseRef'
   ])
   .name;

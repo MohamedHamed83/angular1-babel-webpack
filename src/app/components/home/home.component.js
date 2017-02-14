@@ -26,6 +26,6 @@ let homeComponent = {
   controller: homeController
 };
 
-export default angular.module('home.component', ['services'])
+export default angular.module('homeModule', ['services'])
   .component('homeComponent', homeComponent)
   .name;

@@ -16,6 +16,6 @@ let navbarComponent = {
   }
 };
 
-export default angular.module('ngNavbar.component', [])
+export default angular.module('ngNavbarModule', [])
   .component('navbarComponent', navbarComponent)
   .name;

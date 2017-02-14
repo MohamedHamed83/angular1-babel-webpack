@@ -17,6 +17,6 @@ let searchBarComponent = {
   }
 };
 
-export default angular.module('ngSearchBar.component', [])
+export default angular.module('ngSearchBarModule', [])
   .component('searchBarComponent', searchBarComponent)
   .name;

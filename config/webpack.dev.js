@@ -8,7 +8,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-var localPath = 'http://localhost:8080';
+var localPath = 'http://localhost:8080/';
 
 function root(args) {
   args = Array.prototype.slice.call(arguments, 0);

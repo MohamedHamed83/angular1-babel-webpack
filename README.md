@@ -15,7 +15,7 @@ Fork this repo from inside GitHub so you can commit directly to your account, or
 2. Install Project dependencies by running command 'npm install'
 #### Run
 
- To start the project run command 'npm start'
+To start the project run command 'npm start'
 
 #### Test
 

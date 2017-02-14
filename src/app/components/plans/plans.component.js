@@ -21,6 +21,6 @@ let plansComponent = {
   controller: plansController
 };
 
-export default angular.module('plans.component', [])
+export default angular.module('plansModule', [])
   .component('plansComponent', plansComponent)
   .name;

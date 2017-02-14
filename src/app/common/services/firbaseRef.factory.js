@@ -27,6 +27,6 @@ class firebaseDbRef {
 }
 
 
-export default angular.module('firebaseRef.factory', ['firebase'])
+export default angular.module('ngFirebaseRef', ['firebase'])
   .factory('firebaseDbRefSvc',['$firebaseObject','$firebaseArray',($firebaseObject, $firebaseArray)=> new firebaseDbRef($firebaseObject, $firebaseArray)] )
   .name;

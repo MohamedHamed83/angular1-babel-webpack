@@ -20,8 +20,8 @@ import './plans/plans.component'
 import './workouts/workouts.component';
 
 //application components module
-export default angular.module('components', ['services','ngSearchBar.component', 'home.component', 'login.component', 'plans.component',
-    'ngHeader.component', 'ngFooter.component', 'ngNavbar.component', 'nglistItem.component', 'nglistview.component', 'workoutsByPlan.component'
+export default angular.module('components', ['services','ngSearchBarModule', 'homeModule', 'loginModule', 'plansModule',
+    'ngHeaderModule', 'ngFooterModule', 'ngNavbarModule', 'nglistItemModule', 'nglistviewModule', 'workoutsByPlanModule'
   ])
   .config(routing)
   .name;
