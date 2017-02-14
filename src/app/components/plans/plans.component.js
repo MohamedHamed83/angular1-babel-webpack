@@ -13,6 +13,9 @@ class plansController {
   getSelectedListItem(item) {
     this.plansSvc.reloadView('workoutsStView', item.$id);
   }
+  $onInit(){
+    this.plansSvc.plansOnload();
+  }
 }
 //component settings
 let plansComponent = {

@@ -1,8 +1,22 @@
 class plans {
-  constructor(firebaseDbRefSvc, $state) {
+  constructor(firebaseDbRefSvc, $state, toastr) {
     'ngInject';
     this.firebaseDbRefSvc = firebaseDbRefSvc;
-    this.$state = $state
+    this.$state = $state;
+    this.toastr = toastr;
+  }
+
+  /**
+   * @ngdoc method
+   * @name $plansSvc#plansOnload
+   *
+   * @description
+   * Returns confirmation message.
+   *
+   * @returns  plans view confirmation message.
+   */
+  plansOnload() {
+    this.toastr.info('Loading plans view');
   }
   /**
    * @ngdoc method
@@ -61,7 +75,7 @@ class plans {
   plansRef() {
     return this.firebaseDbRefSvc.plansDbRef();
   }
-   /**
+  /**
    * @ngdoc method
    * @name $plansSvc#reloadView
    * @param {string} view name

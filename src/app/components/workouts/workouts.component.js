@@ -10,7 +10,9 @@ class workoutsByPlanCtrl {
     this.$stateParams = $stateParams;
     this.searchString = '';
   }
-
+  $onInit() {
+    this.workoutsSvc.workoutOnload()
+  }
 }
 //component settings
 let workoutsByPlanComponent = {

@@ -14,6 +14,7 @@ $fa-font-path:'~font-awesome/fonts/';
 @import "./components/navbar/navbar";
 @import "./components/footer/footer";
 @import "./components/listview/listview";
+@import "./components/listItem/listItem";
 @import "./components/searchBar/searchBar";
 ui-view {
   @extend .row;
@@ -25,6 +26,7 @@ ui-view {
   @include make-md-column(12, 0);
   @include make-lg-column(12, 0);
   @include make-xl-column(12, 0);
-  top: 35px;
+  padding-top: 50px;
   height: 80%;
 }
+
