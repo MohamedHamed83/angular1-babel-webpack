@@ -4,25 +4,71 @@ class plans {
     this.firebaseDbRefSvc = firebaseDbRefSvc;
     this.$state = $state
   }
+  /**
+   * @ngdoc method
+   * @name $plansSvc#getPlans
+   *
+   * @description
+   * Returns list of plans.
+   *
+   * @returns {Array} list of plans.
+   */
   getPlans() {
     return this.firebaseDbRefSvc.getAllPlans();
   }
+  /**
+   * @ngdoc method
+   * @name $plansSvc#addNewPlan
+   *
+   * @description
+   * Http Call to add plan .
+   *
+   */
   addNewPlan() {
     this.firebaseDbRefSvc.plansDbRef().push({
       description: 'test New Plan'
     });
   }
 
-
+  /**
+   * @ngdoc method
+   * @name $plansSvc#removePlan
+   *
+   * @description
+   * Http Call to remove plan .
+   *
+   */
   removePlan(plan) {
     return this.firebaseDbRefSvc.plansDbRef().$remove(plan);
   }
+  /**
+   * @ngdoc method
+   * @name $plansSvc#getPlanById
+   * @param {string} plan Id
+   * @description
+   * Get selected play by Id .
+   *
+   */
   getPlanById(planId) {
     return this.firebaseDbRefSvc.getPlanByIdApi(planId).$loaded();
   }
+  /**
+   * @ngdoc method
+   * @name $plansSvc#plansRef
+   * @description
+   * Db refrance to plans array.
+   */
   plansRef() {
     return this.firebaseDbRefSvc.plansDbRef();
   }
+   /**
+   * @ngdoc method
+   * @name $plansSvc#reloadView
+   * @param {string} view name
+   * @param {string} view params
+   * @description
+   * load selected ui route.
+   */
   reloadView(view, params) {
     if (params) {
       this.$state.go(view, {
@@ -48,10 +94,10 @@ class plans {
 export default angular.module('ngPlans', [])
   /**
    * @ngdoc service
-   * @name plans
+   * @name $plansSvc
    * @module ngPlans
    *
    * @description Provides plans HTTP methods for our firebase connection.
    */
-  .service('plans', plans)
+  .service('$plansSvc', plans)
   .name;

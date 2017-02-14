@@ -14,10 +14,10 @@ class workoutsByPlan {
 export default angular.module('ngWorkoutsByPlan', [])
 /**
  * @ngdoc service
- * @name workoutsByPlan
+ * @name $workoutsByPlanSvc
  * @module ngWorkoutsByPlan
  *
  * @description Provides workouts HTTP methods for our firebase connection.
  */
-  .service('workoutsByPlan', workoutsByPlan)
+  .service('$workoutsByPlanSvc', workoutsByPlan)
   .name;

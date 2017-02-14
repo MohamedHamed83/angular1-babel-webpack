@@ -31,10 +31,10 @@ class workoutsVmSvc {
 export default angular.module('ngWorkouts', [])
 /**
  * @ngdoc service
- * @name workoutsVmSvc
+ * @name $workoutsVmSvc
  * @module ngWorkouts
  *
  * @description Provides workouts HTTP methods for our firebase connection.
  */
-  .service('workoutsVmSvc', workoutsVmSvc)
+  .service('$workoutsVmSvc', workoutsVmSvc)
   .name;

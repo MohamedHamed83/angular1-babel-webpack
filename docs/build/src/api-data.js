@@ -17,11 +17,11 @@ angular
     "url": "api/ngPlans",
     "docs": [
       {
-        "name": "plans",
-        "stateName": "plans",
+        "name": "$plansSvc",
+        "stateName": "plansSvc",
         "type": "service",
-        "outputPath": "partials/api/ngPlans/service/plans.html",
-        "url": "api/ngPlans/service/plans"
+        "outputPath": "partials/api/ngPlans/service/$plansSvc.html",
+        "url": "api/ngPlans/service/$plansSvc"
       }
     ]
   },
@@ -33,11 +33,11 @@ angular
     "url": "api/ngWorkouts",
     "docs": [
       {
-        "name": "workoutsVmSvc",
+        "name": "$workoutsVmSvc",
         "stateName": "workoutsVmSvc",
         "type": "service",
-        "outputPath": "partials/api/ngWorkouts/service/workoutsVmSvc.html",
-        "url": "api/ngWorkouts/service/workoutsVmSvc"
+        "outputPath": "partials/api/ngWorkouts/service/$workoutsVmSvc.html",
+        "url": "api/ngWorkouts/service/$workoutsVmSvc"
       }
     ]
   },
@@ -49,11 +49,11 @@ angular
     "url": "api/ngWorkoutsByPlan",
     "docs": [
       {
-        "name": "workoutsByPlan",
-        "stateName": "workoutsByPlan",
+        "name": "$workoutsByPlanSvc",
+        "stateName": "workoutsByPlanSvc",
         "type": "service",
-        "outputPath": "partials/api/ngWorkoutsByPlan/service/workoutsByPlan.html",
-        "url": "api/ngWorkoutsByPlan/service/workoutsByPlan"
+        "outputPath": "partials/api/ngWorkoutsByPlan/service/$workoutsByPlanSvc.html",
+        "url": "api/ngWorkoutsByPlan/service/$workoutsByPlanSvc"
       }
     ]
   },

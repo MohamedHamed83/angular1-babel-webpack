@@ -2,9 +2,9 @@
 import template from './plans.html';
 // component controller
 class plansController {
-  constructor(plans) {
+  constructor($plansSvc) {
     'ngInject';
-    this.plansSvc = plans;
+    this.plansSvc = $plansSvc;
     // plans list
     this.allPlans = this.plansSvc.getPlans()
     this.searchString = '';

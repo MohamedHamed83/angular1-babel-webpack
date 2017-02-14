@@ -4,9 +4,9 @@ import '../../common/services/index';
 
 // component controller
 class workoutsByPlanCtrl {
-  constructor(workoutsVmSvc, $stateParams) {
+  constructor($workoutsVmSvc, $stateParams) {
     'ngInject';
-    this.workoutsSvc = workoutsVmSvc;
+    this.workoutsSvc = $workoutsVmSvc;
     this.$stateParams = $stateParams;
     this.searchString = '';
   }
