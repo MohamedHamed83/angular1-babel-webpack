@@ -46,7 +46,7 @@
     "css-loader": "^0.26.1",
     "del": "^2.2.2",
     "dgeni": "^0.4.3",
-    "dgeni-packages": "^0.16.5",
+    "dgeni-packages": "^0.16.7",
     "eslint": "^3.14.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "file-loader": "^0.9.0",

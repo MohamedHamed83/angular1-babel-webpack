@@ -17,6 +17,6 @@ gulp.task('copyDocs', () => {
 });
 
 gulp.task('dgeni', () => {
-    var dgeni = new Dgeni([require('./docs/config')]);
+    var dgeni = new Dgeni([require('./docs/config/index')]);
     return dgeni.generate();
 });
