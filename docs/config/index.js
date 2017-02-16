@@ -10,6 +10,8 @@ var packagePath = __dirname;
 // which themselves include processors, services, templates...
 module.exports = new Package('cma-docs', [
     require('dgeni-packages/ngdoc'),
+    require('dgeni-packages/jsdoc'),
+    require('dgeni-packages/examples'),
     require('dgeni-packages/nunjucks')
   ])
 

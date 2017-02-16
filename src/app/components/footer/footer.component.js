@@ -2,20 +2,15 @@
 import template from './footer.html';
 
 /**
- * @ngdoc controller
- * @name ngFooterModule.controller:footerComponent
- * @description footer component controller.
+ * @class footerController
+ * @module ngFooterModule
+ * @classdesc This is footer component controller
  */
 class footerController {
   constructor() {
     'ngInject';
   }
 }
-/**
- * @ngdoc object
- * @name footerSetting
- * @methodOf footerComponent.
- */
 let footerComponent = {
   template: template,
   controllerAs: 'footerCtrl',
@@ -35,10 +30,12 @@ let footerComponent = {
 export default angular.module('ngFooterModule', [])
   /**
    * @ngdoc directive
-   * @name ngFooterModule.directive:footerComponent
-   * @restrict A
+   * @name footerComponent
    * @module ngFooterModule
    * @description
+   * @example
+   * <footer-component projectName='project name'>
+   * </footer-component>
    * footer component
    */
   .component('footerComponent', footerComponent)
