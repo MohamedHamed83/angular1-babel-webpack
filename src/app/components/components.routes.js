@@ -1,7 +1,7 @@
 'use strict';
 
 
-export default function routes($stateProvider, $workoutsVmSvcProvider) {
+export default function routes($stateProvider, $workoutsVmSvcProvider, $resourceProvider) {
   'ngInject';
   //components routes
   $stateProvider
@@ -14,6 +14,7 @@ export default function routes($stateProvider, $workoutsVmSvcProvider) {
       url: "/workouts",
       component: 'workoutsByPlanComponent',
       resolve: {
+
         allWorkouts: function () {
           return $workoutsVmSvcProvider.$get().getworkouts();
         }

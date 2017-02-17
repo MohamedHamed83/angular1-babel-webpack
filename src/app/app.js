@@ -7,7 +7,7 @@ require('angular-toastr/dist/angular-toastr.css')
 import './common/config/route-to-component';
 //application components module
 import './components/index';
-
+import 'angular-resource';
 //app route settings
 import {
   routing
@@ -22,6 +22,6 @@ import {
  * @description This is the main module for application
  */
 
-angular.module('fitnessClub', ['ui.router', 'ui.router.components', 'angular-loading-bar', 'ngAnimate', 'toastr', 'components'])
+angular.module('fitnessClub', ['ui.router','ngResource', 'ui.router.components', 'angular-loading-bar', 'ngAnimate', 'toastr', 'components'])
   .config(routing)
   .name

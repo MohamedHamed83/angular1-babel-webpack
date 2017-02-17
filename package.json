@@ -21,6 +21,7 @@
     "angular": "^1.6.2",
     "angular-animate": "^1.6.2",
     "angular-loading-bar": "^0.9.0",
+    "angular-resource": "^1.6.2",
     "angular-toastr": "^2.1.1",
     "angular-ui-router": "^0.4.2",
     "angularfire": "^2.3.0",
@@ -30,6 +31,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
     "lodash": "^4.17.4",
+    "normalize-scss": "^6.0.0",
     "rx": "^4.1.0"
   },
   "devDependencies": {
