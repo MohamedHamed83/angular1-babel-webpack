@@ -19,10 +19,15 @@ import './home/home.component'
 import './plans/plans.component'
 import './workoutsByPlan/workoutsByPlan.component';
 import './workouts/workouts.component';
+import './createPlan/createPlan.component';
+import './createWorkout/createWorkout.component';
+import './editPlan/editPlan.component';
+import './editWorkout/editWorkout.component';
 
 //application components module
 export default angular.module('components', ['services','ngSearchBarModule', 'homeModule', 'loginModule', 'plansModule',
-    'ngHeaderModule', 'ngFooterModule', 'ngNavbarModule', 'nglistItemModule', 'nglistviewModule', 'workoutsByPlanModule', 'workoutsModule'
+    'ngHeaderModule', 'ngFooterModule', 'ngNavbarModule', 'nglistItemModule', 'nglistviewModule', 'workoutsByPlanModule',
+    'workoutsModule','createWorkoutModule', 'editWorkoutModule', 'createPlanModule',  'editPlanModule'
   ])
   .config(routing)
   .name;

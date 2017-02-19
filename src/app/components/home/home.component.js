@@ -8,13 +8,12 @@ class homeController {
     this.projectHeader = 'welcome to Fitness Club';
     this.projectFooter = 'Fitness Club';
     this.navbarLinkes = [{
-        text: "plans",
+        text: "Plans",
         uiSref: "plansStView"
       },
       {
-        text: "workouts",
+        text: "All Workouts",
         uiSref:'workoutsStView',
-        status: ""
       }
     ]
   }
