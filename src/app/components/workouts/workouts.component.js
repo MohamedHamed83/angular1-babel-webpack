@@ -3,11 +3,10 @@ import template from './workouts.html';
 import '../../common/services/index';
 
 // component controller
-class workoutsByPlanCtrl {
-  constructor($workoutsVmSvc, $stateParams) {
+class workoutsCtrl {
+  constructor($workoutsVmSvc) {
     'ngInject';
     this.workoutsSvc = $workoutsVmSvc;
-    this.$stateParams = $stateParams;
     this.searchString = '';
   }
   $onInit() {
@@ -15,15 +14,15 @@ class workoutsByPlanCtrl {
   }
 }
 //component settings
-let workoutsByPlanComponent = {
+let workoutsComponent = {
   template: template,
-  controllerAs: 'workoutsByPlanCtrl',
-  controller: workoutsByPlanCtrl,
+  controllerAs: 'workoutsCtrl',
+  controller: workoutsCtrl,
   bindings: {
     allWorkouts: '='
   }
 };
 
-export default angular.module('workoutsByPlanModule', [])
-  .component('workoutsByPlanComponent', workoutsByPlanComponent)
+export default angular.module('workoutsModule', [])
+  .component('workoutsComponent', workoutsComponent)
   .name;

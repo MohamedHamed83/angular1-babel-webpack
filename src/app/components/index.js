@@ -17,11 +17,12 @@ import './searchBar/searchBar.component';
 // stateful  components
 import './home/home.component'
 import './plans/plans.component'
+import './workoutsByPlan/workoutsByPlan.component';
 import './workouts/workouts.component';
 
 //application components module
 export default angular.module('components', ['services','ngSearchBarModule', 'homeModule', 'loginModule', 'plansModule',
-    'ngHeaderModule', 'ngFooterModule', 'ngNavbarModule', 'nglistItemModule', 'nglistviewModule', 'workoutsByPlanModule'
+    'ngHeaderModule', 'ngFooterModule', 'ngNavbarModule', 'nglistItemModule', 'nglistviewModule', 'workoutsByPlanModule', 'workoutsModule'
   ])
   .config(routing)
   .name;

@@ -13,8 +13,8 @@ class firebaseDbRef {
   getAllWorkouts() {
     return this.$firebaseArray(ref.child("workouts"));
   }
-  getPlanByIdApi(PlanId){
-    return this.$firebaseObject(ref.child(`workouts/${PlanId}`));
+  getWorkoutByIdApi(workoutId) {
+    return this.$firebaseObject(ref.child(`workouts/${workoutId}`)).$loaded();
   }
   plansDbRef() {
     return ref.child("plans");
@@ -22,9 +22,12 @@ class firebaseDbRef {
   workoutsDbRef() {
     return this.$firebaseObject(ref.child("workouts"));
   }
+  workoutsKeysPerPlanApi(planId) {
+    return this.$firebaseArray(ref.child(`workoutsKeysPerPlan/${planId}`));
+  }
 }
 
 
 export default angular.module('ngFirebaseRef', ['firebase'])
-  .factory('firebaseDbRefSvc',['$firebaseObject','$firebaseArray',($firebaseObject, $firebaseArray)=> new firebaseDbRef($firebaseObject, $firebaseArray)] )
+  .factory('firebaseDbRefSvc', ['$firebaseObject', '$firebaseArray', ($firebaseObject, $firebaseArray) => new firebaseDbRef($firebaseObject, $firebaseArray)])
   .name;

@@ -1,7 +1,7 @@
 'use strict';
 
 
-export default function routes($stateProvider, $workoutsVmSvcProvider, $resourceProvider) {
+export default function routes($stateProvider) {
   'ngInject';
   //components routes
   $stateProvider
@@ -9,14 +9,25 @@ export default function routes($stateProvider, $workoutsVmSvcProvider, $resource
       url: '/login',
       component: 'loginComponent',
     })
-    // workouts list view
+    // workouts by plan list view
+    .state('workoutsByPlanView', {
+      url: "/workouts/:planId",
+      component: 'workoutsByPlanComponent',
+      params: {
+        planId: null
+      },
+      resolve: {
+        allWorkouts: function ($workoutsByPlanSvc, $stateParams) {
+          return $workoutsByPlanSvc.getWorkoutsKeysPerPlan($stateParams.planId);
+        }
+      },
+    })
     .state('workoutsStView', {
       url: "/workouts",
-      component: 'workoutsByPlanComponent',
+      component: 'workoutsComponent',
       resolve: {
-
-        allWorkouts: function () {
-          return $workoutsVmSvcProvider.$get().getworkouts();
+        allWorkouts: function ($workoutsVmSvc) {
+          return $workoutsVmSvc.getworkouts();
         }
       },
     })

@@ -1,15 +1,35 @@
 class workoutsByPlan {
-  constructor() {
+  constructor(firebaseDbRefSvc) {
     'ngInject';
+    this.firebaseDbRefSvc = firebaseDbRefSvc;
   }
   /**
    * @ngdoc method
-   * @name $workoutsByPlanSvc#getAllWorkouts
+   * @name $workoutsByPlanSvc#getWorkoutsById
    * @description
-   * Db refrance to workouts by plan Keys array.
+   * Db refrance to workouts by plan Id.
    */
-  getworkoutsKeysPerPlan() {
-    return this.$firebaseArray(ref.child("workoutsKeysPerPlan"));
+  getWorkoutsById(planId, allWorkouts) {
+    var selectedWorkouts = [];
+    _.forEach(allWorkouts, function (workout) {
+      if (planId === workout.planId) {
+        selectedWorkouts.push(workout);
+      }
+    });
+    return selectedWorkouts;
+  }
+  getWorkoutsKeysPerPlan(planId) {
+    return this.firebaseDbRefSvc.workoutsKeysPerPlanApi(planId).$loaded();
+  }
+  getWorkoutsPerPlan(allWorkouts) {
+    let selectedWorkouts = [];
+    var workoutsByPlan = this;
+    _.forEach(allWorkouts, function (workout) {
+      workoutsByPlan.firebaseDbRefSvc.getWorkoutByIdApi(workout.$id).then(function (res) {
+        selectedWorkouts.push(res);
+      });
+    });
+    return selectedWorkouts
   }
 }
 /**

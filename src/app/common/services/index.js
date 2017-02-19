@@ -25,6 +25,7 @@ import './workoutsByPlan.service';
  **/
 export default angular.module('services', ['ngPlans',
     'ngWorkouts',
-    'ngFirebaseRef'
+    'ngFirebaseRef',
+    'ngWorkoutsByPlan'
   ])
   .name;
