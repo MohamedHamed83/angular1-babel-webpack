@@ -1,0 +1,9 @@
+create-plan-component {
+    .vm-button-item {
+      @include make-xs-column(4, 0);
+      @include make-sm-column(4, 0);
+      @include make-md-column(4, 0);
+      @include make-lg-column(4, 0);
+      @include make-xl-column(4, 0);
+    }
+}
