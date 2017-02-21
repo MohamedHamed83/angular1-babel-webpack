@@ -1,18 +1,17 @@
 class plans {
+
   constructor(firebaseDbRefSvc, $state, toastr) {
     'ngInject';
     this.firebaseDbRefSvc = firebaseDbRefSvc;
     this.$state = $state;
     this.toastr = toastr;
+    this.viewStatus = this.viewTypes;
   }
-  viewStatus() {
-    return {
-      newPlan: 1,
-      updatePlan: 2,
-      deletePlan: 3,
-      planDetail: 4
-
-    }
+  viewTypes = {
+    newPlan: 1,
+    updatePlan: 2,
+    deletePlan: 3,
+    planDetail: 4
   }
   CreateNewPlan(plan) {
     alert(plan)

@@ -8,7 +8,6 @@ class createPlanCtrl {
     this.$plansSvc = $plansSvc;
   }
   $onInit() {
-    console.log(this)
     this.plan = {
       description: '',
       url: ''

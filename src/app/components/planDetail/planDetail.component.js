@@ -6,9 +6,10 @@ class planDetailCtrl {
   constructor($plansSvc) {
     'ngInject';
     this.$plansSvc = $plansSvc;
+    this.viewType = this.$plansSvc.viewStatus;
   }
   $onInit() {
-    console.log(this.$plansSvc.viewStatus)
+
   }
   savePlan() {
     this.onSave({
