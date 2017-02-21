@@ -6,7 +6,7 @@ class planDetailCtrl {
   constructor($plansSvc) {
     'ngInject';
     this.$plansSvc = $plansSvc;
-    this.viewType = this.$plansSvc.viewStatus;
+    this.plansViewTypes = this.$plansSvc.plansViewTypes;
   }
   $onInit() {
 
@@ -17,6 +17,20 @@ class planDetailCtrl {
         plan: this.plan,
       },
     });
+  }
+  updatePlan() {
+    this.onUpdate({
+      $event: {
+        plan: this.plan,
+      },
+    });
+  }
+  deletePlan() {
+    this.onDelete({
+      $event: {
+        plan: this.plan,
+      }
+    })
   }
 }
 //component settings

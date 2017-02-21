@@ -17,7 +17,7 @@ export default function routes($stateProvider) {
         planId: null
       },
       resolve: {
-        allWorkouts: function ($workoutsByPlanSvc, $stateParams) {
+        allWorkouts: ($workoutsByPlanSvc, $stateParams) => {
           return $workoutsByPlanSvc.getWorkoutsKeysPerPlan($stateParams.planId);
         }
       },
@@ -26,13 +26,13 @@ export default function routes($stateProvider) {
       url: "/workouts",
       component: 'workoutsComponent',
       resolve: {
-        allWorkouts: function ($workoutsVmSvc) {
+        allWorkouts: ($workoutsVmSvc) => {
           return $workoutsVmSvc.getworkouts();
         }
       },
     })
     // plans list view
-    .state('plansStView', {
+    .state('plansListView', {
       url: '/',
       component: 'plansComponent',
     })
@@ -40,7 +40,30 @@ export default function routes($stateProvider) {
       url: '/create-plan',
       component: 'createPlanComponent',
       resolve: {
-        viewStatus: () => 1
+        viewStatus: ($plansSvc) => $plansSvc.plansViewTypes.newPlan,
       }
     })
+    .state('updatePlan', {
+      url: '/update-plan/:planId',
+      component: 'editPlanComponent',
+      resolve: {
+        viewStatus: ($plansSvc) => $plansSvc.plansViewTypes.updatePlan,
+        plan: ($plansSvc, $stateParams) => {
+          const key = $stateParams.planId;
+          return $plansSvc.getPlanPerKeys(key);
+        }
+      }
+    })
+    .state('deletePlan', {
+      url: '/delete-plan/:planId',
+      component: 'editPlanComponent',
+      resolve: {
+        viewStatus: ($plansSvc) => $plansSvc.plansViewTypes.deletePlan,
+        plan: ($plansSvc, $stateParams) => {
+          const key = $stateParams.planId;
+          return $plansSvc.getPlanPerKeys(key);
+        }
+      }
+    })
+
 }

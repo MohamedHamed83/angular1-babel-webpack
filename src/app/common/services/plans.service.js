@@ -1,33 +1,35 @@
 class plans {
 
-  constructor(firebaseDbRefSvc, $state, toastr) {
+  constructor(firebaseDbRefSvc, $state) {
     'ngInject';
     this.firebaseDbRefSvc = firebaseDbRefSvc;
     this.$state = $state;
-    this.toastr = toastr;
-    this.viewStatus = this.viewTypes;
+    this.plansViewTypes = this.viewTypes;
+  }
+  getPlanPerKeys(planId) {
+    return this.firebaseDbRefSvc.planPerKeysApi(planId).$loaded();
   }
   viewTypes = {
-    newPlan: 1,
-    updatePlan: 2,
-    deletePlan: 3,
-    planDetail: 4
-  }
-  CreateNewPlan(plan) {
-    alert(plan)
+    newPlan: 'newPlan',
+    updatePlan: 'updatePlan',
+    deletePlan: 'deletePlan',
+    planDetail: 'deletePlan'
   }
   /**
    * @ngdoc method
-   * @name $plansSvc#plansOnload
+   * @name $plansSvc#createNewPlan
    *
    * @description
-   * Returns confirmation message.
+   * Http Call to add plan .
    *
-   * @returns  plans view confirmation message.
    */
-  plansOnload() {
-    this.toastr.info('Loading plans view');
+  createNewPlan(plan) {
+    return this.firebaseDbRefSvc.plansRef().$add(plan);
   }
+  updatePlan(plan) {
+    return plan.$save();
+  }
+
   /**
    * @ngdoc method
    * @name $plansSvc#getPlans
@@ -38,20 +40,7 @@ class plans {
    * @returns {Array} list of plans.
    */
   getPlans() {
-    return this.firebaseDbRefSvc.getAllPlans();
-  }
-  /**
-   * @ngdoc method
-   * @name $plansSvc#addNewPlan
-   *
-   * @description
-   * Http Call to add plan .
-   *
-   */
-  addNewPlan() {
-    this.firebaseDbRefSvc.plansDbRef().push({
-      description: 'test New Plan'
-    });
+    return this.firebaseDbRefSvc.plansRef();
   }
 
   /**
@@ -62,8 +51,8 @@ class plans {
    * Http Call to remove plan .
    *
    */
-  removePlan(plan) {
-    return this.firebaseDbRefSvc.plansDbRef().$remove(plan);
+  deletePlan(plan) {
+    return plan.$remove();
   }
   /**
    * @ngdoc method
@@ -87,13 +76,13 @@ class plans {
   }
   /**
    * @ngdoc method
-   * @name $plansSvc#reloadView
+   * @name $plansSvc#loadUiRoute
    * @param {string} view name
    * @param {string} view params
    * @description
    * load selected ui route.
    */
-  reloadView(view, params) {
+  loadUiRoute(view, params) {
     if (params) {
       this.$state.go(view, {
         planId: params

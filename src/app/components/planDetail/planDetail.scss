@@ -19,9 +19,9 @@ plan-detail-component {
       padding-bottom: 10px;
       @include make-xs-column(12);
       @include make-sm-column(12);
-      @include make-md-column(5);
-      @include make-lg-column(5);
-      @include make-xl-column(5);
+      @include make-md-column(6);
+      @include make-lg-column(6);
+      @include make-xl-column(6);
     }
   }
   .vm-page-title {

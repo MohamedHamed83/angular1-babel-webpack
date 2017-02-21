@@ -12,7 +12,7 @@ describe('home', () => {
     const mockProjectFooter = 'Fitness Club';
     const mockNavbarLinkes = [{
         text: "plans",
-        uiSref: "plansStView"
+        uiSref: "plansListView"
       },
       {
         text: "workouts",

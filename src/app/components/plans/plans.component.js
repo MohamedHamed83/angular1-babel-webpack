@@ -11,10 +11,10 @@ class plansController {
   }
   // get selected item from the list view
   getSelectedListItem(item) {
-    this.plansSvc.reloadView('workoutsByPlanView', item.$id);
+    this.plansSvc.loadUiRoute('workoutsByPlanView', item.$id);
   }
   $onInit(){
-    this.plansSvc.plansOnload();
+
   }
 }
 //component settings

@@ -14,10 +14,9 @@ class createPlanCtrl {
     }
   }
   createNewContact(event) {
-    this.$plansSvc.CreateNewPlan(event.contact).then(function () {
-      this.$plansSvc.reloadView('plansStView');
+    this.$plansSvc.createNewPlan(event.plan).then(() => {
+      this.$plansSvc.loadUiRoute('plansListView');
     })
-
   }
 }
 //component settings

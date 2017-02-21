@@ -7,7 +7,7 @@ class firebaseDbRef {
     this.$firebaseObject = $firebaseObject;
     this.$firebaseArray = $firebaseArray;
   }
-  getAllPlans() {
+  plansRef() {
     return this.$firebaseArray(ref.child("plans"));
   }
   getAllWorkouts() {
@@ -24,6 +24,9 @@ class firebaseDbRef {
   }
   workoutsKeysPerPlanApi(planId) {
     return this.$firebaseArray(ref.child(`workoutsKeysPerPlan/${planId}`));
+  }
+  planPerKeysApi(planId) {
+    return this.$firebaseObject(ref.child(`plans/${planId}`));
   }
 }
 

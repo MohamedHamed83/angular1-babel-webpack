@@ -3,13 +3,22 @@ import template from './editPlan.html';
 
 // component controller
 class editPlanCtrl {
-  constructor($workoutsVmSvc) {
+  constructor($plansSvc) {
     'ngInject';
-    this.workoutsSvc = $workoutsVmSvc;
-    this.searchString = '';
+    this.$plansSvc = $plansSvc;
   }
   $onInit() {
-    this.workoutsSvc.workoutOnload()
+
+  }
+  updateContact(event) {
+    this.$plansSvc.updatePlan(event.plan).then(() => {
+      this.$plansSvc.loadUiRoute('plansListView');
+    });
+  }
+  deletePlan(event) {
+    this.$plansSvc.deletePlan(event.plan).then(() => {
+      this.$plansSvc.loadUiRoute('plansListView');
+    });
   }
 }
 //component settings
@@ -18,7 +27,8 @@ let editPlanComponent = {
   controllerAs: 'editPlanCtrl',
   controller: editPlanCtrl,
   bindings: {
-    allWorkouts: '='
+    viewStatus: '<',
+    plan: '<',
   }
 };
 
