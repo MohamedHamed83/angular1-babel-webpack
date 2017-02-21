@@ -1,0 +1,39 @@
+<div class="container">
+  <form class="form-horizontal vm-form-view" role="form">
+    <div class="row">
+      <div class="vm-page-title">
+        <h2 ng-if="planDetailCtrl.viewStatus === planDetailCtrl.$plansSvc.viewStatus().newPlan">New Plan</h2>
+        <h2 ng-if="planDetailCtrl.viewStatus === planDetailCtrl.$plansSvc.viewStatus().updatePlan">Update Plan</h2>
+        <h2 ng-if="planDetailCtrl.viewStatus === planDetailCtrl.$plansSvc.viewStatus().deletePlan">Delete Plan</h2>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="PlanName" class="col-sm-3  control-label">Plan Name</label>
+      <div class="col-sm-9">
+        <input type="text" id="PlanName" placeholder="Plan Name" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-sm-3 control-label">Description</label>
+      <div class="col-sm-9">
+        <input type="text" id="description" placeholder="Plan Description" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row vm-button-group">
+        <div class="vm-button-item" ng-if="planDetailCtrl.viewStatus === planDetailCtrl.$plansSvc.viewStatus().newPlan">
+          <button type="submit" class="btn btn-inverse btn-block">New Plan</button>
+        </div>
+        <div class="vm-button-item" ng-if="planDetailCtrl.viewStatus === planDetailCtrl.$plansSvc.viewStatus().updatePlan">
+          <button type="submit" class="btn btn-inverse btn-block">Update Plan</button>
+        </div>
+        <div class="vm-button-item" ng-if="planDetailCtrl.viewStatus === planDetailCtrl.$plansSvc.viewStatus().deletePlan">
+          <button type="submit" class="btn btn-inverse btn-block">Delete Plan</button>
+        </div>
+        <div class="vm-button-item">
+          <button type="submit" class="btn btn-inverse btn-block">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

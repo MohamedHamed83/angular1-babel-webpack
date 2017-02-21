@@ -5,7 +5,18 @@ class plans {
     this.$state = $state;
     this.toastr = toastr;
   }
+  viewStatus() {
+    return {
+      newPlan: 1,
+      updatePlan: 2,
+      deletePlan: 3,
+      planDetail: 4
 
+    }
+  }
+  CreateNewPlan(plan) {
+    alert(plan)
+  }
   /**
    * @ngdoc method
    * @name $plansSvc#plansOnload

@@ -1,0 +1,42 @@
+plan-detail-component {
+  .vm-form-view {
+    @include make-xs-column(6);
+    @include make-sm-column(6);
+    @include make-md-column(6);
+    @include make-lg-column(6);
+    @include make-xl-column(6);
+    @include make-sm-column-offset(3);
+    @include make-xs-column-offset(3);
+    @include make-md-column-offset(3);
+    @include make-lg-column-offset(3);
+    @include make-xl-column-offset(3);
+  }
+  .vm-button-group {
+    @include make-md-column-offset(3);
+    @include make-lg-column-offset(3);
+    @include make-xl-column-offset(3);
+    .vm-button-item {
+      padding-bottom: 10px;
+      @include make-xs-column(12);
+      @include make-sm-column(12);
+      @include make-md-column(5);
+      @include make-lg-column(5);
+      @include make-xl-column(5);
+    }
+  }
+  .vm-page-title {
+    background-color: transparent;
+    h2 {
+      width: 100% !important;
+    }
+    @include make-xs-column(12, 0);
+    @include make-sm-column(10, 0);
+    @include make-md-column(6, 0);
+    @include make-lg-column(6, 0);
+    @include make-xl-column(6, 0);
+    @include make-sm-column-offset(2);
+    @include make-md-column-offset(5);
+    @include make-lg-column-offset(5);
+    @include make-xl-column-offset(5);
+  }
+}

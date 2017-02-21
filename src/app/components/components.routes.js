@@ -9,10 +9,6 @@ export default function routes($stateProvider) {
       url: '/login',
       component: 'loginComponent',
     })
-    .state('createPlan', {
-      url: '/create-plan',
-      component: 'createPlanComponent'
-    })
     // workouts by plan list view
     .state('workoutsByPlanView', {
       url: "/workouts/:planId",
@@ -39,5 +35,12 @@ export default function routes($stateProvider) {
     .state('plansStView', {
       url: '/',
       component: 'plansComponent',
+    })
+    .state('createPlan', {
+      url: '/create-plan',
+      component: 'createPlanComponent',
+      resolve: {
+        viewStatus: () => 1
+      }
     })
 }

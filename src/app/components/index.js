@@ -14,6 +14,7 @@ import './navbar/navbar.component';
 import './listview/listview.component';
 import './listItem/listItem.component';
 import './searchBar/searchBar.component';
+import './planDetail/planDetail.component';
 // stateful  components
 import './home/home.component'
 import './plans/plans.component'
@@ -25,9 +26,9 @@ import './editPlan/editPlan.component';
 import './editWorkout/editWorkout.component';
 
 //application components module
-export default angular.module('components', ['services','ngSearchBarModule', 'homeModule', 'loginModule', 'plansModule',
+export default angular.module('components', ['services', 'ngSearchBarModule', 'homeModule', 'loginModule', 'plansModule',
     'ngHeaderModule', 'ngFooterModule', 'ngNavbarModule', 'nglistItemModule', 'nglistviewModule', 'workoutsByPlanModule',
-    'workoutsModule','createWorkoutModule', 'editWorkoutModule', 'createPlanModule',  'editPlanModule'
+    'workoutsModule', 'createWorkoutModule', 'editWorkoutModule', 'createPlanModule', 'editPlanModule', 'planDetailModule'
   ])
   .config(routing)
   .name;

@@ -3,13 +3,22 @@ import template from './createPlan.html';
 
 // component controller
 class createPlanCtrl {
-  constructor($workoutsVmSvc) {
+  constructor($plansSvc) {
     'ngInject';
-    this.workoutsSvc = $workoutsVmSvc;
-    this.searchString = '';
+    this.$plansSvc = $plansSvc;
   }
   $onInit() {
-    this.workoutsSvc.workoutOnload()
+    console.log(this)
+    this.plan = {
+      description: '',
+      url: ''
+    }
+  }
+  createNewContact(event) {
+    this.$plansSvc.CreateNewPlan(event.contact).then(function () {
+      this.$plansSvc.reloadView('plansStView');
+    })
+
   }
 }
 //component settings
@@ -18,7 +27,7 @@ let createPlanComponent = {
   controllerAs: 'createPlanCtrl',
   controller: createPlanCtrl,
   bindings: {
-    allWorkouts: '='
+    viewStatus: '='
   }
 };
 
