@@ -9,7 +9,7 @@ class createWorkoutCtrl {
     this.searchString = '';
   }
   $onInit() {
-    this.workoutsSvc.workoutOnload()
+
   }
 }
 //component settings

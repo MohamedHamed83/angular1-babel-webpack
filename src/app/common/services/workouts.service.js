@@ -6,22 +6,10 @@
    * @description Provides workouts HTTP methods for our firebase connection.
    */
   class workoutsVmSvc {
-    constructor(firebaseDbRefSvc, toastr) {
+    constructor(firebaseDbRefSvc) {
       'ngInject';
       this.firebaseDbRefSvc = firebaseDbRefSvc;
-      this.toastr = toastr
-    }
-    /**
-     * @ngdoc method
-     * @name $workoutsVmSvc#workoutOnload
-     *
-     * @description
-     * Returns confirmation message.
-     *
-     * @returns workout view confirmation message.
-     */
-    workoutOnload() {
-      this.toastr.info('Loading workouts view');
+
     }
     /**
      * @ngdoc method

@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <ul class="listrap">
-      <list-item-component ng-repeat="listItem in listviewCtrl.allItems | filter: listviewCtrl.listSearchString" list-item='listItem' set-selected-item='listviewCtrl.getSelectedItem(item)' > </list-item-component>
+      <list-item-component class="vm-listview-animate" ng-repeat="listItem in listviewCtrl.allItems | filter: listviewCtrl.listSearchString"
+        list-item='listItem' set-selected-item='listviewCtrl.getSelectedItem(item)'> </list-item-component>
     </ul>
   </div>
 </div>

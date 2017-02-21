@@ -10,7 +10,6 @@ class workoutsCtrl {
     this.searchString = '';
   }
   $onInit() {
-    this.workoutsSvc.workoutOnload()
   }
 }
 //component settings

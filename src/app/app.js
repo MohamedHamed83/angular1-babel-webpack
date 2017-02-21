@@ -1,8 +1,6 @@
 import 'angular-ui-router';
 import 'angular-animate';
 import 'angular-loading-bar';
-import 'angular-toastr';
-require('angular-toastr/dist/angular-toastr.css')
 //module to allow using components in ui router
 import './common/config/route-to-component';
 //application components module
@@ -22,6 +20,6 @@ import {
  * @description This is the main module for application
  */
 
-angular.module('fitnessClub', ['ui.router','ngResource', 'ui.router.components', 'angular-loading-bar', 'ngAnimate', 'toastr', 'components'])
+angular.module('fitnessClub', ['ui.router','ngResource', 'ui.router.components', 'angular-loading-bar',  'components'])
   .config(routing)
   .name

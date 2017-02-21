@@ -12,7 +12,6 @@ class workoutsByPlanCtrl {
   }
   $onInit() {
     this.allWorkouts = this.$workoutsByPlanSvc.getWorkoutsPerPlan(this.allWorkouts);
-    this.workoutsSvc.workoutOnload()
   }
 }
 //component settings
