@@ -12,9 +12,9 @@ listview-component {
   }
   .vm-animate-list-item.ng-move,
   .vm-animate-list-item.ng-enter{
-    @include fadeInLeft( $duration: 0.3s, $count: 1, $delay: .2s, $function: ease, $fill: both);
+    @include fadeInLeft( $duration: 0.3s, $count: 1, $delay: 0s, $function: ease, $fill: both);
   }
   .vm-animate-list-item.ng-leave {
-    @include fadeOutRight( $duration: 0.2s, $count: 1, $delay: .2s, $function: ease, $fill: both);
+    @include fadeOutRight( $duration: 100ms, $count: 1, $delay: 0s, $function: ease, $fill: both);
   }
 }

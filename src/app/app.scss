@@ -7,6 +7,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $fa-font-path:'~font-awesome/fonts/';
 @import"~font-awesome/scss/font-awesome";
 @import "~normalize-scss/sass/_normalize.scss";
+@import "~hover.css/scss/hover.scss";
 @import "./cutom-bootstrap";
 // application  style
 @import "./components/header/header";
@@ -34,4 +35,16 @@ ui-view {
   @include make-xl-column(12, 0);
   padding-top: 50px;
   height: 80%;
+}
+.navbar-inverse {
+  background-color: rgba(65, 65, 65, 1) !important;
+}
+
+ui-view.ng-enter,
+ui-view.ng-enter-active {
+  @include fadeInLeft( $duration: 0.3s, $count: 1, $delay: .2s, $function: ease, $fill: both);
+}
+ui-view.ng-leave,
+ui-view.ng-leave-active {
+  @include fadeOutRight( $duration: 50ms, $count: 1, $delay: 0s, $function: ease, $fill: both);
 }

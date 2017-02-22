@@ -15,6 +15,14 @@ plan-detail-component {
     @include make-md-column-offset(3);
     @include make-lg-column-offset(3);
     @include make-xl-column-offset(3);
+    .btn:hover,
+    .btn:active,
+    .btn:focus {
+      @include fade;
+      @include prefixed(transition-duration, 200ms);
+      background-color: rgba(65, 65, 65, 1) !important;
+      color: white !important;
+    }
     .vm-button-item {
       padding-bottom: 10px;
       @include make-xs-column(12);

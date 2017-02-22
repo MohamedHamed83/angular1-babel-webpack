@@ -1,8 +1,10 @@
 list-item-component {
-    height: 100px;
-    display: block;
+  height: 100px;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 25px;
   li {
-    padding-bottom: 45px;
+    height: 100%;
     strong {
       margin-left: 40px;
     }
@@ -41,7 +43,9 @@ list-item-component {
   }
   li.active,
   li:hover {
-    background-color: rgba(130, 140, 142, 0.50);
+    @include bounce-in;
+    @include prefixed(transition-duration,
+    400ms);
     cursor: pointer;
   }
 }
