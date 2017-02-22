@@ -1,5 +1,5 @@
 import 'angular-ui-router';
-import 'angular-animate';
+import ngAnimate from 'angular-animate';
 import 'angular-loading-bar';
 //module to allow using components in ui router
 import './common/config/route-to-component';
@@ -20,6 +20,6 @@ import {
  * @description This is the main module for application
  */
 
-angular.module('fitnessClub', ['ui.router','ngResource', 'ui.router.components', 'angular-loading-bar',  'components'])
+angular.module('fitnessClub', ['ui.router','ngResource', 'ui.router.components', 'angular-loading-bar', 'components', ngAnimate])
   .config(routing)
   .name
