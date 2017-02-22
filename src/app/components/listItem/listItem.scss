@@ -1,60 +1,47 @@
 list-item-component {
-  .listrap {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    cursor: default;
-    user-select: none;
-    .img-circle {
-      padding-top: 5px;
-      width: 100px;
-      height: 100px;
-      .plan-img {
-        content: url("../img/workout-item.jpg");
-      }
-    }
-    li {
-      padding-bottom: 45px;
-      strong {
-        margin-left: 40px;
-      }
-    }
-    li.active,
-    li:hover {
-      background-color: rgba(130, 140, 142, 0.50);
-      cursor: pointer;
-    }
-  }
-  .listrap .listrap li.active,
-  .listrap li:hover {
-    background-color: rgba(130, 140, 142, 0.50);
-  }
-  .listrap .listrap-toggle {
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-  }
-  .listrap .listrap-toggle span {
-    background-color: #428bca;
-    opacity: 0.8;
-    z-index: 100;
-    width: 60px;
-    height: 60px;
-    display: none;
-    position: absolute;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 90px;
-    vertical-align: middle;
-    color: #ffffff;
-  }
-  .listrap .listrap-toggle span:before {
-    font-family: 'Glyphicons Halflings';
-    content: "\e013";
-  }
-  .listrap li.active .listrap-toggle span {
-    width: 100px;
     height: 100px;
     display: block;
+  li {
+    padding-bottom: 45px;
+    strong {
+      margin-left: 40px;
+    }
+    .img-circle {
+      padding-top: 5px;
+      content: url("../img/workout-item.jpg");
+      width: 100px;
+      height: 100px;
+    }
+    .listrap-toggle {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      span {
+        width: 100px;
+        height: 100px;
+        display: block;
+        background-color: #428bca;
+        opacity: 0.8;
+        z-index: 100;
+        width: 60px;
+        height: 60px;
+        display: none;
+        position: absolute;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 90px;
+        vertical-align: middle;
+        color: #ffffff;
+      }
+      span:before {
+        font-family: 'Glyphicons Halflings';
+        content: "\e013";
+      }
+    }
+  }
+  li.active,
+  li:hover {
+    background-color: rgba(130, 140, 142, 0.50);
+    cursor: pointer;
   }
 }
