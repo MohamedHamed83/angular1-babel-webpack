@@ -21,6 +21,8 @@ $fa-font-path:'~font-awesome/fonts/';
 @import "./components/planDetail/planDetail";
 @import "./components/plans/plans";
 @import "./components/createPlan/createPlan";
+@import "./components/workouts/workouts";
+@import "./components/workoutsByPlan/workoutsByPlan";
 @import "./components/createWorkout/createWorkout";
 @import "./components/editPlan/editPlan";
 @import "./components/editWorkout/editWorkout";
@@ -28,7 +30,8 @@ ui-view {
   @extend .row;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
   @include make-xs-column(12, 0);
   @include make-sm-column(12, 0);
   @include make-md-column(12, 0);
@@ -37,6 +40,7 @@ ui-view {
   padding-top: 50px;
   height: 80%;
 }
+
 .navbar-inverse {
   background-color: rgba(65, 65, 65, 1) !important;
 }
@@ -44,4 +48,13 @@ ui-view {
 ui-view.ng-enter,
 ui-view.ng-enter-active {
   @include fadeInLeft( $duration: 0.3s, $count: 1, $delay: .2s, $function: ease, $fill: both);
+}
+
+html {
+  background: url('../img/bg-image.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-x: hidden;
 }

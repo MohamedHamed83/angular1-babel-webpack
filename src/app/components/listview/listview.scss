@@ -4,6 +4,11 @@ listview-component {
     padding-bottom: 60px;
   }
   .vm-listView {
+    @include make-xs-column(8);
+    @include make-sm-column(8);
+    @include make-md-column(10);
+    @include make-lg-column(10);
+    @include make-xl-column(10);
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,7 +16,7 @@ listview-component {
     user-select: none;
   }
   .vm-animate-list-item.ng-move,
-  .vm-animate-list-item.ng-enter{
+  .vm-animate-list-item.ng-enter {
     @include fadeInLeft( $duration: 0.3s, $count: 1, $delay: 0s, $function: ease, $fill: both);
   }
   .vm-animate-list-item.ng-leave {

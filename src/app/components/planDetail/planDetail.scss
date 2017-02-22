@@ -20,6 +20,9 @@ plan-detail-component {
     @include make-md-column-offset(2);
     @include make-lg-column-offset(2);
     @include make-xl-column-offset(2);
+    .btn{
+      background-color: darkgray;
+    }
     .btn:hover,
     .btn:active,
     .btn:focus {
