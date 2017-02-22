@@ -1,20 +1,25 @@
 plan-detail-component {
   .vm-form-view {
-    @include make-xs-column(6);
-    @include make-sm-column(6);
+    @include make-xs-column(10);
+    @include make-sm-column(10);
     @include make-md-column(6);
     @include make-lg-column(6);
     @include make-xl-column(6);
-    @include make-sm-column-offset(3);
-    @include make-xs-column-offset(3);
+    @include make-sm-column-offset(1);
+    @include make-xs-column-offset(1);
     @include make-md-column-offset(3);
     @include make-lg-column-offset(3);
     @include make-xl-column-offset(3);
   }
   .vm-button-group {
-    @include make-md-column-offset(3);
-    @include make-lg-column-offset(3);
-    @include make-xl-column-offset(3);
+    @include make-xs-column(12);
+    @include make-sm-column(12);
+    @include make-md-column(10);
+    @include make-lg-column(10);
+    @include make-xl-column(10);
+    @include make-md-column-offset(2);
+    @include make-lg-column-offset(2);
+    @include make-xl-column-offset(2);
     .btn:hover,
     .btn:active,
     .btn:focus {

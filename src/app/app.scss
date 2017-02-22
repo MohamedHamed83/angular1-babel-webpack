@@ -19,6 +19,7 @@ $fa-font-path:'~font-awesome/fonts/';
 @import "./components/listItem/listItem";
 @import "./components/searchBar/searchBar";
 @import "./components/planDetail/planDetail";
+@import "./components/plans/plans";
 @import "./components/createPlan/createPlan";
 @import "./components/createWorkout/createWorkout";
 @import "./components/editPlan/editPlan";
@@ -43,8 +44,4 @@ ui-view {
 ui-view.ng-enter,
 ui-view.ng-enter-active {
   @include fadeInLeft( $duration: 0.3s, $count: 1, $delay: .2s, $function: ease, $fill: both);
-}
-ui-view.ng-leave,
-ui-view.ng-leave-active {
-  @include fadeOutRight( $duration: 50ms, $count: 1, $delay: 0s, $function: ease, $fill: both);
 }

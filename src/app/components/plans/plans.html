@@ -1,2 +1,11 @@
-<search-bar-component  search-bar-string="plansCtrl.searchString" >  </search-bar-component>
-<listview-component all-items="plansCtrl.allPlans" set-selected-item="plansCtrl.getSelectedListItem(item)" list-search-string="plansCtrl.searchString"></listview-component>
+<div class="container">
+  <div class="row">
+    <search-bar-component search-bar-string="plansCtrl.searchString"> </search-bar-component>
+  </div>
+  <div class="row">
+    <div class="fa fa-plus vm-add-plan" ui-sref="createPlan"> Add Plan</div>
+  </div>
+  <div class="row">
+    <listview-component all-items="plansCtrl.allPlans" set-selected-item="plansCtrl.getSelectedListItem(item)" list-search-string="plansCtrl.searchString"></listview-component>
+  </div>
+</div>
