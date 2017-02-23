@@ -96,6 +96,7 @@
     "ts-node": "^2.0.0",
     "typedoc": "^0.5.5",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.2.0"
+    "webpack-dev-server": "^2.2.0",
+    "webpack-md5-hash": "0.0.5"
   }
 }

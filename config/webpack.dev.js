@@ -33,7 +33,7 @@ module.exports = function makeWebpackConfig() {
   };
 
 
-  config.devtool = 'source-map';
+  config.devtool = 'cheap-module-source-map';
 
 
   // Initialize module
@@ -122,6 +122,7 @@ module.exports = function makeWebpackConfig() {
       }
     }),
     new HtmlWebpackPlugin({
+      chunkSortMode: 'dependency',
       template: './src/index.html',
       inject: 'body'
     }),
