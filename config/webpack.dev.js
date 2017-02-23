@@ -9,6 +9,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 var localPath = 'http://localhost:8080/';
+const precss = require('precss');
+const mqpacker = require('css-mqpacker');
 
 function root(args) {
   args = Array.prototype.slice.call(arguments, 0);
@@ -48,6 +50,17 @@ module.exports = function makeWebpackConfig() {
           fallbackLoader: 'style-loader',
           loader: [{
               loader: 'css-loader'
+            }, {
+              loader: 'postcss-loader',
+              options: {
+                postcss: [
+                  precss(),
+                  autoprefixer({
+                    browsers: ['last 2 versions', 'iOS 7', 'ios 6', '> 5%', 'IE <= 9', 'safari <= 7', 'opera <= 20', 'android 4'],
+                  }),
+                  mqpacker(),
+                ],
+              },
             },
             {
               loader: 'sass-loader'
@@ -59,15 +72,22 @@ module.exports = function makeWebpackConfig() {
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
           loader: [{
-              loader: 'css-loader',
-              options: {
-                sourceMap: true
-              }
-            },
-            {
-              loader: 'postcss-loader'
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
             }
-          ],
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              postcss: [
+                precss(),
+                autoprefixer({
+                  browsers: ['last 2 versions', 'iOS 7', 'ios 6', '> 5%', 'IE <= 9', 'safari <= 7', 'opera <= 20', 'android 4'],
+                }),
+                mqpacker(),
+              ],
+            },
+          }],
         })
       }, {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
@@ -94,7 +114,7 @@ module.exports = function makeWebpackConfig() {
       jquery: 'jquery'
     }),
     new webpack.LoaderOptionsPlugin({
-      test: /\.scss$/i,
+      test: /\.scss$/,
       options: {
         postcss: {
           plugins: [autoprefixer]

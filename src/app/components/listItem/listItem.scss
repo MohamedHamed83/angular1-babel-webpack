@@ -5,14 +5,22 @@ list-item-component {
   margin-bottom: 25px;
   li {
     height: 100%;
-    strong {
-      margin-left: 40px;
+    .title {
+      margin-left: 120px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: bold;
+      display: block;
+      margin-top: -20px;
     }
     .img-circle {
       padding-top: 5px;
-      content: url("../img/workout-item.jpg");
+      background: url("../img/workout-item.jpg");
       width: 100px;
       height: 100px;
+      display: block;
+      background-size: cover !important;
     }
     .listrap-toggle {
       display: inline-block;

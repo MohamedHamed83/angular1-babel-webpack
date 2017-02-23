@@ -2,9 +2,9 @@
   <div class="listrap-toggle">
     <span></span>
     <img class="img-circle plan-img" ng-if='listItemCtrl.listItem.url' />
-    <img class="img-circle" ng-if='listItemCtrl.listItem.workoutName' style='content: url("{{listItemCtrl.listItem.imageUrl}}")'
+    <img class="img-circle" ng-if='listItemCtrl.listItem.workoutName' style='background: url("{{listItemCtrl.listItem.imageUrl}}")'
      />
   </div>
-  <strong ng-if='listItemCtrl.listItem.url'>{{listItemCtrl.listItem.url}}</strong>
-  <strong ng-if='listItemCtrl.listItem.workoutName'>{{listItemCtrl.listItem.workoutName}}</strong>
+   <div class="title" ng-if='listItemCtrl.listItem.url'>{{listItemCtrl.listItem.url}}</div>
+  <div class="title" ng-if='listItemCtrl.listItem.workoutName'>{{listItemCtrl.listItem.workoutName}}</div>
 </li>

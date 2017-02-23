@@ -116,7 +116,9 @@ module.exports = function makeWebpackConfig() {
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
+      compress: { warnings: false },
+      sourceMap: true,
+      minimize: true
     }),
     new CopyWebpackPlugin([{
       from: './src'
