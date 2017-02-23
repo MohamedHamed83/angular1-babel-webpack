@@ -7,28 +7,28 @@ import '../common/services/index';
 //components routing
 import routing from './components.routes';
 // stateless components
-import './header/header.component';
-import './footer/footer.component';
+import './common/header/header.component';
+import './common/footer/footer.component';
 import './login/login.component';
-import './navbar/navbar.component';
-import './listview/listview.component';
-import './listItem/listItem.component';
-import './searchBar/searchBar.component';
-import './planDetail/planDetail.component';
+import './common/navbar/navbar.component';
+import './common/listview/listview.component';
+import './common/listItem/listItem.component';
+import './common/searchBar/searchBar.component';
+import './plans/planDetail/planDetail.component';
 // stateful  components
 import './home/home.component'
-import './plans/plans.component'
-import './workoutsByPlan/workoutsByPlan.component';
-import './workouts/workouts.component';
-import './createPlan/createPlan.component';
-import './createWorkout/createWorkout.component';
-import './editPlan/editPlan.component';
-import './editWorkout/editWorkout.component';
+import './plans/plansList/plansList.component'
+import './plans/createPlan/createPlan.component';
+import './plans/editPlan/editPlan.component';
+import './workouts/createWorkout/createWorkout.component';
+import './workouts/workoutsByPlan/workoutsByPlan.component';
+import './workouts/workoutsList/workoutsList.component';
+import './workouts/editWorkout/editWorkout.component';
 
 //application components module
-export default angular.module('components', ['services', 'ngSearchBarModule', 'homeModule', 'loginModule', 'plansModule',
+export default angular.module('components', ['services', 'ngSearchBarModule', 'homeModule', 'loginModule', 'plansListModule',
     'ngHeaderModule', 'ngFooterModule', 'ngNavbarModule', 'nglistItemModule', 'nglistviewModule', 'workoutsByPlanModule',
-    'workoutsModule', 'createWorkoutModule', 'editWorkoutModule', 'createPlanModule', 'editPlanModule', 'planDetailModule'
+    'workoutsListModule', 'createWorkoutModule', 'editWorkoutModule', 'createPlanModule', 'editPlanModule', 'planDetailModule'
   ])
   .config(routing)
   .name;

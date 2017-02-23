@@ -9,7 +9,7 @@ class listItemController {
   }
   $onInit() {
     if (this.listItem.imgUrl) {
-      this.listItem.imageUrl = require('../../../img/workouts/' + this.listItem.imgUrl);
+      this.listItem.imageUrl = require('../../../../img/workouts/' + this.listItem.imgUrl);
     }
   }
 

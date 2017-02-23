@@ -3,8 +3,12 @@
     <span></span>
     <img class="img-circle plan-img" ng-if='listItemCtrl.listItem.url' />
     <img class="img-circle" ng-if='listItemCtrl.listItem.workoutName' style='background: url("{{listItemCtrl.listItem.imageUrl}}")'
-     />
+    />
   </div>
-   <div class="title" ng-if='listItemCtrl.listItem.url'>{{listItemCtrl.listItem.url}}</div>
+  <div class="title" ng-if='listItemCtrl.listItem.url'>{{listItemCtrl.listItem.url}}</div>
   <div class="title" ng-if='listItemCtrl.listItem.workoutName'>{{listItemCtrl.listItem.workoutName}}</div>
+  <div class="pull-right">
+  <button type="submit" class="btn btn-info btn-block" ng-click="listItemCtrl.updateListItem(listItemCtrl.listItem)" ui-sref="plansListView">Update</button>
+  <button type="submit" class="btn btn-danger btn-block" ng-click="listItemCtrl.deleteListItem(listItemCtrl.listItem)">Delete</button>
+  </div>
 </li>

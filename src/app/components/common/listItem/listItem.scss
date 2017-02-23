@@ -4,6 +4,11 @@ list-item-component {
   cursor: pointer;
   margin-bottom: 25px;
   li {
+    @include make-xs-column(12);
+    @include make-sm-column(12);
+    @include make-md-column(12);
+    @include make-lg-column(12);
+    @include make-xl-column(12);
     height: 100%;
     .title {
       margin-left: 120px;
@@ -13,6 +18,12 @@ list-item-component {
       font-weight: bold;
       display: block;
       margin-top: -20px;
+    }
+    .listrap-toggle:active,
+    .listrap-toggle:hover {
+      cursor: pointer;
+      @include bounce-in;
+      @include prefixed(transition-duration, 400ms);
     }
     .img-circle {
       padding-top: 5px;
@@ -49,12 +60,5 @@ list-item-component {
         content: "\e013";
       }
     }
-  }
-  li.active,
-  li:hover {
-    @include bounce-in;
-    @include prefixed(transition-duration,
-    400ms);
-    cursor: pointer;
   }
 }

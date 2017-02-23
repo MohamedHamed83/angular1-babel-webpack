@@ -34,7 +34,7 @@ export default function routes($stateProvider) {
     // plans list view
     .state('plansListView', {
       url: '/',
-      component: 'plansComponent',
+      component: 'plansListComponent',
     })
     .state('createPlan', {
       url: '/create-plan',

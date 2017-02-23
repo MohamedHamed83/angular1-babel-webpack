@@ -1,7 +1,7 @@
 'use strict';
-import template from './plans.html';
+import template from './plansList.html';
 // component controller
-class plansController {
+class plansListController {
   constructor($plansSvc) {
     'ngInject';
     this.plansSvc = $plansSvc;
@@ -18,12 +18,12 @@ class plansController {
   }
 }
 //component settings
-let plansComponent = {
+let plansListComponent = {
   template: template,
-  controllerAs: 'plansCtrl',
-  controller: plansController
+  controllerAs: 'plansListCtrl',
+  controller: plansListController
 };
 
-export default angular.module('plansModule', [])
-  .component('plansComponent', plansComponent)
+export default angular.module('plansListModule', [])
+  .component('plansListComponent', plansListComponent)
   .name;

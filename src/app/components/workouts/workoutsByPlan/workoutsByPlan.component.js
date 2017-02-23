@@ -1,6 +1,6 @@
 'use strict';
 import template from './workoutsByPlan.html';
-import '../../common/services/index';
+
 
 // component controller
 class workoutsByPlanCtrl {
