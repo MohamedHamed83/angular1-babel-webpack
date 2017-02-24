@@ -7,7 +7,7 @@
   </div>
   <div class="title" ng-if='listItemCtrl.listItem.url'>{{listItemCtrl.listItem.url}}</div>
   <div class="title" ng-if='listItemCtrl.listItem.workoutName'>{{listItemCtrl.listItem.workoutName}}</div>
-  <div class="pull-right">
+  <div class="pull-right vm-edit-buttons-group">
   <button type="submit" class="btn btn-info btn-block" ng-click="listItemCtrl.updateListItem(listItemCtrl.listItem)" ui-sref="plansListView">Update</button>
   <button type="submit" class="btn btn-danger btn-block" ng-click="listItemCtrl.deleteListItem(listItemCtrl.listItem)">Delete</button>
   </div>

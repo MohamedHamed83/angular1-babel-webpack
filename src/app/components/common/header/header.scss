@@ -1,0 +1,38 @@
+.vm-multi-color-header {
+  div {
+    height: 8px;
+        opacity:0.7;
+  }
+  .vm-color-col-1 {
+    @include make-xs-column(3);
+    @include make-sm-column(3);
+    @include make-md-column(3);
+    @include make-lg-column(3);
+    @include make-xl-column(3);
+    background-color: #4ABDAC;
+  }
+  .vm-color-col-2 {
+    @include make-xs-column(2);
+    @include make-sm-column(2);
+    @include make-md-column(2);
+    @include make-lg-column(2);
+    @include make-xl-column(2);
+    background-color: #4717F6;
+  }
+  .vm-color-col-3 {
+    @include make-xs-column(4);
+    @include make-sm-column(4);
+    @include make-md-column(4);
+    @include make-lg-column(4);
+    @include make-xl-column(4);
+    background-color: #FC4A1A;
+  }
+  .vm-color-col-4 {
+    @include make-xs-column(3);
+    @include make-sm-column(3);
+    @include make-md-column(3);
+    @include make-lg-column(3);
+    @include make-xl-column(3);
+    background-color: #DFDCE3;
+  }
+}

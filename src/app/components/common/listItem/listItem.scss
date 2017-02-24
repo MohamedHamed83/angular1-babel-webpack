@@ -1,9 +1,25 @@
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 list-item-component {
   height: 100px;
   display: block;
   cursor: pointer;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   li {
+    .vm-edit-buttons-group {
+      @include make-xs-column(12);
+      @include make-sm-column(12);
+      @include make-md-column(2);
+      @include make-lg-column(2);
+      @include make-xl-column(2);
+      @include vertical-align();
+    }
     @include make-xs-column(12);
     @include make-sm-column(12);
     @include make-md-column(12);
@@ -11,13 +27,18 @@ list-item-component {
     @include make-xl-column(12);
     height: 100%;
     .title {
-      margin-left: 120px;
+      @include make-xs-column(8);
+      @include make-sm-column(8);
+      @include make-md-column(8);
+      @include make-lg-column(8);
+      @include make-xl-column(8);
+      @include vertical-align();
+      margin-left: 70px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       font-weight: bold;
       display: block;
-      margin-top: -20px;
     }
     .listrap-toggle:active,
     .listrap-toggle:hover {
@@ -26,27 +47,25 @@ list-item-component {
       @include prefixed(transition-duration, 400ms);
     }
     .img-circle {
-      padding-top: 5px;
       background: url("../img/workout-item.jpg");
-      width: 100px;
-      height: 100px;
       display: block;
       background-position: 45%;
       background-size: cover !important;
+      width: 100px !important;
+      height: 100px !important;
     }
     .listrap-toggle {
+      @include make-xs-column(1);
+      @include make-sm-column(1);
+      @include make-md-column(1);
+      @include make-lg-column(1);
+      @include make-xl-column(1);
       display: inline-block;
-      width: 60px;
-      height: 60px;
       span {
-        width: 100px;
-        height: 100px;
         display: block;
         background-color: #428bca;
         opacity: 0.8;
         z-index: 100;
-        width: 60px;
-        height: 60px;
         display: none;
         position: absolute;
         border-radius: 50%;

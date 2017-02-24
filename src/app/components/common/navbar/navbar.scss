@@ -1,0 +1,17 @@
+.navbar-inverse {
+  background-color: rgba(65, 65, 65, 0.5) !important;
+  .navbar-nav {
+    li {
+      a {
+        color: white;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        font-size: 1.3em !important;
+      }
+      a:hover,
+      a:active {
+        color: white;
+        background-color: #b22701;
+      }
+    }
+  }
+}
