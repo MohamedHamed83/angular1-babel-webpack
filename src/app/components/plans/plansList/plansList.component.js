@@ -13,7 +13,13 @@ class plansListController {
   getSelectedListItem(item) {
     this.plansSvc.loadUiRoute('workoutsByPlanView', item.$id);
   }
-  $onInit(){
+  updateListItem(listItem) {
+    this.plansSvc.loadUiRoute('updatePlan', listItem.$id);
+  }
+  deleteListItem(listItem) {
+    this.plansSvc.loadUiRoute('deletePlan', listItem.$id);
+  }
+  $onInit() {
 
   }
 }

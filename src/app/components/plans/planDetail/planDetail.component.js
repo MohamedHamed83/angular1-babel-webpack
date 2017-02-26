@@ -6,7 +6,7 @@ class planDetailCtrl {
   constructor($plansSvc) {
     'ngInject';
     this.$plansSvc = $plansSvc;
-    this.plansViewTypes = this.$plansSvc.plansViewTypes;
+    this.viewTypes = this.$plansSvc.viewTypes;
   }
   $onInit() {
 

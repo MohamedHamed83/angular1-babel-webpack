@@ -103,7 +103,6 @@ module.exports = function makeWebpackConfig() {
     new OpenBrowserPlugin({
       url: localPath
     }),
-    new ExtractTextPlugin("[name].css"),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['vendors'],
       minChunks: Infinity

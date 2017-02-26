@@ -10,9 +10,20 @@ class listItemController {
   $onInit() {
     if (this.listItem.imgUrl) {
       this.listItem.imageUrl = require('../../../../img/workouts/' + this.listItem.imgUrl);
+    } else if (this.listItem.imageUrl) {
+      this.listItem.imageUrl = require('../../../../img/muscleGroups/' + this.listItem.imageUrl);
     }
   }
-
+  updateItem(item) {
+    this.updateListItem({
+      listItem: item
+    });
+  }
+  deleteItem(item) {
+    this.deleteListItem({
+      listItem: item
+    });
+  }
   selectedListItem(listItem) {
     //select list item and add active class to the item
     listItem.selected = true;
@@ -29,7 +40,9 @@ const listItemComponent = {
   controller: listItemController,
   bindings: {
     listItem: '=',
-    setSelectedItem: '&'
+    setSelectedItem: '&',
+    updateListItem: '&',
+    deleteListItem: '&'
   }
 };
 //list item is nested component in list view

@@ -2,9 +2,9 @@
   <form class="form-horizontal vm-form-view" role="form">
     <div class="row">
       <div class="vm-page-title">
-        <h2 ng-if="planDetailCtrl.viewStatus === planDetailCtrl.plansViewTypes.newPlan">New Plan</h2>
-        <h2 ng-if="planDetailCtrl.viewStatus === planDetailCtrl.plansViewTypes.updatePlan">Update Plan</h2>
-        <h2 ng-if="planDetailCtrl.viewStatus === planDetailCtrl.plansViewTypes.deletePlan">Delete Plan</h2>
+        <h2 ng-if="planDetailCtrl.viewStatus === planDetailCtrl.viewTypes.new">New Plan</h2>
+        <h2 ng-if="planDetailCtrl.viewStatus === planDetailCtrl.viewTypes.update">Update Plan</h2>
+        <h2 ng-if="planDetailCtrl.viewStatus === planDetailCtrl.viewTypes.delete">Delete Plan</h2>
       </div>
     </div>
     <div class="form-group">
@@ -22,18 +22,18 @@
     <!--Form-group option buttons-->
     <div class="form-group">
       <div class="row vm-button-group">
-        <div class="vm-button-item" ng-if="planDetailCtrl.viewStatus === planDetailCtrl.plansViewTypes.newPlan">
-          <button type="submit" class="btn btn-inverse btn-block"
+        <div class="vm-button-item" ng-if="planDetailCtrl.viewStatus === planDetailCtrl.viewTypes.new">
+          <button type="submit" class="btn btn-info btn-block"
           ng-click="planDetailCtrl.savePlan()">New Plan</button>
         </div>
-        <div class="vm-button-item" ng-if="planDetailCtrl.viewStatus === planDetailCtrl.plansViewTypes.updatePlan">
-          <button type="submit" class="btn btn-inverse btn-block" ng-click="planDetailCtrl.updatePlan()">Update</button>
+        <div class="vm-button-item" ng-if="planDetailCtrl.viewStatus === planDetailCtrl.viewTypes.update">
+          <button type="submit" class="btn btn-info btn-block" ng-click="planDetailCtrl.updatePlan()">Update</button>
         </div>
-        <div class="vm-button-item" ng-if="planDetailCtrl.viewStatus === planDetailCtrl.plansViewTypes.deletePlan">
-          <button type="submit" class="btn btn-inverse btn-block" ng-click="planDetailCtrl.deletePlan()">Delete</button>
+        <div class="vm-button-item" ng-if="planDetailCtrl.viewStatus === planDetailCtrl.viewTypes.delete">
+          <button type="submit" class="btn btn-danger btn-block" ng-click="planDetailCtrl.deletePlan()">Delete</button>
         </div>
         <div class="vm-button-item">
-          <button type="submit" class="btn btn-inverse btn-block" ui-sref="plansListView">Cancel</button>
+          <button type="submit" class="btn btn-info btn-block" ui-sref="plansListView">Cancel</button>
         </div>
       </div>
     </div>

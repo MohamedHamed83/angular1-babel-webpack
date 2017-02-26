@@ -11,6 +11,10 @@
       this.firebaseDbRefSvc = firebaseDbRefSvc;
 
     }
+
+    createNewMuscleGroup(muscleGroup) {
+      return this.firebaseDbRefSvc.getAllMuscleGroups().$add(muscleGroup);
+    }
     /**
      * @ngdoc method
      * @name $workoutsVmSvc#getworkouts

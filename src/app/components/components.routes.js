@@ -9,10 +9,10 @@ export default function routes($stateProvider) {
       url: '/login',
       component: 'loginComponent',
     })
-    // workouts by plan list view
-    .state('workoutsByPlanView', {
+    // workouts routes
+    .state('workoutsListView', {
       url: "/workouts/:planId",
-      component: 'workoutsByPlanComponent',
+      component: 'workoutsListViewComponent',
       params: {
         planId: null
       },
@@ -31,9 +31,9 @@ export default function routes($stateProvider) {
         }
       },
     })
-    // plans list view
+    // plans routes
     .state('plansListView', {
-      url: '/',
+      url: '/plans',
       component: 'plansListComponent',
     })
     .state('createPlan', {
@@ -66,4 +66,38 @@ export default function routes($stateProvider) {
       }
     })
 
+    // muscle groups routes
+    .state('muscleGroupsListView', {
+      url: '/',
+      component: 'muscleGroupListComponent',
+    })
+    .state('createMuscleGroups', {
+      url: '/create-muscle-groups',
+      component: 'createMuscleGroupComponent',
+      resolve: {
+        viewStatus: ($plansSvc) => $plansSvc.viewTypes.newItem,
+      }
+    })
+    .state('updateMuscleGroups', {
+      url: '/update-muscle-groups/:planId',
+      component: 'editMuscleGroupComponent',
+      resolve: {
+        viewStatus: ($plansSvc) => $plansSvc.viewTypes.updateItem,
+        plan: ($plansSvc, $stateParams) => {
+          const key = $stateParams.planId;
+          return $plansSvc.getPlanPerKeys(key);
+        }
+      }
+    })
+    .state('deleteMuscleGroups', {
+      url: '/delete-muscle-groups/:planId',
+      component: 'editMuscleGroupComponent',
+      resolve: {
+        viewStatus: ($plansSvc) => $plansSvc.viewTypes.deleteItem,
+        plan: ($plansSvc, $stateParams) => {
+          const key = $stateParams.planId;
+          return $plansSvc.getPlanPerKeys(key);
+        }
+      }
+    })
 }

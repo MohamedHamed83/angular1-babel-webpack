@@ -10,7 +10,7 @@ class editPlanCtrl {
   $onInit() {
 
   }
-  updateContact(event) {
+  updatePlan(event) {
     this.$plansSvc.updatePlan(event.plan).then(() => {
       this.$plansSvc.loadUiRoute('plansListView');
     });
@@ -27,8 +27,8 @@ let editPlanComponent = {
   controllerAs: 'editPlanCtrl',
   controller: editPlanCtrl,
   bindings: {
-    viewStatus: '<',
-    plan: '<',
+    viewStatus: '=',
+    plan: '=',
   }
 };
 

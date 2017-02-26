@@ -4,6 +4,9 @@
   </div>
   <div class="row">
     <div class="fa fa-plus vm-add-plan" ui-sref="createPlan"> Add Plan</div>
-    <listview-component all-items="plansListCtrl.allPlans" set-selected-item="plansListCtrl.getSelectedListItem(item)" list-search-string="plansListCtrl.searchString"></listview-component>
+    <listview-component all-items="plansListCtrl.allPlans" set-selected-item="plansListCtrl.getSelectedListItem(item)"
+    list-search-string="plansListCtrl.searchString"
+    update-list-item="plansListCtrl.updateListItem(listItem)"
+    delete-list-item="plansListCtrl.deleteListItem(listItem)"></listview-component>
   </div>
 </div>

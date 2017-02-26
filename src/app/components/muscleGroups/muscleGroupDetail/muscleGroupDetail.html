@@ -1,0 +1,41 @@
+
+  <form class="form-horizontal vm-form-view" role="form">
+    <div class="row">
+      <div class="vm-page-title">
+        <h2 ng-if="muscleGroupDetailCtrl.viewStatus === muscleGroupDetailCtrl.viewTypes.newItem">New Muscle Group</h2>
+        <h2 ng-if="muscleGroupDetailCtrl.viewStatus === muscleGroupDetailCtrl.viewTypes.updateItem">Update Muscle Group</h2>
+        <h2 ng-if="muscleGroupDetailCtrl.viewStatus === muscleGroupDetailCtrl.viewTypes.deleteItem">Delete Muscle Group</h2>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="PlanName" class="col-sm-3  control-label">Plan Name</label>
+      <div class="col-sm-9">
+        <input type="text" id="goupName" ng-model="muscleGroupDetailCtrl.muscleGroup.groupName" placeholder="muscleGroup Name" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-sm-3 control-label">Description</label>
+      <div class="col-sm-9">
+        <input type="text" id="imageUrl"  ng-model="muscleGroupDetailCtrl.muscleGroup.imageUrl" placeholder="muscleGroup image url" class="form-control">
+      </div>
+    </div>
+    <!--Form-group option buttons-->
+    <div class="form-group">
+      <div class="row vm-button-group">
+        <div class="vm-button-item" ng-if="muscleGroupDetailCtrl.viewStatus === muscleGroupDetailCtrl.viewTypes.newItem">
+          <button type="submit" class="btn btn-info btn-block"
+          ng-click="muscleGroupDetailCtrl.savePlan()">New Group</button>
+        </div>
+        <div class="vm-button-item" ng-if="muscleGroupDetailCtrl.viewStatus === muscleGroupDetailCtrl.viewTypes.updateItem">
+          <button type="submit" class="btn btn-info btn-block" ng-click="muscleGroupDetailCtrl.updatePlan()">Update</button>
+        </div>
+        <div class="vm-button-item" ng-if="muscleGroupDetailCtrl.viewStatus === muscleGroupDetailCtrl.viewTypes.deleteItem">
+          <button type="submit" class="btn btn-danger btn-block" ng-click="muscleGroupDetailCtrl.deletePlan()">Delete</button>
+        </div>
+        <div class="vm-button-item">
+          <button type="submit" class="btn btn-info btn-block" ui-sref="plansListView">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </form>
+

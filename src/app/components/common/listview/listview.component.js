@@ -10,6 +10,16 @@ class listviewController {
       item: listitem
     })
   }
+  update(item) {
+    this.updateListItem({
+      listItem: item
+    })
+  }
+  delete(item) {
+    this.deleteListItem({
+      listItem: item
+    })
+  }
 }
 //component settings
 let listviewComponent = {
@@ -18,8 +28,10 @@ let listviewComponent = {
   controller: listviewController,
   bindings: {
     allItems: '=',
-    listSearchString:'=',
-    setSelectedItem: '&'
+    listSearchString: '=',
+    setSelectedItem: '&',
+    updateListItem: '&',
+    deleteListItem: '&'
   }
 };
 

@@ -18,14 +18,20 @@ $fa-font-path:'~font-awesome/fonts/';
 @import "./components/common/listview/listview";
 @import "./components/common/listItem/listItem";
 @import "./components/common/searchBar/searchBar";
+@import "./components/workouts/workoutsList/workoutsList";
+@import "./components/workouts/workoutsListView/workoutsListView";
+@import "./components/workouts/createWorkout/createWorkout";
+@import "./components/workouts/editWorkout/editWorkout";
 @import "./components/plans/planDetail/planDetail";
 @import "./components/plans/plansList/plansList";
 @import "./components/plans/createPlan/createPlan";
-@import "./components/workouts/workoutsList/workoutsList";
-@import "./components/workouts/workoutsByPlan/workoutsByPlan";
-@import "./components/workouts/createWorkout/createWorkout";
 @import "./components/plans/editPlan/editPlan";
-@import "./components/workouts/editWorkout/editWorkout";
+
+@import "./components/muscleGroups/createMuscleGroup/createMuscleGroup";
+@import "./components/muscleGroups/editMuscleGroup/editMuscleGroup";
+@import "./components/muscleGroups/muscleGroupDetail/muscleGroupDetail";
+@import "./components/muscleGroups/muscleGroupList/muscleGroupList";
+
 ui-view {
   @extend .row;
   background-repeat: no-repeat;

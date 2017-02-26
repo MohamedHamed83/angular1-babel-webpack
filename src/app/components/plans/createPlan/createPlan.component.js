@@ -13,7 +13,7 @@ class createPlanCtrl {
       url: ''
     }
   }
-  createNewContact(event) {
+  createNewPlan(event) {
     this.$plansSvc.createNewPlan(event.plan).then(() => {
       this.$plansSvc.loadUiRoute('plansListView');
     })

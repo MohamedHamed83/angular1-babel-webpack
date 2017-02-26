@@ -1,5 +1,6 @@
-
-    <ul class="vm-listView">
-      <list-item-component class="vm-animate-list-item" ng-repeat="listItem in listviewCtrl.allItems | filter: listviewCtrl.listSearchString"
-        list-item='listItem' set-selected-item='listviewCtrl.getSelectedItem(item)'> </list-item-component>
-    </ul>
+<ul class="vm-listView">
+  <list-item-component class="vm-animate-list-item" ng-repeat="listItem in listviewCtrl.allItems | filter: listviewCtrl.listSearchString"
+    list-item='listItem' set-selected-item='listviewCtrl.getSelectedItem(item)'
+     update-list-item="listviewCtrl.update(listItem)"
+     delete-list-item="listviewCtrl.delete(listItem)"> </list-item-component>
+</ul>

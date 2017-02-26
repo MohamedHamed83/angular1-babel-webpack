@@ -10,11 +10,14 @@ class firebaseDbRef {
   plansRef() {
     return this.$firebaseArray(ref.child("plans"));
   }
-  getAllWorkouts() {
-    return this.$firebaseArray(ref.child("workouts"));
+  getAllMuscleGroups() {
+    return this.$firebaseArray(ref.child("muscleGroups"));
   }
   getWorkoutByIdApi(workoutId) {
     return this.$firebaseObject(ref.child(`workouts/${workoutId}`)).$loaded();
+  }
+  muscleGroupRef() {
+    return ref.child("muscleGroups");
   }
   plansDbRef() {
     return ref.child("plans");

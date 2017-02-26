@@ -1,9 +1,9 @@
 'use strict';
-import template from './workoutsByPlan.html';
+import template from './workoutsListView.html';
 
 
 // component controller
-class workoutsByPlanCtrl {
+class workoutsListViewCtrl {
   constructor($workoutsVmSvc, $workoutsByPlanSvc) {
     'ngInject';
     this.workoutsSvc = $workoutsVmSvc;
@@ -15,15 +15,15 @@ class workoutsByPlanCtrl {
   }
 }
 //component settings
-let workoutsByPlanComponent = {
+let workoutsListViewComponent = {
   template: template,
-  controllerAs: 'workoutsByPlanCtrl',
-  controller: workoutsByPlanCtrl,
+  controllerAs: 'workoutsListViewCtrl',
+  controller: workoutsListViewCtrl,
   bindings: {
     allWorkouts: '='
   }
 };
 
-export default angular.module('workoutsByPlanModule', [])
-  .component('workoutsByPlanComponent', workoutsByPlanComponent)
+export default angular.module('workoutsListViewModule', [])
+  .component('workoutsListViewComponent', workoutsListViewComponent)
   .name;

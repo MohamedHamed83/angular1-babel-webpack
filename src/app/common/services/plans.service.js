@@ -4,16 +4,19 @@ class plans {
     'ngInject';
     this.firebaseDbRefSvc = firebaseDbRefSvc;
     this.$state = $state;
-    this.plansViewTypes = this.viewTypes;
+    this.viewTypes = this.selectedViewType;
+  }
+  getMuscleGroups() {
+    return this.firebaseDbRefSvc.getAllMuscleGroups();
   }
   getPlanPerKeys(planId) {
     return this.firebaseDbRefSvc.planPerKeysApi(planId).$loaded();
   }
-  viewTypes = {
-    newPlan: 'newPlan',
-    updatePlan: 'updatePlan',
-    deletePlan: 'deletePlan',
-    planDetail: 'deletePlan'
+  selectedViewType = {
+    newItem: 'new',
+    updateItem: 'update',
+    deleteItem: 'delete',
+    itemDetail: 'detail'
   }
   /**
    * @ngdoc method
