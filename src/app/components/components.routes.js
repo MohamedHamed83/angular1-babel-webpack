@@ -78,25 +78,25 @@ export default function routes($stateProvider) {
         viewStatus: ($plansSvc) => $plansSvc.viewTypes.newItem,
       }
     })
-    .state('updateMuscleGroups', {
-      url: '/update-muscle-groups/:planId',
+    .state('updateMuscleGroup', {
+      url: '/update-muscle-groups/:itemId',
       component: 'editMuscleGroupComponent',
       resolve: {
         viewStatus: ($plansSvc) => $plansSvc.viewTypes.updateItem,
-        plan: ($plansSvc, $stateParams) => {
-          const key = $stateParams.planId;
-          return $plansSvc.getPlanPerKeys(key);
+        muscleGroup: ($workoutsVmSvc, $stateParams) => {
+          const key = $stateParams.itemId;
+          return $workoutsVmSvc.getMuscleGroupPerKeys(key);
         }
       }
     })
-    .state('deleteMuscleGroups', {
-      url: '/delete-muscle-groups/:planId',
+    .state('deleteMuscleGroup', {
+      url: '/delete-muscle-groups/:itemId',
       component: 'editMuscleGroupComponent',
       resolve: {
         viewStatus: ($plansSvc) => $plansSvc.viewTypes.deleteItem,
-        plan: ($plansSvc, $stateParams) => {
-          const key = $stateParams.planId;
-          return $plansSvc.getPlanPerKeys(key);
+        muscleGroup: ($workoutsVmSvc, $stateParams) => {
+          const key = $stateParams.itemId;
+          return $workoutsVmSvc.getMuscleGroupPerKeys(key);
         }
       }
     })

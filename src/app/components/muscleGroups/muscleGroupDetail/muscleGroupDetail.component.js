@@ -9,7 +9,7 @@ class muscleGroupDetailCtrl {
     this.viewTypes = this.$plansSvc.viewTypes;
   }
   $onInit() {
-    console.log(this.viewStatus);
+
   }
   saveMuscleGroup() {
     this.onSave({

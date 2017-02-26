@@ -15,7 +15,7 @@ class createMuscleGroupCtrl {
   }
   createNewMuscleGroup(event) {
     this.$workoutsVmSvc.createNewMuscleGroup(event.muscleGroup).then(() => {
-      this.$workoutsVmSvc.loadUiRoute('muscleGroupListView');
+      this.$workoutsVmSvc.loadRoute('muscleGroupsListView');
     })
   }
 }

@@ -2,22 +2,22 @@
 import template from './muscleGroupList.html';
 // component controller
 class muscleGroupListController {
-  constructor($plansSvc) {
+  constructor($workoutsVmSvc) {
     'ngInject';
-    this.plansSvc = $plansSvc;
+    this.workoutsVmSvc = $workoutsVmSvc;
     // plans list
-    this.allMuscleGroups = this.plansSvc.getMuscleGroups()
+    this.allMuscleGroups = this.workoutsVmSvc.getMuscleGroups()
     this.searchString = '';
   }
   // get selected item from the list view
   getSelectedListItem(item) {
-    this.plansSvc.loadUiRoute('workoutsListView', item.$id);
+    this.workoutsVmSvc.loadRoute('workoutsListView', item.$id);
   }
   updateListItem(listItem) {
-    this.plansSvc.loadUiRoute('updateMuscleGroup', listItem.$id);
+    this.workoutsVmSvc.loadRoute('updateMuscleGroup', listItem.$id);
   }
   deleteListItem(listItem) {
-    this.plansSvc.loadUiRoute('deleteMuscleGroup', listItem.$id);
+    this.workoutsVmSvc.loadRoute('deleteMuscleGroup', listItem.$id);
   }
   $onInit() {
 

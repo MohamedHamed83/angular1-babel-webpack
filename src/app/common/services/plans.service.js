@@ -6,9 +6,6 @@ class plans {
     this.$state = $state;
     this.viewTypes = this.selectedViewType;
   }
-  getMuscleGroups() {
-    return this.firebaseDbRefSvc.getAllMuscleGroups();
-  }
   getPlanPerKeys(planId) {
     return this.firebaseDbRefSvc.planPerKeysApi(planId).$loaded();
   }
@@ -93,7 +90,6 @@ class plans {
     } else {
       this.$state.go(view);
     }
-
   }
 
 }

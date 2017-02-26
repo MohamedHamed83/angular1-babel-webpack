@@ -24,13 +24,13 @@
       <div class="row vm-button-group">
         <div class="vm-button-item" ng-if="muscleGroupDetailCtrl.viewStatus === muscleGroupDetailCtrl.viewTypes.newItem">
           <button type="submit" class="btn btn-info btn-block"
-          ng-click="muscleGroupDetailCtrl.savePlan()">New Group</button>
+          ng-click="muscleGroupDetailCtrl.saveMuscleGroup()">New Group</button>
         </div>
         <div class="vm-button-item" ng-if="muscleGroupDetailCtrl.viewStatus === muscleGroupDetailCtrl.viewTypes.updateItem">
-          <button type="submit" class="btn btn-info btn-block" ng-click="muscleGroupDetailCtrl.updatePlan()">Update</button>
+          <button type="submit" class="btn btn-info btn-block" ng-click="muscleGroupDetailCtrl.updateMuscleGroup()">Update</button>
         </div>
         <div class="vm-button-item" ng-if="muscleGroupDetailCtrl.viewStatus === muscleGroupDetailCtrl.viewTypes.deleteItem">
-          <button type="submit" class="btn btn-danger btn-block" ng-click="muscleGroupDetailCtrl.deletePlan()">Delete</button>
+          <button type="submit" class="btn btn-danger btn-block" ng-click="muscleGroupDetailCtrl.deleteMuscleGroup()">Delete</button>
         </div>
         <div class="vm-button-item">
           <button type="submit" class="btn btn-info btn-block" ui-sref="plansListView">Cancel</button>

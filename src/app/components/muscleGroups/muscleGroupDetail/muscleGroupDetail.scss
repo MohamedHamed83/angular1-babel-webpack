@@ -1,4 +1,4 @@
-muscle-group-list-component {
+muscle-group-detail-component {
   .vm-form-view {
     @include make-xs-column(10);
     @include make-sm-column(10);
@@ -20,7 +20,7 @@ muscle-group-list-component {
     @include make-md-column-offset(2);
     @include make-lg-column-offset(2);
     @include make-xl-column-offset(2);
-    .btn-info{
+    .btn-info {
       background-color: #4ABDAC;
       border-color: #4ABDAC;
     }
@@ -29,7 +29,7 @@ muscle-group-list-component {
     .btn-info:focus {
       @include fade;
       @include prefixed(transition-duration, 200ms);
-      background-color:#3f9a8d !important;
+      background-color: #3f9a8d !important;
       border-color: #3f9a8d !important;
     }
     .vm-button-item {

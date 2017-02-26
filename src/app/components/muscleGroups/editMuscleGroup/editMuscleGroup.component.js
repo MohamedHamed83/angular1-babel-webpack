@@ -11,13 +11,13 @@ class editMuscleGroupCtrl {
 
   }
   updateMuscleGroup(event) {
-    this.$plansSvc.updateMuscleGroup(event.muscleGroup).then(() => {
-      this.$plansSvc.loadUiRoute('muscleGroupListView');
+    this.$workoutsVmSvc.updateMuscleGroup(event.muscleGroup).then(() => {
+      this.$workoutsVmSvc.deleteListItem('muscleGroupListView');
     });
   }
   deleteMuscleGroup(event) {
     this.$workoutsVmSvc.deleteMuscleGroup(event.muscleGroup).then(() => {
-      this.$workoutsVmSvc.loadUiRoute('muscleGroupListView');
+      this.$workoutsVmSvc.deleteListItem('muscleGroupListView');
     });
   }
 }

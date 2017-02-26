@@ -25,6 +25,7 @@ import './muscleGroups/muscleGroupList/muscleGroupList.component';
 import './muscleGroups/muscleGroupList/muscleGroupList.component';
 import './muscleGroups/muscleGroupDetail/muscleGroupDetail.component';
 import './muscleGroups/createMuscleGroup/createMuscleGroup.component';
+import './muscleGroups/editMuscleGroup/editMuscleGroup.component';
 
 //plans componente
 import './plans/plansList/plansList.component';
@@ -44,7 +45,7 @@ export default angular.module('components', ['services',
     'nglistviewModule', 'workoutsListViewModule', 'workoutsListModule',
     'createWorkoutModule', 'editWorkoutModule', 'createPlanModule',
     'editPlanModule', 'planDetailModule', 'muscleGroupListModule',
-    'createMuscleGroupModule', 'muscleGroupDetailModule'
+    'createMuscleGroupModule', 'muscleGroupDetailModule', 'editMuscleGroupModule'
   ])
   .config(routing)
   .name;

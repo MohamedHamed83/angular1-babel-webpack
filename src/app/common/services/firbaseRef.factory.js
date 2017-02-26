@@ -10,6 +10,9 @@ class firebaseDbRef {
   plansRef() {
     return this.$firebaseArray(ref.child("plans"));
   }
+  muscleGroupPerKeysApi(itemId) {
+    return this.$firebaseObject(ref.child(`muscleGroups/${itemId}`));
+  }
   getAllMuscleGroups() {
     return this.$firebaseArray(ref.child("muscleGroups"));
   }
