@@ -4,6 +4,10 @@ search-bar-component {
   @include make-md-column(12, 0);
   @include make-lg-column(12, 0);
   @include make-xl-column(12, 0);
+  .form-control,
+  .btn  {
+    z-index: 0 !important;
+  }
   .input-group-btn {
     height: 100%
   }

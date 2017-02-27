@@ -3,8 +3,11 @@ import template from './navbar.html';
 // component controller
 class navbarController {
   constructor() {
-        'ngInject';
+    'ngInject';
   }
+  menuCollapsed() {
+    $(".menu-collapsed").toggleClass("menu-expanded");
+  };
 }
 //component settings
 let navbarComponent = {
