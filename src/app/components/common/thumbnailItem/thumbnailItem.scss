@@ -2,8 +2,8 @@ thumbnail-item-component {
   @include make-xs-column(12);
   @include make-sm-column(6);
   @include make-md-column(3);
-  @include make-lg-column(4);
-  @include make-xl-column(4);
+  @include make-lg-column(3);
+  @include make-xl-column(3);
   .thumbnail {
     @include wobble-vertical;
     @include border-fade;
@@ -19,14 +19,14 @@ thumbnail-item-component {
   .thumbnail:active {
     color: white;
     background-color: #b22701;
-    box-shadow: inset 0 0 0 4px #4ABDAC, 0 0 1px transparent;
+    box-shadow: inset 0 0 0 4px #046380, 0 0 1px transparent;
   }
   .thumbnail img {
-    height: 200px;
+    height: 150px;
     background-position: 45%;
     background-size: cover !important;
     background-repeat: no-repeat;
-    width: 99%;
+    width: 98%;
     margin-top: 4px;
   }
   .caption {
