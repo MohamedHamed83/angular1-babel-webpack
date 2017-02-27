@@ -5,11 +5,20 @@ import template from './editWorkout.html';
 class editWorkoutCtrl {
   constructor($workoutsVmSvc) {
     'ngInject';
-    this.workoutsSvc = $workoutsVmSvc;
-    this.searchString = '';
+    this.$workoutsVmSvc = $workoutsVmSvc;
   }
   $onInit() {
 
+  }
+  updateWorkout(event) {
+    this.$workoutsVmSvc.updateWorkout(event.workout).then(() => {
+      this.$workoutsVmSvc.loadRoute('WorkoutsListView');
+    });
+  }
+  deleteWorkout(event) {
+    this.$workoutsVmSvc.deleteWorkout(event.workout).then(() => {
+      this.$workoutsVmSvc.loadRoute('WorkoutsListView');
+    });
   }
 }
 //component settings
@@ -18,7 +27,8 @@ let editWorkoutComponent = {
   controllerAs: 'editWorkoutCtrl',
   controller: editWorkoutCtrl,
   bindings: {
-    allWorkouts: '='
+    viewStatus: '=',
+    workout: '=',
   }
 };
 

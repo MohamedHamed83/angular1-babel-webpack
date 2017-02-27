@@ -21,10 +21,6 @@ import './common/listItem/listItem.component';
 import './common/searchBar/searchBar.component';
 // stateful  components
 import './home/home.component'
-import './muscleGroups/createMuscleGroup/createMuscleGroup.component'
-import './muscleGroups/editMuscleGroup/editMuscleGroup.component';
-import './muscleGroups/muscleGroupList/muscleGroupList.component';
-import './muscleGroups/muscleGroupDetail/muscleGroupDetail.component';
 //Muscle Group componente
 import './muscleGroups/muscleGroupList/muscleGroupList.component';
 import './muscleGroups/muscleGroupDetail/muscleGroupDetail.component';
@@ -36,9 +32,10 @@ import './plans/plansList/plansList.component';
 import './plans/createPlan/createPlan.component';
 import './plans/planDetail/planDetail.component';
 import './plans/editPlan/editPlan.component';
+
 //workout componente
-import './workouts/workoutsListView/workoutsListView.component';
-import './workouts/workoutsList/workoutsList.component';
+import './workouts/workoutList/workoutList.component';
+import './workouts/workoutDetail/workoutDetail.component';
 import './workouts/editWorkout/editWorkout.component';
 import './workouts/createWorkout/createWorkout.component';
 
@@ -46,11 +43,11 @@ import './workouts/createWorkout/createWorkout.component';
 export default angular.module('components', ['services',
     'ngSearchBarModule', 'homeModule', 'loginModule', 'plansListModule',
     'ngHeaderModule', 'ngFooterModule', 'ngNavbarModule', 'nglistItemModule',
-    'nglistviewModule', 'workoutsListViewModule', 'workoutsListModule',
-    'createWorkoutModule', 'editWorkoutModule', 'createPlanModule',
+    'nglistviewModule', 'createPlanModule',
     'editPlanModule', 'planDetailModule', 'muscleGroupListModule',
     'createMuscleGroupModule', 'muscleGroupDetailModule', 'editMuscleGroupModule',
-    'ngThumbnailItemModule', 'ngthumbnailViewModule'
+    'ngThumbnailItemModule', 'ngthumbnailViewModule','workoutListModule', 'workoutDetailModule',
+    'editWorkoutModule', 'createWorkoutModule'
   ])
   .config(routing)
   .name;

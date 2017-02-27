@@ -5,11 +5,19 @@ import template from './createWorkout.html';
 class createWorkoutCtrl {
   constructor($workoutsVmSvc) {
     'ngInject';
-    this.workoutsSvc = $workoutsVmSvc;
-    this.searchString = '';
+    this.$workoutsVmSvc = $workoutsVmSvc;
   }
   $onInit() {
-
+    this.workout = {
+      workoutName: '',
+      muscleGroupId:'',
+      url: ''
+    }
+  }
+  createNewWorkout(event) {
+    this.$workoutsVmSvc.createNewWorkout(event.workout).then(() => {
+      this.$workoutsVmSvc.loadRoute('WorkoutsListView');
+    })
   }
 }
 //component settings
@@ -18,7 +26,7 @@ let createWorkoutComponent = {
   controllerAs: 'createWorkoutCtrl',
   controller: createWorkoutCtrl,
   bindings: {
-    allWorkouts: '='
+    viewStatus: '='
   }
 };
 

@@ -1,0 +1,41 @@
+
+  <form class="form-horizontal vm-form-view" role="form">
+    <div class="row">
+      <div class="vm-page-title">
+        <h2 ng-if="workoutDetailCtrl.viewStatus === workoutDetailCtrl.viewTypes.new">New workout</h2>
+        <h2 ng-if="workoutDetailCtrl.viewStatus === workoutDetailCtrl.viewTypes.update">Update workout</h2>
+        <h2 ng-if="workoutDetailCtrl.viewStatus === workoutDetailCtrl.viewTypes.delete">Delete workout</h2>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="workoutName" class="col-sm-3  control-label">workout Name</label>
+      <div class="col-sm-9">
+        <input type="text" id="workoutName" ng-model="workoutDetailCtrl.workout.url" placeholder="workout Name" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-sm-3 control-label">Description</label>
+      <div class="col-sm-9">
+        <input type="text" id="description"   ng-model="workoutDetailCtrl.workout.description" placeholder="workout Description" class="form-control">
+      </div>
+    </div>
+    <!--Form-group option buttons-->
+    <div class="form-group">
+      <div class="row vm-button-group">
+        <div class="vm-button-item" ng-if="workoutDetailCtrl.viewStatus === workoutDetailCtrl.viewTypes.new">
+          <button type="submit" class="btn btn-info btn-block"
+          ng-click="workoutDetailCtrl.saveworkout()">New Workout</button>
+        </div>
+        <div class="vm-button-item" ng-if="workoutDetailCtrl.viewStatus === workoutDetailCtrl.viewTypes.update">
+          <button type="submit" class="btn btn-info btn-block" ng-click="workoutDetailCtrl.updateworkout()">Update</button>
+        </div>
+        <div class="vm-button-item" ng-if="workoutDetailCtrl.viewStatus === workoutDetailCtrl.viewTypes.delete">
+          <button type="submit" class="btn btn-danger btn-block" ng-click="workoutDetailCtrl.deleteworkout()">Delete</button>
+        </div>
+        <div class="vm-button-item">
+          <button type="submit" class="btn btn-info btn-block" ui-sref="workoutsListView">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </form>
+

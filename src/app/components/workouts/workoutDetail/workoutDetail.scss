@@ -1,0 +1,59 @@
+workout-detail-component {
+  .vm-form-view {
+    @include make-xs-column(10);
+    @include make-sm-column(10);
+    @include make-md-column(6);
+    @include make-lg-column(6);
+    @include make-xl-column(6);
+    @include make-sm-column-offset(1);
+    @include make-xs-column-offset(1);
+    @include make-md-column-offset(3);
+    @include make-lg-column-offset(3);
+    @include make-xl-column-offset(3);
+  }
+  .vm-button-group {
+    @include make-xs-column(12);
+    @include make-sm-column(12);
+    @include make-md-column(10);
+    @include make-lg-column(10);
+    @include make-xl-column(10);
+    @include make-md-column-offset(2);
+    @include make-lg-column-offset(2);
+    @include make-xl-column-offset(2);
+    .btn-info{
+      background-color: #4ABDAC;
+      border-color: #4ABDAC;
+    }
+    .btn-info:hover,
+    .btn-info:active,
+    .btn-info:focus {
+      @include fade;
+      @include prefixed(transition-duration, 200ms);
+      background-color:#3f9a8d !important;
+      border-color: #3f9a8d !important;
+    }
+    .vm-button-item {
+      padding-bottom: 10px;
+      @include make-xs-column(12);
+      @include make-sm-column(12);
+      @include make-md-column(6);
+      @include make-lg-column(6);
+      @include make-xl-column(6);
+    }
+  }
+  .vm-page-title {
+    background-color: transparent;
+    h2 {
+      width: 100% !important;
+    }
+    @include make-xs-column(12, 0);
+    @include make-sm-column(10, 0);
+    @include make-md-column(6, 0);
+    @include make-lg-column(6, 0);
+    @include make-xl-column(6, 0);
+    @include make-sm-column-offset(2);
+    @include make-md-column-offset(5);
+    @include make-lg-column-offset(5);
+    @include make-xl-column-offset(5);
+  }
+}

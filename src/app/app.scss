@@ -13,21 +13,27 @@ $fa-font-path:'~font-awesome/fonts/';
 @import "./components/common/header/header";
 @import "./components/home/home";
 @import "./components/login/login";
+
 @import "./components/common/navbar/navbar";
 @import "./components/common/footer/footer";
+
 @import "./components/common/thumbnailItem/thumbnailItem";
 @import "./components/common/thumbnailView/thumbnailView";
+
 @import "./components/common/listview/listview";
 @import "./components/common/listItem/listItem";
+
 @import "./components/common/searchBar/searchBar";
-@import "./components/workouts/workoutsList/workoutsList";
-@import "./components/workouts/workoutsListView/workoutsListView";
-@import "./components/workouts/createWorkout/createWorkout";
-@import "./components/workouts/editWorkout/editWorkout";
+
 @import "./components/plans/planDetail/planDetail";
 @import "./components/plans/plansList/plansList";
 @import "./components/plans/createPlan/createPlan";
 @import "./components/plans/editPlan/editPlan";
+
+@import "./components/workouts/workoutList/workoutList";
+@import "./components/workouts/workoutDetail/workoutDetail";
+@import "./components/workouts/editWorkout/editWorkout";
+@import "./components/workouts/createWorkout/createWorkout";
 
 @import "./components/muscleGroups/createMuscleGroup/createMuscleGroup";
 @import "./components/muscleGroups/editMuscleGroup/editMuscleGroup";

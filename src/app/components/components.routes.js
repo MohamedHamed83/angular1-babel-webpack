@@ -12,7 +12,7 @@ export default function routes($stateProvider) {
     // workouts routes
     .state('workoutsListView', {
       url: "/workouts/:planId",
-      component: 'workoutsListViewComponent',
+      component: 'workoutListComponent',
       params: {
         planId: null
       },
@@ -24,7 +24,7 @@ export default function routes($stateProvider) {
     })
     .state('workoutsStView', {
       url: "/workouts",
-      component: 'workoutsListViewComponent',
+      component: 'workoutListComponent',
       resolve: {
         allWorkouts: ($workoutsVmSvc) => {
           return $workoutsVmSvc.getworkouts();
