@@ -1,0 +1,7 @@
+<div class="container">
+<div class="row">
+    <thumbnail-item-component ng-repeat="listItem in thumbnailViewCtrl.allItems | filter: thumbnailViewCtrl.listSearchString"
+      list-item='listItem' set-selected-item='thumbnailViewCtrl.getSelectedItem(item)' update-list-item="thumbnailViewCtrl.update(listItem)"
+      delete-list-item="thumbnailViewCtrl.delete(listItem)"> </thumbnail-list-item-component>
+ </ul>
+</div>

@@ -15,6 +15,8 @@ $fa-font-path:'~font-awesome/fonts/';
 @import "./components/login/login";
 @import "./components/common/navbar/navbar";
 @import "./components/common/footer/footer";
+@import "./components/common/thumbnailItem/thumbnailItem";
+@import "./components/common/thumbnailView/thumbnailView";
 @import "./components/common/listview/listview";
 @import "./components/common/listItem/listItem";
 @import "./components/common/searchBar/searchBar";
@@ -36,7 +38,7 @@ ui-view {
   @extend .row;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: rgba(42, 44, 43, 0.7);
+  background-color: rgba(42, 44, 43, 0.7) !important;
   color: white;
   @include make-xs-column(12, 0);
   @include make-sm-column(12, 0);

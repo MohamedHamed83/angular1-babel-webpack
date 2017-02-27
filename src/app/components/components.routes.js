@@ -24,7 +24,7 @@ export default function routes($stateProvider) {
     })
     .state('workoutsStView', {
       url: "/workouts",
-      component: 'workoutsComponent',
+      component: 'workoutsListViewComponent',
       resolve: {
         allWorkouts: ($workoutsVmSvc) => {
           return $workoutsVmSvc.getworkouts();

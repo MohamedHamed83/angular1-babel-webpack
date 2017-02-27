@@ -16,6 +16,9 @@ class firebaseDbRef {
   getAllMuscleGroups() {
     return this.$firebaseArray(ref.child("muscleGroups"));
   }
+  getAllWorkouts() {
+    return this.$firebaseArray(ref.child("workouts"));
+  }
   getWorkoutByIdApi(workoutId) {
     return this.$firebaseObject(ref.child(`workouts/${workoutId}`)).$loaded();
   }

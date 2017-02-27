@@ -29,7 +29,17 @@ class plans {
   updatePlan(plan) {
     return plan.$save();
   }
-
+  /**
+   * @ngdoc method
+   * @name $plansSvc#removePlan
+   *
+   * @description
+   * Http Call to remove plan .
+   *
+   */
+  deletePlan(plan) {
+    return plan.$remove();
+  }
   /**
    * @ngdoc method
    * @name $plansSvc#getPlans

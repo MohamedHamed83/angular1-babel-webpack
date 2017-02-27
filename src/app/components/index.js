@@ -11,16 +11,20 @@ import './common/header/header.component';
 import './common/footer/footer.component';
 import './login/login.component';
 import './common/navbar/navbar.component';
+//thumbnail view components
+import './common/thumbnailView/thumbnailView.component';
+import './common/thumbnailItem/thumbnailItem.component';
+//listview components
 import './common/listview/listview.component';
 import './common/listItem/listItem.component';
+//search bar component
 import './common/searchBar/searchBar.component';
-import './muscleGroups/muscleGroupDetail/muscleGroupDetail.component';
 // stateful  components
 import './home/home.component'
 import './muscleGroups/createMuscleGroup/createMuscleGroup.component'
 import './muscleGroups/editMuscleGroup/editMuscleGroup.component';
 import './muscleGroups/muscleGroupList/muscleGroupList.component';
-
+import './muscleGroups/muscleGroupDetail/muscleGroupDetail.component';
 //Muscle Group componente
 import './muscleGroups/muscleGroupList/muscleGroupList.component';
 import './muscleGroups/muscleGroupDetail/muscleGroupDetail.component';
@@ -45,7 +49,8 @@ export default angular.module('components', ['services',
     'nglistviewModule', 'workoutsListViewModule', 'workoutsListModule',
     'createWorkoutModule', 'editWorkoutModule', 'createPlanModule',
     'editPlanModule', 'planDetailModule', 'muscleGroupListModule',
-    'createMuscleGroupModule', 'muscleGroupDetailModule', 'editMuscleGroupModule'
+    'createMuscleGroupModule', 'muscleGroupDetailModule', 'editMuscleGroupModule',
+    'ngThumbnailItemModule', 'ngthumbnailViewModule'
   ])
   .config(routing)
   .name;
