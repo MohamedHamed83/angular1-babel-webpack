@@ -11,7 +11,7 @@ class muscleGroupListController {
   }
   // get selected item from the list view
   getSelectedListItem(item) {
-    this.workoutsVmSvc.loadRoute('workoutsListView', item.$id);
+    this.workoutsVmSvc.loadRoute('updateMuscleGroup', item.$id);
   }
   updateListItem(listItem) {
     this.workoutsVmSvc.loadRoute('updateMuscleGroup', listItem.$id);

@@ -4,10 +4,47 @@ thumbnail-item-component {
   @include make-md-column(3);
   @include make-lg-column(3);
   @include make-xl-column(3);
+  .btn-info:hover,
+  .btn-info:active,
+  .btn-info:focus,
+  .btn-info.focus {
+    background-color: #012525 !important;
+    border-color: #012525 !important;
+  }
+  .btn-info {
+    background-color: #024d4d;
+    border-color: #024d4d;
+  }
+  button,
+  h4 {
+    display: inline-block;
+  }
+  .vm-delete {
+    @extend .pull-right;
+    display: none;
+  }
+  .vm-update {
+    @extend .pull-left;
+    display: none;
+  }
+  .caption:hover {
+    .vm-update {
+      @include fadeIn( $duration: 1s, $count: 1, $delay: 0s, $function: ease, $fill: both);
+      display: inline-block;
+    }
+    .vm-delete {
+      @include fadeIn( $duration: 1s, $count: 1, $delay: 0s, $function: ease, $fill: both);
+      display: inline-block;
+    }
+  }
+  .vm-options-list {
+    width: 95%;
+    height: 90%;
+    position: absolute;
+    top: 0px;
+    display: none;
+  }
   .thumbnail {
-    @include wobble-vertical;
-    @include border-fade;
-    @include prefixed(transition-duration, 600ms);
     display: block;
     padding: 0;
     border-color: transparent;
@@ -17,6 +54,11 @@ thumbnail-item-component {
   }
   .thumbnail:hover,
   .thumbnail:active {
+    @include wobble-vertical;
+    @include border-fade;
+    @include prefixed(transition-duration, 400ms);
+    padding: 0;
+    display: block;
     color: white;
     background-color: #b22701;
     box-shadow: inset 0 0 0 4px #046380, 0 0 1px transparent;

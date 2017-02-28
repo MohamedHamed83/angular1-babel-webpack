@@ -1,10 +1,12 @@
 <div class="thumbnail">
   <img ng-if='thumbnailItemCtrl.listItem.url' />
-  <img ng-if='thumbnailItemCtrl.listItem.workoutName || thumbnailItemCtrl.listItem.imageUrl' ng-click="thumbnailItemCtrl.selectedListItem(thumbnailItemCtrl.listItem)"
+  <img ng-if='thumbnailItemCtrl.listItem.workoutName || thumbnailItemCtrl.listItem.imageUrl'
     style='background: url("{{thumbnailItemCtrl.listItem.imageUrl}}")' />
   <div class="caption">
-    <h4 ng-if='thumbnailItemCtrl.listItem.url' ng-click="thumbnailItemCtrl.selectedListItem(thumbnailItemCtrl.listItem)">{{thumbnailItemCtrl.listItem.url}}</h3>
-      <h4 ng-if='thumbnailItemCtrl.listItem.workoutName'>{{thumbnailItemCtrl.listItem.workoutName}}</h3>
-        <h4 ng-if='thumbnailItemCtrl.listItem.groupName'>{{thumbnailItemCtrl.listItem.groupName}}</h3>
+    <button type="submit" class="btn btn-info vm-update" ng-click="thumbnailItemCtrl.updateListItem(listItemCtrl.listItem)">Update</button>
+    <h4 ng-if='thumbnailItemCtrl.listItem.url' >{{thumbnailItemCtrl.listItem.url}}</h4>
+    <h4 ng-if='thumbnailItemCtrl.listItem.workoutName'>{{thumbnailItemCtrl.listItem.workoutName}}</h4>
+    <h4 ng-if='thumbnailItemCtrl.listItem.groupName'>{{thumbnailItemCtrl.listItem.groupName}}</h4>
+    <button type="submit" class="btn btn-info vm-delete" ng-click="thumbnailItemCtrl.deleteListItem(listItemCtrl.listItem)">Delete</button>
   </div>
 </div>
