@@ -59,9 +59,9 @@
       })
       workoutRef.then(function (ref) {
         var refId = ref.key
-        const muscleRef = dbRefSvc.workoutsPerMuscleGroupArray().child(workout.muscleGroupId);
-        const workoutPerMuscle = muscleRef.child(refId);
-        workoutPerMuscle.set(true);
+        const muscleAssociation = dbRefSvc.workoutsPerMuscleGroupArray().child(workout.muscleGroupId);
+        const workoutPerMuscleAssociation = muscleAssociation.child(refId);
+        workoutPerMuscleAssociation.set(true);
       });
     }
     createNewMuscleGroup(muscleGroup) {
