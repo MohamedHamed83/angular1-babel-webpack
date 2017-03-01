@@ -11,13 +11,11 @@ class createWorkoutCtrl {
     this.workout = {
       workoutName: '',
       muscleGroupId:'',
-      url: ''
+      imageUrl: ''
     }
   }
   createNewWorkout(event) {
-    this.$workoutsVmSvc.createNewWorkout(event.workout).then(() => {
-      this.$workoutsVmSvc.loadRoute('WorkoutsListView');
-    })
+    this.$workoutsVmSvc.createNewWorkout(event.workout)
   }
 }
 //component settings
@@ -26,7 +24,8 @@ let createWorkoutComponent = {
   controllerAs: 'createWorkoutCtrl',
   controller: createWorkoutCtrl,
   bindings: {
-    viewStatus: '='
+    viewStatus: '=',
+    muscleGroups:'='
   }
 };
 

@@ -20,17 +20,16 @@ muscle-group-detail-component {
     @include make-md-column-offset(2);
     @include make-lg-column-offset(2);
     @include make-xl-column-offset(2);
-    .btn-info {
-      background-color: #4ABDAC;
-      border-color: #4ABDAC;
-    }
     .btn-info:hover,
     .btn-info:active,
-    .btn-info:focus {
-      @include fade;
-      @include prefixed(transition-duration, 200ms);
-      background-color: #3f9a8d !important;
-      border-color: #3f9a8d !important;
+    .btn-info:focus,
+    .btn-info.focus {
+      background-color: #012525 !important;
+      border-color: #012525 !important;
+    }
+    .btn-info {
+      background-color: #076464;
+      border-color: #076464;
     }
     .vm-button-item {
       padding-bottom: 10px;
@@ -46,12 +45,13 @@ muscle-group-detail-component {
     h2 {
       width: 100% !important;
     }
-    @include make-xs-column(12, 0);
-    @include make-sm-column(10, 0);
+    @include make-xs-column(11, 0);
+    @include make-sm-column(8, 0);
     @include make-md-column(6, 0);
     @include make-lg-column(6, 0);
     @include make-xl-column(6, 0);
-    @include make-sm-column-offset(2);
+    @include make-xs-column-offset(1);
+    @include make-sm-column-offset(4);
     @include make-md-column-offset(5);
     @include make-lg-column-offset(5);
     @include make-xl-column-offset(5);

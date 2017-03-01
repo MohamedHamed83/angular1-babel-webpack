@@ -9,28 +9,6 @@ export default function routes($stateProvider) {
       url: '/login',
       component: 'loginComponent',
     })
-    // workouts routes
-    .state('workoutsListView', {
-      url: "/workouts/:planId",
-      component: 'workoutListComponent',
-      params: {
-        planId: null
-      },
-      resolve: {
-        allWorkouts: ($workoutsByPlanSvc, $stateParams) => {
-          return $workoutsByPlanSvc.getWorkoutsKeysPerPlan($stateParams.planId);
-        }
-      },
-    })
-    .state('workoutsStView', {
-      url: "/workouts",
-      component: 'workoutListComponent',
-      resolve: {
-        allWorkouts: ($workoutsVmSvc) => {
-          return $workoutsVmSvc.getworkouts();
-        }
-      },
-    })
     // plans routes
     .state('plansListView', {
       url: '/plans',
@@ -99,5 +77,37 @@ export default function routes($stateProvider) {
           return $workoutsVmSvc.getMuscleGroupPerKeys(key);
         }
       }
+    })
+    // workouts routes
+    .state('workoutsListView', {
+      url: "/workouts/:planId",
+      component: 'workoutListComponent',
+      params: {
+        planId: null
+      },
+      resolve: {
+        allWorkouts: ($workoutsByPlanSvc, $stateParams) => {
+          return $workoutsByPlanSvc.getWorkoutsKeysPerPlan($stateParams.planId);
+        }
+      },
+    })
+    .state('workoutsStView', {
+      url: "/workouts",
+      component: 'workoutListComponent',
+      resolve: {
+        allWorkouts: ($workoutsVmSvc) => {
+          return $workoutsVmSvc.getworkouts();
+        }
+      },
+    })
+    .state('createWorkout', {
+      url: "/create-workout",
+      component: 'createWorkoutComponent',
+      resolve: {
+        viewStatus: ($plansSvc) => $plansSvc.viewTypes.newItem,
+        muscleGroups: ($workoutsVmSvc) => {
+          return $workoutsVmSvc.muscleGroupsList();
+        }
+      },
     })
 }

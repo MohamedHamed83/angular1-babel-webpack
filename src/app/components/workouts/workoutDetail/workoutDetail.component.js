@@ -3,13 +3,23 @@ import template from './workoutDetail.html';
 
 // component controller
 class workoutDetailCtrl {
-  constructor($workoutsVmSvc) {
+  constructor($plansSvc) {
     'ngInject';
-    this.$workoutsVmSvc = $workoutsVmSvc;
-    this.viewTypes = this.$workoutsVmSvc.viewTypes;
+    this.$plansSvc = $plansSvc;
+    this.viewTypes = this.$plansSvc.viewTypes;
   }
   $onInit() {
 
+  }
+  getSelectedMuscle(event) {
+    var $target = $(event.currentTarget);
+
+    $target.closest('.btn-group')
+      .find('[data-bind="muscleGroupName"]').text($target.text())
+      .end()
+      .children('.dropdown-toggle').dropdown('toggle');
+    this.workout.muscleGroupId = $target.children()[0].id;
+    return false;
   }
   saveWorkout() {
     this.onSave({
@@ -41,9 +51,10 @@ let workoutDetailComponent = {
   bindings: {
     workout: '=',
     viewStatus: '=',
+    muscleGroups: '=',
     onSave: '&',
     onUpdate: '&',
-    onDelete: '&',
+    onDelete: '&'
   }
 };
 

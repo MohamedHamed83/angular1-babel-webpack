@@ -12,10 +12,12 @@
       this.$state = $state;
 
     }
-    getMuscleGroups() {
-      return this.firebaseDbRefSvc.getAllMuscleGroups();
+    muscleGroupsList() {
+      return this.firebaseDbRefSvc.muscleGroupsArray().$loaded();
     }
-
+    getMuscleGroups() {
+      return this.firebaseDbRefSvc.muscleGroupsArray();
+    }
     getMuscleGroupPerKeys(itemId) {
       return this.firebaseDbRefSvc.muscleGroupPerKeysApi(itemId).$loaded();
     }
@@ -50,9 +52,20 @@
         this.$state.go(view);
       }
     }
-
+    createNewWorkout(workout) {
+      var dbRefSvc = this.firebaseDbRefSvc;
+      var workoutRef = dbRefSvc.workoutsArray().$add({
+        workout: workout
+      })
+      workoutRef.then(function (ref) {
+        var refId = ref.key
+        const muscleRef = dbRefSvc.workoutsPerMuscleGroupArray().child(workout.muscleGroupId);
+        const workoutPerMuscle = muscleRef.child(refId);
+        workoutPerMuscle.set(true);
+      });
+    }
     createNewMuscleGroup(muscleGroup) {
-      return this.firebaseDbRefSvc.getAllMuscleGroups().$add(muscleGroup);
+      return this.firebaseDbRefSvc.muscleGroupsArray().$add(muscleGroup);
     }
     /**
      * @ngdoc method
@@ -64,7 +77,7 @@
      * @returns {Array} list of workouts.
      */
     getworkouts() {
-      return this.firebaseDbRefSvc.getAllWorkouts().$loaded();
+      return this.firebaseDbRefSvc.muscleGroupsArray().$loaded();
     }
     /**
      * @ngdoc method

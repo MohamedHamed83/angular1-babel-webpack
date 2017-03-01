@@ -61,7 +61,7 @@ ui-view.ng-enter-active {
   @include fadeInLeft( $duration: 0.3s, $count: 1, $delay: .2s, $function: ease, $fill: both);
 }
 
-html {
+body {
   background: url('../img/bg-image.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;

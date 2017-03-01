@@ -13,11 +13,17 @@ class firebaseDbRef {
   muscleGroupPerKeysApi(itemId) {
     return this.$firebaseObject(ref.child(`muscleGroups/${itemId}`));
   }
-  getAllMuscleGroups() {
+  muscleGroupsArray() {
     return this.$firebaseArray(ref.child("muscleGroups"));
   }
   getAllWorkouts() {
     return this.$firebaseArray(ref.child("workouts"));
+  }
+  workoutsArray() {
+    return this.$firebaseArray(ref.child("workoutsList"));
+  }
+  workoutsPerMuscleGroupArray() {
+    return ref.child("workoutsKeysPerMuscleGroup");
   }
   getWorkoutByIdApi(workoutId) {
     return this.$firebaseObject(ref.child(`workouts/${workoutId}`)).$loaded();
