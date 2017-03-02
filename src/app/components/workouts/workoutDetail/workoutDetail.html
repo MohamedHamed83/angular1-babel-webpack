@@ -26,10 +26,19 @@
                    <span data-bind="muscleGroupName">Select Muscle Group</span>&nbsp;<span class="caret"></span>
                  </button>
         <ul class="dropdown-menu" role="menu">
-          <li ng-repeat="muscleGroup in workoutDetailCtrl.muscleGroups" ng-click="workoutDetailCtrl.getSelectedMuscle($event)"><a id="{{muscleGroup.$id}}">{{muscleGroup.groupName}}</a></li>
+          <li ng-repeat="muscleGroup in workoutDetailCtrl.muscleGroups" ng-click="workoutDetailCtrl.getSelectedMuscle($event)">
+            <a id="{{muscleGroup.$id}}">{{muscleGroup.groupName}}</a>
+          </li>
         </ul>
       </div>
     </div>
+  </div>
+  <div class="form-group">
+    <label for="workoutDetail" class="col-sm-3 control-label">workout Details:</label>
+    <div class="col-sm-9">
+      <textarea class="form-control" ng-model="workoutDetailCtrl.workout.workoutDetail" rows="5" id="workoutDetail"></textarea>
+    </div>
+  </div>
   </div>
   <!--Form-group option buttons-->
   <div class="form-group">

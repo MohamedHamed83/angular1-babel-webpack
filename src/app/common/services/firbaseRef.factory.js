@@ -17,7 +17,7 @@ class firebaseDbRef {
     return this.$firebaseArray(ref.child("muscleGroups"));
   }
   getAllWorkouts() {
-    return this.$firebaseArray(ref.child("workouts"));
+    return this.$firebaseArray(ref.child("workoutsList"));
   }
   workoutsArray() {
     return this.$firebaseArray(ref.child("workoutsList"));

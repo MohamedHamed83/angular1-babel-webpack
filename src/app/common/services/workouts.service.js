@@ -54,14 +54,13 @@
     }
     createNewWorkout(workout) {
       var dbRefSvc = this.firebaseDbRefSvc;
-      var workoutRef = dbRefSvc.workoutsArray().$add({
-        workout: workout
-      })
+      var workoutRef = dbRefSvc.workoutsArray().$add(workout)
       workoutRef.then(function (ref) {
         var refId = ref.key
         const muscleAssociation = dbRefSvc.workoutsPerMuscleGroupArray().child(workout.muscleGroupId);
         const workoutPerMuscleAssociation = muscleAssociation.child(refId);
         workoutPerMuscleAssociation.set(true);
+        this.$state.go('workoutsStView');
       });
     }
     createNewMuscleGroup(muscleGroup) {
@@ -77,7 +76,7 @@
      * @returns {Array} list of workouts.
      */
     getworkouts() {
-      return this.firebaseDbRefSvc.muscleGroupsArray().$loaded();
+      return this.firebaseDbRefSvc.getAllWorkouts().$loaded();
     }
     /**
      * @ngdoc method

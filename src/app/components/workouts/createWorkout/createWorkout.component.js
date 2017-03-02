@@ -11,7 +11,8 @@ class createWorkoutCtrl {
     this.workout = {
       workoutName: '',
       muscleGroupId:'',
-      imageUrl: ''
+      imageUrl: '',
+      workoutDetail:''
     }
   }
   createNewWorkout(event) {

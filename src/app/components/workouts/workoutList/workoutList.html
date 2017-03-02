@@ -1,9 +1,11 @@
 <div class="container-fluid">
   <div class="row">
-    <search-bar-component search-bar-string="workoutListCtrl.searchString"> </search-bar-component>
+    <search-bar-component search-bar-string="muscleGroupListCtrl.searchString"> </search-bar-component>
   </div>
   <div class="row">
-    <listview-component all-items="workoutListCtrl.allWorkouts" set-selected-item="workoutListCtrl.getSelectedListItem(item)"
-      list-search-string="workoutListCtrl.searchString"></listview-component>
+    <div class="fa fa-plus vm-add-workout" ui-sref="createWorkout"> Add Workout</div>
+    <thumbnail-view-component all-items="workoutListCtrl.allWorkouts"
+    set-selected-item="workoutListCtrl.getSelectedListItem(item)"
+    list-search-string="workoutListCtrl.searchString"></thumbnail-view-component>
   </div>
 </div>

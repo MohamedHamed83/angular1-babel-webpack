@@ -8,10 +8,10 @@ class thumbnailItemController {
 
   }
   $onInit() {
-    if (this.listItem.imgUrl) {
-      this.listItem.imageUrl = require('../../../../img/workouts/' + this.listItem.imgUrl);
-    } else if (this.listItem.imageUrl) {
-      this.listItem.imageUrl = require('../../../../img/muscleGroups/' + this.listItem.imageUrl);
+    if (this.listItem.imageUrl) {
+      this.listItem.imageUrl = require('../../../../img/' + this.listItem.imageUrl);
+    } else {
+      this.listItem.imageUrl = '';
     }
   }
   updateItem(item) {

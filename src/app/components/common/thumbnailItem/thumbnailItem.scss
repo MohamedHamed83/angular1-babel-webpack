@@ -36,6 +36,9 @@ thumbnail-item-component {
       @include fadeIn( $duration: 1s, $count: 1, $delay: 0s, $function: ease, $fill: both);
       display: inline-block;
     }
+    h4{
+      width: 30%;
+    }
   }
   .vm-options-list {
     width: 95%;
@@ -74,5 +77,11 @@ thumbnail-item-component {
   .caption {
     color: white !important;
     text-align: center;
+    h4 {
+      width: 80%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }
