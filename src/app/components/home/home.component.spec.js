@@ -16,7 +16,7 @@ describe('home', () => {
       },
       {
         text: "workouts",
-        uiSref:'workoutsStView',
+        uiSref:'allWorkoutsView',
         status: ""
       }
     ]

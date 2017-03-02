@@ -21,11 +21,14 @@ class workoutsByPlan {
   getWorkoutsKeysPerPlan(planId) {
     return this.firebaseDbRefSvc.workoutsKeysPerPlanApi(planId).$loaded();
   }
+  workoutsKeysPerMuscleGroup(groupId) {
+    return this.firebaseDbRefSvc.workoutsKeysPerMuscleGroupApi(groupId).$loaded();
+  }
   getWorkoutsPerPlan(allWorkouts) {
     let selectedWorkouts = [];
     var workoutsByPlan = this;
     _.forEach(allWorkouts, function (workout) {
-      workoutsByPlan.firebaseDbRefSvc.getWorkoutByIdApi(workout.$id).then(function (res) {
+      workoutsByPlan.firebaseDbRefSvc.getWorkoutByPlanIdApi(workout.$id).then(function (res) {
         selectedWorkouts.push(res);
       });
     });

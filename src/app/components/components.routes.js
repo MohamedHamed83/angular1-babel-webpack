@@ -79,22 +79,43 @@ export default function routes($stateProvider) {
       }
     })
     // workouts routes
-    .state('workoutsListView', {
-      url: "/workouts/:planId",
+    .state('workoutsByPlan', {
+      url: "/workouts-by-plan/:planId",
       component: 'workoutListComponent',
       params: {
         planId: null
       },
       resolve: {
+        viewType: () => {
+          return 'workoutsByPlan';
+        },
         allWorkouts: ($workoutsByPlanSvc, $stateParams) => {
           return $workoutsByPlanSvc.getWorkoutsKeysPerPlan($stateParams.planId);
         }
       },
     })
-    .state('workoutsStView', {
+    .state('workoutsByMuscle', {
+      url: "/workouts-by-muscle-group/:itemId",
+      component: 'workoutListComponent',
+      params: {
+        planId: null
+      },
+      resolve: {
+        viewType: () => {
+          return 'workoutsByMuscle';
+        },
+        allWorkouts: ($workoutsByPlanSvc, $stateParams) => {
+          return $workoutsByPlanSvc.workoutsKeysPerMuscleGroup($stateParams.itemId);
+        }
+      },
+    })
+    .state('allWorkoutsView', {
       url: "/workouts",
       component: 'workoutListComponent',
       resolve: {
+        viewType: () => {
+          return 'allWorkoutsView';
+        },
         allWorkouts: ($workoutsVmSvc) => {
           return $workoutsVmSvc.getworkouts();
         }

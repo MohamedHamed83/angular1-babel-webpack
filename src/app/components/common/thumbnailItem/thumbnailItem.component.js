@@ -10,6 +10,8 @@ class thumbnailItemController {
   $onInit() {
     if (this.listItem.imageUrl) {
       this.listItem.imageUrl = require('../../../../img/' + this.listItem.imageUrl);
+    } else if (this.listItem.imgUrl) {
+      this.listItem.imageUrl = require('../../../../img/' + this.listItem.imgUrl);
     } else {
       this.listItem.imageUrl = '';
     }

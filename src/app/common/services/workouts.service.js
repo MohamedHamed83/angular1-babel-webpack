@@ -53,51 +53,62 @@
       }
     }
     createNewWorkout(workout) {
-      var dbRefSvc = this.firebaseDbRefSvc;
-      var workoutRef = dbRefSvc.workoutsArray().$add(workout)
+      const dbRefSvc = this.firebaseDbRefSvc;
+      const workoutRef = dbRefSvc.workoutsArray().$add(workout);
+      const workoutsVmSvc = this;
       workoutRef.then(function (ref) {
-        var refId = ref.key
+        const refId = ref.key
         const muscleAssociation = dbRefSvc.workoutsPerMuscleGroupArray().child(workout.muscleGroupId);
         const workoutPerMuscleAssociation = muscleAssociation.child(refId);
         workoutPerMuscleAssociation.set(true);
-        this.$state.go('workoutsStView');
+        workoutsVmSvc.$state.go('allWorkoutsView');
       });
     }
-    createNewMuscleGroup(muscleGroup) {
-      return this.firebaseDbRefSvc.muscleGroupsArray().$add(muscleGroup);
+    getWorkoutsPerKey(allWorkouts) {
+      const selectedWorkouts = [];
+      const workoutsVmSvc= this;
+      _.forEach(allWorkouts, function (workout) {
+        workoutsVmSvc.firebaseDbRefSvc.getWorkoutByIdApi(workout.$id).then(function (res) {
+          selectedWorkouts.push(res);
+        });
+      });
+      return selectedWorkouts
     }
-    /**
-     * @ngdoc method
-     * @name $workoutsVmSvc#getworkouts
-     *
-     * @description
-     * Returns list of plans.
-     *
-     * @returns {Array} list of workouts.
-     */
-    getworkouts() {
-      return this.firebaseDbRefSvc.getAllWorkouts().$loaded();
-    }
-    /**
-     * @ngdoc method
-     * @name $workoutsVmSvc#getworkoutById
-     * @param {string} workout Id
-     * @description
-     * Get selected workout by Id .
-     *
-     */
-    getworkoutById(workoutId) {
-      return this.firebaseDbRefSvc.getworkoutByIdApi(workoutId).$loaded();
-    }
-    /**
-     * @ngdoc method
-     * @name $workoutsVmSvc#workoutsRef
-     * @description
-     * Db refrance to workouts array.
-     */
-    workoutsRef() {
-      return this.firebaseDbRefSvc.workoutsDbRef();
-    }
+  createNewMuscleGroup(muscleGroup) {
+    return this.firebaseDbRefSvc.muscleGroupsArray().$add(muscleGroup);
+  }
+  /**
+   * @ngdoc method
+   * @name $workoutsVmSvc#getworkouts
+   *
+   * @description
+   * Returns list of plans.
+   *
+   * @returns {Array} list of workouts.
+   */
+  getworkouts() {
+    return this.firebaseDbRefSvc.getAllWorkouts().$loaded();
+  }
+  /**
+   * @ngdoc method
+   * @name $workoutsVmSvc#getworkoutById
+   * @param {string} workout Id
+   * @description
+   * Get selected workout by Id .
+   *
+   */
+  getworkoutById(workoutId) {
+    return this.firebaseDbRefSvc.getworkoutByIdApi(workoutId).$loaded();
+  }
+  /**
+   * @ngdoc method
+   * @name $workoutsVmSvc#workoutsRef
+   * @description
+   * Db refrance to workouts array.
+   */
+  workoutsRef() {
+    return this.firebaseDbRefSvc.workoutsDbRef();
+  }
   }
 
   /**

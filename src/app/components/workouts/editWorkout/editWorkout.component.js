@@ -12,12 +12,12 @@ class editWorkoutCtrl {
   }
   updateWorkout(event) {
     this.$workoutsVmSvc.updateWorkout(event.workout).then(() => {
-      this.$workoutsVmSvc.loadRoute('WorkoutsListView');
+      this.$workoutsVmSvc.loadRoute('workoutsByPlan');
     });
   }
   deleteWorkout(event) {
     this.$workoutsVmSvc.deleteWorkout(event.workout).then(() => {
-      this.$workoutsVmSvc.loadRoute('WorkoutsListView');
+      this.$workoutsVmSvc.loadRoute('workoutsByPlan');
     });
   }
 }

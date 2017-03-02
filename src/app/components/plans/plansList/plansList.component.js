@@ -11,7 +11,7 @@ class plansListController {
   }
   // get selected item from the list view
   getSelectedListItem(item) {
-    this.plansSvc.loadUiRoute('workoutsListView', item.$id);
+    this.plansSvc.loadUiRoute('workoutsByPlan', item.$id);
   }
   updateListItem(listItem) {
     this.plansSvc.loadUiRoute('updatePlan', listItem.$id);

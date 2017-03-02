@@ -15,7 +15,7 @@ describe('Header Component', () => {
       },
       {
         text: "workouts",
-        uiSref: 'workoutsStView',
+        uiSref: 'allWorkoutsView',
         status: ""
       }
     ]

@@ -16,7 +16,7 @@ class homeController {
       },
       {
         text: "All Workouts",
-        uiSref: 'workoutsStView',
+        uiSref: 'allWorkoutsView',
       }
     ]
   }

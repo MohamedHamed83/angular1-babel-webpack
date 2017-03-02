@@ -1,4 +1,4 @@
-<div class="thumbnail">
+<div class="thumbnail" ng-click="thumbnailItemCtrl.selectedListItem(thumbnailItemCtrl.listItem)">
   <img ng-if='thumbnailItemCtrl.listItem.url' />
   <img ng-if='thumbnailItemCtrl.listItem.workoutName || thumbnailItemCtrl.listItem.imageUrl'
     style='background: url("{{thumbnailItemCtrl.listItem.imageUrl}}")' />

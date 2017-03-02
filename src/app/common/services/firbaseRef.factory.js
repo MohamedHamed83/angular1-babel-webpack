@@ -26,6 +26,9 @@ class firebaseDbRef {
     return ref.child("workoutsKeysPerMuscleGroup");
   }
   getWorkoutByIdApi(workoutId) {
+    return this.$firebaseObject(ref.child(`workoutsList/${workoutId}`)).$loaded();
+  }
+  getWorkoutByPlanIdApi(workoutId) {
     return this.$firebaseObject(ref.child(`workouts/${workoutId}`)).$loaded();
   }
   muscleGroupRef() {
@@ -39,6 +42,9 @@ class firebaseDbRef {
   }
   workoutsKeysPerPlanApi(planId) {
     return this.$firebaseArray(ref.child(`workoutsKeysPerPlan/${planId}`));
+  }
+  workoutsKeysPerMuscleGroupApi(itemId) {
+    return this.$firebaseArray(ref.child(`workoutsKeysPerMuscleGroup/${itemId}`));
   }
   planPerKeysApi(planId) {
     return this.$firebaseObject(ref.child(`plans/${planId}`));
