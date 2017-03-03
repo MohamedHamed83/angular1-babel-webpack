@@ -2,7 +2,7 @@ import './header.component';
 
 describe('Header Component', () => {
   beforeEach(() => {
-    angular.mock.module('ngHeader.component');
+    angular.mock.module('ngHeaderModule');
   });
 
   describe('Header.Controller', () => {

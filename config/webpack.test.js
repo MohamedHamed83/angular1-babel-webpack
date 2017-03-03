@@ -24,55 +24,46 @@ module.exports = function makeWebpackConfig() {
     extensions: ['.js', '.json', '.css', '.scss', '.html'],
   };
 
-  config.entry = () => { return {} };
-
-
-  config.output = {
-    path: root('./dist'),
-    publicPath: isProd ? '/' : 'http://localhost:8080/',
-    filename: isProd ? '[name].[hash].js' : '[name].bundle.js',
-    chunkFilename: isProd ? '[name].[hash].js' : '[name].bundle.js'
+  config.entry = () => {
+    return {}
   };
-
 
   config.devtool = 'inline-source-map';
 
   // Initialize module
   config.module = {
     rules: [{
-      test: /\.js$/,
-      use: 'babel-loader',
-      exclude: /node_modules/
-    }, {
-      test: /\.css$/,
-      loader: 'null-loader'
-    },
-    {
-      test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-      loader: 'null-loader'
-    }, {
-      test: /\.html$/,
-      loader: 'raw-loader'
-    },
-    {
-      enforce: 'pre',
-      test: /\.js$/,
-      exclude: [
-        /node_modules/,
-        /\.spec\.js$/
-      ],
-      loader: 'istanbul-instrumenter-loader',
-      options: {
-        esModules: true
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      }, {
+        test: /\.css$/,
+        loader: 'null-loader'
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+        loader: 'null-loader'
+      }, {
+        test: /\.html$/,
+        loader: 'raw-loader'
+      },
+      {
+          enforce: 'pre',
+          test: /\.js$/,
+          loader: 'source-map-loader',
+          exclude: [
+            // these packages have problems with their sourcemaps
+            root('node_modules/rxjs'),
+          ]
+        },
+      {
+        enforce: 'post',
+        test: /\.(js)$/,
+        loader: 'istanbul-instrumenter-loader',
+        include: root('src'),
+        exclude: [/\.spec\.js$/, /\.e2e\.js$/, /node_modules/]
       }
-    },
-    {
-      enforce: 'post',
-      test: /\.(js)$/,
-      loader: 'istanbul-instrumenter-loader',
-      include: root('src'),
-      exclude: [/\.spec\.js$/, /\.e2e\.js$/, /node_modules/]
-    }]
+    ]
   };
 
   config.plugins = [
@@ -86,6 +77,7 @@ module.exports = function makeWebpackConfig() {
     new webpack.LoaderOptionsPlugin({
       test: /\.scss$/i,
       options: {
+        emitErrors: true,
         postcss: {
           plugins: [autoprefixer]
         }
@@ -99,4 +91,4 @@ module.exports = function makeWebpackConfig() {
   };
 
   return config;
-} ();
+}();

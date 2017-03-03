@@ -2,7 +2,7 @@ import './listview.component'
 
 describe('listview Component', () => {
   beforeEach(() => {
-    angular.mock.module('nglistview.component');
+    angular.mock.module('nglistviewModule');
   });
 
   describe('listview: Controller', () => {

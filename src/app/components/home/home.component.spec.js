@@ -2,7 +2,7 @@ import './home.component';
 
 describe('home', () => {
   beforeEach(() => {
-    angular.mock.module('home.component');
+    angular.mock.module('homeModule');
   });
 
   describe('home.Controller', () => {
@@ -10,14 +10,16 @@ describe('home', () => {
     let controller;
     const mockProjectHeader = 'welcome to Fitness Club';
     const mockProjectFooter = 'Fitness Club';
-    const mockNavbarLinkes = [{
-        text: "plans",
+    const mockNavbarLinkes =  [{
+        text: "muscle groups",
+        uiSref: "muscleGroupsListView"
+      }, {
+        text: "Plans",
         uiSref: "plansListView"
       },
       {
-        text: "workouts",
-        uiSref:'allWorkoutsView',
-        status: ""
+        text: "All Workouts",
+        uiSref: 'allWorkoutsView',
       }
     ]
 

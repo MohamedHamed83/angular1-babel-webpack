@@ -2,7 +2,7 @@ import './footer.component';
 
 describe('Footer Component', () => {
   beforeEach(() => {
-    angular.mock.module('ngFooter.component');
+    angular.mock.module('ngFooterModule');
   });
 
   describe('Footer.Controller', () => {
