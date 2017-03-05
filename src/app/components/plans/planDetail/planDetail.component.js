@@ -2,7 +2,7 @@
 import template from './planDetail.html';
 
 // component controller
-class planDetailCtrl {
+export class planDetailCtrl {
   constructor($plansSvc) {
     'ngInject';
     this.$plansSvc = $plansSvc;
@@ -34,7 +34,7 @@ class planDetailCtrl {
   }
 }
 //component settings
-let planDetailComponent = {
+export const planDetailComponent = {
   template: template,
   controllerAs: 'planDetailCtrl',
   controller: planDetailCtrl,

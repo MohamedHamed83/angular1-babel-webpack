@@ -1,7 +1,7 @@
 'use strict';
 import template from './muscleGroupList.html';
 // component controller
-class muscleGroupListController {
+export class muscleGroupListController {
   constructor($workoutsVmSvc) {
     'ngInject';
     this.workoutsVmSvc = $workoutsVmSvc;
@@ -24,12 +24,8 @@ class muscleGroupListController {
   }
 }
 //component settings
-let muscleGroupListComponent = {
+export const muscleGroupListComponent = {
   template: template,
   controllerAs: 'muscleGroupListCtrl',
   controller: muscleGroupListController
 };
-
-export default angular.module('muscleGroupListModule', [])
-  .component('muscleGroupListComponent', muscleGroupListComponent)
-  .name;

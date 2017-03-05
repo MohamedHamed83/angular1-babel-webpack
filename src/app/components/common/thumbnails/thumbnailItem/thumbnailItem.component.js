@@ -1,17 +1,19 @@
 'use strict';
-import template from './listItem.html';
+import template from './thumbnailItem.html';
 
 // component controller
-class listItemController {
+export class thumbnailItemController {
   constructor() {
     'ngInject';
 
   }
   $onInit() {
-    if (this.listItem.imgUrl) {
-      this.listItem.imageUrl = require('../../../../img/workouts/' + this.listItem.imgUrl);
-    } else if (this.listItem.imageUrl) {
-      this.listItem.imageUrl = require('../../../../img/muscleGroups/' + this.listItem.imageUrl);
+    if (this.listItem.imageUrl) {
+      this.listItem.imageUrl = require('../../../../../img/' + this.listItem.imageUrl);
+    } else if (this.listItem.imgUrl) {
+      this.listItem.imageUrl = require('../../../../../img/' + this.listItem.imgUrl);
+    } else {
+      this.listItem.imageUrl = '';
     }
   }
   updateItem(item) {
@@ -34,10 +36,10 @@ class listItemController {
   }
 }
 //component settings
-const listItemComponent = {
+export const thumbnailItemComponent = {
   template: template,
-  controllerAs: 'listItemCtrl',
-  controller: listItemController,
+  controllerAs: 'thumbnailItemCtrl',
+  controller: thumbnailItemController,
   bindings: {
     listItem: '=',
     setSelectedItem: '&',
@@ -45,7 +47,4 @@ const listItemComponent = {
     deleteListItem: '&'
   }
 };
-//list item is nested component in list view
-export default angular.module('nglistItemModule', [])
-  .component('listItemComponent', listItemComponent)
-  .name;
+

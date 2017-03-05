@@ -17,7 +17,7 @@ module.exports = function karmaConfig(config) {
       require('karma-mocha-reporter'),
       require('istanbul-instrumenter-loader'),
       require('karma-remap-coverage'),
-      require('karma-spec-reporter'),
+      require('karma-spec-reporter')
     ],
     reporters: ['spec'],
 

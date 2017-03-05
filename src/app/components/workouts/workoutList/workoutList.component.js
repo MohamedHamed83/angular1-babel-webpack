@@ -2,7 +2,7 @@
 import template from './workoutList.html';
 
 // component controller
-class workoutListCtrl {
+export class workoutListCtrl {
   constructor($workoutsVmSvc, $workoutsByPlanSvc) {
     'ngInject';
     this.$workoutsVmSvc = $workoutsVmSvc;
@@ -19,7 +19,7 @@ class workoutListCtrl {
   }
 }
 //component settings
-let workoutListComponent = {
+export const workoutListComponent = {
   template: template,
   controllerAs: 'workoutListCtrl',
   controller: workoutListCtrl,
@@ -28,7 +28,3 @@ let workoutListComponent = {
     allWorkouts: '='
   }
 };
-
-export default angular.module('workoutListModule', [])
-  .component('workoutListComponent', workoutListComponent)
-  .name;

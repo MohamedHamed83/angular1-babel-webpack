@@ -2,7 +2,7 @@
 import template from './editWorkout.html';
 
 // component controller
-class editWorkoutCtrl {
+export class editWorkoutCtrl {
   constructor($workoutsVmSvc) {
     'ngInject';
     this.$workoutsVmSvc = $workoutsVmSvc;
@@ -22,7 +22,7 @@ class editWorkoutCtrl {
   }
 }
 //component settings
-let editWorkoutComponent = {
+export const editWorkoutComponent = {
   template: template,
   controllerAs: 'editWorkoutCtrl',
   controller: editWorkoutCtrl,
@@ -31,7 +31,3 @@ let editWorkoutComponent = {
     workout: '=',
   }
 };
-
-export default angular.module('editWorkoutModule', [])
-  .component('editWorkoutComponent', editWorkoutComponent)
-  .name;

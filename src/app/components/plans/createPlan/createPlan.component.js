@@ -2,7 +2,7 @@
 import template from './createPlan.html';
 
 // component controller
-class createPlanCtrl {
+export class createPlanCtrl {
   constructor($plansSvc) {
     'ngInject';
     this.$plansSvc = $plansSvc;
@@ -20,7 +20,7 @@ class createPlanCtrl {
   }
 }
 //component settings
-let createPlanComponent = {
+export const createPlanComponent = {
   template: template,
   controllerAs: 'createPlanCtrl',
   controller: createPlanCtrl,
@@ -29,6 +29,3 @@ let createPlanComponent = {
   }
 };
 
-export default angular.module('createPlanModule', [])
-  .component('createPlanComponent', createPlanComponent)
-  .name;

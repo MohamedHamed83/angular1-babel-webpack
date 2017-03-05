@@ -1,7 +1,7 @@
 'use strict';
-import template from './listview.html';
+import template from './thumbnailView.html';
 // component controller
-class listviewController {
+export class thumbnailViewController {
   constructor() {
     'ngInject';
   }
@@ -22,10 +22,10 @@ class listviewController {
   }
 }
 //component settings
-let listviewComponent = {
+export const thumbnailViewComponent = {
   template: template,
-  controllerAs: 'listviewCtrl',
-  controller: listviewController,
+  controllerAs: 'thumbnailViewCtrl',
+  controller: thumbnailViewController,
   bindings: {
     allItems: '=',
     listSearchString: '=',
@@ -35,6 +35,3 @@ let listviewComponent = {
   }
 };
 
-export default angular.module('nglistviewModule', [])
-  .component('listviewComponent', listviewComponent)
-  .name;

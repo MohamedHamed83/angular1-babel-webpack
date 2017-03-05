@@ -2,7 +2,7 @@
 import template from './createMuscleGroup.html';
 
 // component controller
-class createMuscleGroupCtrl {
+export class createMuscleGroupCtrl {
   constructor($workoutsVmSvc) {
     'ngInject';
     this.$workoutsVmSvc = $workoutsVmSvc;
@@ -20,7 +20,7 @@ class createMuscleGroupCtrl {
   }
 }
 //component settings
-let createMuscleGroupComponent = {
+export const createMuscleGroupComponent = {
   template: template,
   controllerAs: 'createMuscleGroupCtrl',
   controller: createMuscleGroupCtrl,
@@ -28,7 +28,3 @@ let createMuscleGroupComponent = {
     viewStatus: '='
   }
 };
-
-export default angular.module('createMuscleGroupModule', [])
-  .component('createMuscleGroupComponent', createMuscleGroupComponent)
-  .name;

@@ -2,7 +2,7 @@
 import template from './editMuscleGroup.html';
 
 // component controller
-class editMuscleGroupCtrl {
+export class editMuscleGroupCtrl {
   constructor($workoutsVmSvc) {
     'ngInject';
     this.$workoutsVmSvc = $workoutsVmSvc;
@@ -22,7 +22,7 @@ class editMuscleGroupCtrl {
   }
 }
 //component settings
-let editMuscleGroupComponent = {
+export const editMuscleGroupComponent = {
   template: template,
   controllerAs: 'editMuscleGroupCtrl',
   controller: editMuscleGroupCtrl,
@@ -31,7 +31,3 @@ let editMuscleGroupComponent = {
     muscleGroup: '=',
   }
 };
-
-export default angular.module('editMuscleGroupModule', [])
-  .component('editMuscleGroupComponent', editMuscleGroupComponent)
-  .name;

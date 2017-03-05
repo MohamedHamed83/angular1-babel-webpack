@@ -8,7 +8,7 @@ describe('Footer Component', () => {
   describe('Footer.Controller', () => {
     let $componentController;
     let controller;
-    const mockProjectName =  'Fitness Club';
+    const mockProjectName = 'Fitness Club';
     beforeEach(inject(($injector) => {
       $componentController = $injector.get('$componentController');
       controller = $componentController('footerComponent', {

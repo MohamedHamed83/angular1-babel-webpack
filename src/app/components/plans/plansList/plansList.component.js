@@ -1,7 +1,7 @@
 'use strict';
 import template from './plansList.html';
 // component controller
-class plansListController {
+export class plansListController {
   constructor($plansSvc) {
     'ngInject';
     this.plansSvc = $plansSvc;
@@ -24,7 +24,7 @@ class plansListController {
   }
 }
 //component settings
-let plansListComponent = {
+export const plansListComponent = {
   template: template,
   controllerAs: 'plansListCtrl',
   controller: plansListController

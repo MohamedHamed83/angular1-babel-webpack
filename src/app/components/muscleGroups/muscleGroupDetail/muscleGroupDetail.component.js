@@ -2,7 +2,7 @@
 import template from './muscleGroupDetail.html';
 
 // component controller
-class muscleGroupDetailCtrl {
+export class muscleGroupDetailCtrl {
   constructor($plansSvc) {
     'ngInject';
     this.$plansSvc = $plansSvc;
@@ -34,7 +34,7 @@ class muscleGroupDetailCtrl {
   }
 }
 //component settings
-let muscleGroupDetailComponent = {
+export const muscleGroupDetailComponent = {
   template: template,
   controllerAs: 'muscleGroupDetailCtrl',
   controller: muscleGroupDetailCtrl,
@@ -46,7 +46,3 @@ let muscleGroupDetailComponent = {
     onDelete: '&',
   }
 };
-
-export default angular.module('muscleGroupDetailModule', [])
-  .component('muscleGroupDetailComponent', muscleGroupDetailComponent)
-  .name;

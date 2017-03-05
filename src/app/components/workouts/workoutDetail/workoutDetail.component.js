@@ -2,7 +2,7 @@
 import template from './workoutDetail.html';
 
 // component controller
-class workoutDetailCtrl {
+export class workoutDetailCtrl {
   constructor($plansSvc) {
     'ngInject';
     this.$plansSvc = $plansSvc;
@@ -44,7 +44,7 @@ class workoutDetailCtrl {
   }
 }
 //component settings
-let workoutDetailComponent = {
+export const workoutDetailComponent = {
   template: template,
   controllerAs: 'workoutDetailCtrl',
   controller: workoutDetailCtrl,
@@ -57,7 +57,3 @@ let workoutDetailComponent = {
     onDelete: '&'
   }
 };
-
-export default angular.module('workoutDetailModule', [])
-  .component('workoutDetailComponent', workoutDetailComponent)
-  .name;
