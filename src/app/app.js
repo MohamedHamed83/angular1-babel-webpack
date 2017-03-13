@@ -22,4 +22,4 @@ import {
 
 angular.module('fitnessClub', ['ui.router','ngResource', 'ui.router.components', 'angular-loading-bar', 'components', ngAnimate])
   .config(routing)
-  .name
+  .name;

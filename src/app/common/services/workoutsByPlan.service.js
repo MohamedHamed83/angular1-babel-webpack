@@ -32,7 +32,7 @@ class workoutsByPlan {
         selectedWorkouts.push(res);
       });
     });
-    return selectedWorkouts
+    return selectedWorkouts;
   }
 }
 /**

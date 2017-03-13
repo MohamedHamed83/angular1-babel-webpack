@@ -32,7 +32,7 @@ export class thumbnailItemController {
     //passing selected item to list view component
     this.setSelectedItem({
       item: listItem
-    })
+    });
   }
 }
 //component settings

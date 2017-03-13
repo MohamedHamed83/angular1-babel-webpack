@@ -30,7 +30,7 @@ export class planDetailCtrl {
       $event: {
         plan: this.plan,
       }
-    })
+    });
   }
 }
 //component settings

@@ -11,12 +11,12 @@ export class createPlanCtrl {
     this.plan = {
       description: '',
       url: ''
-    }
+    };
   }
   createNewPlan(event) {
     this.$plansSvc.createNewPlan(event.plan).then(() => {
       this.$plansSvc.loadUiRoute('plansListView');
-    })
+    });
   }
 }
 //component settings

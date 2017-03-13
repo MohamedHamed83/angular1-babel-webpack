@@ -6,7 +6,7 @@ class navbarController {
     'ngInject';
   }
   menuCollapsed() {
-    $(".menu-collapsed").toggleClass("menu-expanded");
+    $('.menu-collapsed').toggleClass('menu-expanded');
   };
 }
 //component settings

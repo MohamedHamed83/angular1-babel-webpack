@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "no-extra-semi": 0, // disallow unnecessary semicolons
+    "semi-spacing": 0,
+    "eqeqeq": "off",
+    "curly": "warn",
+     "semi": 2,                      // require or disallow use of semicolons instead of ASI
+    // "no-console": 0,  // disallow use of console (off by default in the node environment)
+    // "no-ex-assign": 0,            // disallow assigning to the exception in a catch block
+    "quotes": ["warn", "single"]
+  }
+}

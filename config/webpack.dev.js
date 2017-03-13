@@ -40,7 +40,22 @@ module.exports = function makeWebpackConfig() {
   config.module = {
     rules: [{
         test: /\.js$/,
-        loaders: ['ng-annotate-loader', 'babel-loader'],
+        loaders: [{
+          loader: 'ng-annotate-loader'
+        }, {
+          loader: 'babel-loader'
+        }, {
+          loader: 'eslint-loader',
+          options: {
+            emitError: false,
+            fix: true,
+            // default value
+            formatter: require("eslint/lib/formatters/stylish"),
+
+            // community formatter
+            formatter: require("eslint-friendly-formatter"),
+          }
+        }],
         exclude: /node_modules/
       },
       {

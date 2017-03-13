@@ -8,17 +8,17 @@ export class thumbnailViewController {
   getSelectedItem(listitem) {
     this.setSelectedItem({
       item: listitem
-    })
+    });
   }
   update(item) {
     this.updateListItem({
       listItem: item
-    })
+    });
   }
   delete(item) {
     this.deleteListItem({
       listItem: item
-    })
+    });
   }
 }
 //component settings

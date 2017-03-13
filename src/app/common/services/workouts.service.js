@@ -57,7 +57,7 @@
       const workoutRef = dbRefSvc.workoutsArray().$add(workout);
       const workoutsVmSvc = this;
       workoutRef.then(function (ref) {
-        const refId = ref.key
+        const refId = ref.key;
         const muscleAssociation = dbRefSvc.workoutsPerMuscleGroupArray().child(workout.muscleGroupId);
         const workoutPerMuscleAssociation = muscleAssociation.child(refId);
         workoutPerMuscleAssociation.set(true);
@@ -72,7 +72,7 @@
           selectedWorkouts.push(res);
         });
       });
-      return selectedWorkouts
+      return selectedWorkouts;
     }
   createNewMuscleGroup(muscleGroup) {
     return this.firebaseDbRefSvc.muscleGroupsArray().$add(muscleGroup);

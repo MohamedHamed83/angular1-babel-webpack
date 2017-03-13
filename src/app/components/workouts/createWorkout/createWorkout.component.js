@@ -13,10 +13,10 @@ export class createWorkoutCtrl {
       muscleGroupId:'',
       imageUrl: '',
       workoutDetail:''
-    }
+    };
   }
   createNewWorkout(event) {
-    this.$workoutsVmSvc.createNewWorkout(event.workout)
+    this.$workoutsVmSvc.createNewWorkout(event.workout);
   }
 }
 //component settings

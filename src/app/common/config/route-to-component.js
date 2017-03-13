@@ -23,7 +23,7 @@
 	}
 
 	var getCompInputs = function getCompInputs($injector, componentName) {
-		return $injector.get(componentName + "Directive").map(function (directive) {
+		return $injector.get(componentName + 'Directive').map(function (directive) {
 			return Object.keys(directive.bindToController);
 		}).reduce(unnestR, []);
 	};

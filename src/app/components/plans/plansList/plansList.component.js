@@ -6,7 +6,7 @@ export class plansListController {
     'ngInject';
     this.plansSvc = $plansSvc;
     // plans list
-    this.allPlans = this.plansSvc.getPlans()
+    this.allPlans = this.plansSvc.getPlans();
     this.searchString = '';
   }
   // get selected item from the list view

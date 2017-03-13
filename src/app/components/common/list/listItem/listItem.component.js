@@ -30,7 +30,7 @@ export class listItemController {
     //passing selected item to list view component
     this.setSelectedItem({
       item: listItem
-    })
+    });
   }
 }
 //component settings

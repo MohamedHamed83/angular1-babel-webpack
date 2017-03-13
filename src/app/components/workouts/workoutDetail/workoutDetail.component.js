@@ -40,7 +40,7 @@ export class workoutDetailCtrl {
       $event: {
         workoutsVmSvcorkout: this.workout,
       }
-    })
+    });
   }
 }
 //component settings

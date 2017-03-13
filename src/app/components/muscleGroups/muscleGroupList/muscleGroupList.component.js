@@ -6,7 +6,7 @@ export class muscleGroupListController {
     'ngInject';
     this.workoutsVmSvc = $workoutsVmSvc;
     // plans list
-    this.allMuscleGroups = this.workoutsVmSvc.getMuscleGroups()
+    this.allMuscleGroups = this.workoutsVmSvc.getMuscleGroups();
     this.searchString = '';
   }
   // get selected item from the list view

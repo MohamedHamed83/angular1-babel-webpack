@@ -80,7 +80,7 @@ export default function routes($stateProvider) {
     })
     // workouts routes
     .state('workoutsByPlan', {
-      url: "/workouts-by-plan/:planId",
+      url: '/workouts-by-plan/:planId',
       component: 'workoutListComponent',
       params: {
         planId: null
@@ -95,7 +95,7 @@ export default function routes($stateProvider) {
       },
     })
     .state('workoutsByMuscle', {
-      url: "/workouts-by-muscle-group/:itemId",
+      url: '/workouts-by-muscle-group/:itemId',
       component: 'workoutListComponent',
       params: {
         planId: null
@@ -110,7 +110,7 @@ export default function routes($stateProvider) {
       },
     })
     .state('allWorkoutsView', {
-      url: "/workouts",
+      url: '/workouts',
       component: 'workoutListComponent',
       resolve: {
         viewType: () => {
@@ -122,7 +122,7 @@ export default function routes($stateProvider) {
       },
     })
     .state('createWorkout', {
-      url: "/create-workout",
+      url: '/create-workout',
       component: 'createWorkoutComponent',
       resolve: {
         viewStatus: ($plansSvc) => $plansSvc.viewTypes.newItem,
@@ -130,5 +130,5 @@ export default function routes($stateProvider) {
           return $workoutsVmSvc.muscleGroupsList();
         }
       },
-    })
+    });
 }

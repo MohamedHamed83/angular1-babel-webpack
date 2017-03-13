@@ -18,7 +18,7 @@ import './common/list/index';
 //search bar component
 import './common/searchBar/searchBar.component';
 // stateful  components
-import './home/home.component'
+import './home/home.component';
 //Muscle Group componente
 import './muscleGroups/index';
 

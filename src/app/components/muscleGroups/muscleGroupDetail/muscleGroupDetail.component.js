@@ -30,7 +30,7 @@ export class muscleGroupDetailCtrl {
       $event: {
         muscleGroup: this.muscleGroup,
       }
-    })
+    });
   }
 }
 //component settings
